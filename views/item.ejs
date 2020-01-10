@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>메이플 추가옵션 분석기</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="/img/mdb-favicon.ico" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="/css/style.css">
+	<style>
+		body{
+			font-size: 16px;
+			font-family: sans-serif;
+		}
+
+		h1{
+			font-size: 2.618em;
+		}
+
+		h2{
+			font-size: 1.717em;
+		}
+
+		h3{
+			font-size: 1em;
+			line-height: 1.618em;
+			text-transform: uppercase;
+		}
+
+		p{
+			font-size: 1em;
+			line-height: 1.618em;
+		}
+		.md-form.md-outline label {
+			font-size: 0.8em;
+		}
+		
+		@media all and (min-width: 960px) {
+			body{
+				font-size: 16px;
+			}
+		}
+
+		@media all and (max-width: 959px) and (min-width: 600px) {
+			body{
+				font-size: 14px;
+			}
+		}
+
+		@media all and (max-width: 599px) and (min-width: 320px) {
+			body{
+				font-size: 12px;
+			}
+
+		}
+		
+		#name {
+			color: #111111;
+			font-weight: bold;
+			padding-top: 12px;
+			padding-left: 5px;
+		}
+		#thumbnail {
+			display: inline-block;
+			float: left;
+			width: 150px;
+    		height: auto;
+		}
+		.mainbody {
+			display: inline-block;
+			width: 90%;
+			padding: 0.5rem;
+			vertical-align: top;
+			text-align: center;
+		}
+		.tnail {
+			display: inline;
+			width: 15rem;
+			padding: 2rem;
+		}
+		.group {
+			display: inline-block;
+			vertical-align: top;
+			width: 90%;
+			max-width: 600px;
+		}
+		.sideInformation {
+			display: inline-block;
+			width: 100%;
+			max-width: 600px;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+			vertical-align: top;
+		}
+		.information {
+			display: inline-block;
+			width: 90%;
+			max-width: 600px;
+			margin: 1rem;
+			vertical-align: top;
+		}
+		.divider {
+			display: block;
+			float: none;
+			width: 100%;
+			height: 1rem;
+			border-bottom: 1px dashed #cccccc;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.subtitle {
+			font-weight: bold;
+			padding-top: 12px;
+			padding-left: 5px;
+		}
+		.customYellow {
+			color: #ffc107;
+		}
+		.setItemTitle {
+			font-weight: bold;
+			font-size: 1.618em;
+			margin-bottom: 2rem;
+		}
+		.setItemLi {
+			font-weight: bold;
+			
+		}
+		.setItemType {
+			float: right;
+		}
+		.setEffectSubject {
+			font-weight: bold;
+			margin-top: 2rem;
+			margin-bottom: 1rem;
+			font-size: 1.347em;
+		}
+		.setEffectDes {
+			font-weight: bold;
+		}
+		.setItemSection {
+			margin-top: 3rem;
+		}
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			text-align: left;
+			font-weight: bold;
+		}
+		
+	</style>
+</head>
+<body>
+
+  <!-- Start your project here-->  
+	<header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark default-color">
+    <a class="navbar-brand" href="/"><strong>메이플 추가옵션 분석기</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">홈<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/summary">아이템 목록</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/guide">가이드</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" href="/about">about</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><i class="fab fa-instagram"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+	
+<div class="flex-center flex-column">
+	<div class="card mt-5 animated fadeIn tnail">
+		<span id = "thumbnail"></span>
+	</div>
+	<span class="mainbody">
+		<div class="card animated fadeIn information">
+			<div class="card-header">
+				<h2 id = "name" class="subtitle"></h2>
+			</div>
+			<div class="card-body">
+			  <ul>
+				  <li>착용레벨 : <span id = reqlev></span></li>
+				  <li>장비분류 : <span id = kind></span></li>
+				  <li><span id = spdOrNot></span> <span id = spd></span></li>
+				  <li><span id = atkOrMag></span> <span id = atk></span></li>
+				  <li>착용직업 : <span id = job></span></li>
+				  <li>업그레이드 가능 횟수 : <span id = upgrade></span></li>
+				  <li class="customYellow">가위 사용 가능 횟수 : <span id = scissors></span></li>
+				  <li>최대 스타포스 강화 횟수 : <span id = starforce></span></li>
+				  <li>REQ STR : <span id = reqstr></span></li>
+				  <li>REQ DEX : <span id = reqdex></span></li>
+				  <li>REQ INT : <span id = reqint></span></li>
+				  <li>REQ LUK : <span id = reqluk></span></li>
+				  <li>REQ POP : <span id = reqpop></span></li>
+			  </ul>
+			</div>	
+		</div>
+
+		<div class="animated fadeIn group">
+		<div class="card sideInformation">
+			<div class="card-header">
+				  <h2 class="subtitle">세트아이템 정보</h2>
+			</div>
+			<div class="card-body">
+				<span id="setItem">세트아이템 정보는 준비중입니다. 조금만 기다려주세요!</span>
+			</div>
+		</div>
+		
+		<div class="card sideInformation">
+			<div class="card-header">
+				  <h2 class="subtitle">획득 경로</h2>
+			</div>
+			<div class="card-body">
+				<ul>
+					<li>몬스터로부터 획득 : <span id = earndrop></span></li>
+					<li>퀘스트로 획득 : <span id = earnquest></span></li>
+					<li>제작으로 획득 : <span id = earnmake></span></li>
+					<li>기타 획득 경로 : <span id = earnetc></span></li>
+				</ul>
+			</div>
+		</div>
+		</div>
+	</span>
+    
+  <!-- End your project here-->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript">
+	function getParameterByName(name) {
+		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search);
+		return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+
+	var loading = function(done) {
+		var xmlhttpItem = new XMLHttpRequest();
+		xmlhttpItem.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200)
+			{
+				var myObj = JSON.parse(this.responseText);
+				var id = getParameterByName('id');
+				var type;
+				for(var i = 0; i < myObj.list.length; i++) {
+					if(myObj.list[i].name == id) {
+						type = myObj.list[i].type;
+						document.getElementById("thumbnail").innerHTML = "<img src=\"/img/items/" + myObj.list[i].imgsrc + " \" width=\"175\" >";
+						document.getElementById("name").innerHTML = myObj.list[i].name;
+						document.getElementById("kind").innerHTML = myObj.list[i].kind;
+						document.getElementById("reqlev").innerHTML = myObj.list[i].reqlev;
+						document.getElementById("reqstr").innerHTML = myObj.list[i].reqstr;
+						document.getElementById("reqdex").innerHTML = myObj.list[i].reqdex;
+						document.getElementById("reqint").innerHTML = myObj.list[i].reqint;
+						document.getElementById("reqluk").innerHTML = myObj.list[i].reqluk;
+						document.getElementById("reqpop").innerHTML = myObj.list[i].reqpop;
+						document.getElementById("upgrade").innerHTML = myObj.list[i].upgrade;
+						document.getElementById("scissors").innerHTML = myObj.list[i].scissors;
+						document.getElementById("starforce").innerHTML = myObj.list[i].starforce;
+						document.getElementById("earndrop").innerHTML = myObj.list[i].earndrop;
+						document.getElementById("earnquest").innerHTML = myObj.list[i].earnquest;
+						document.getElementById("earnmake").innerHTML = myObj.list[i].earnmake;
+						document.getElementById("earnetc").innerHTML = myObj.list[i].earnetc;
+
+						console.log("로딩함수 동작");
+
+						// type :: 0 1 4 5 6 7 8 9 공격력 장비, 2 3 마력 장비
+						if(type == "0") { // 전사계열 무기 (공격력)
+							document.getElementById("job").innerHTML = "전사";
+							document.getElementById("atkOrMag").innerHTML = "공격력: ";
+							document.getElementById("atk").innerHTML = myObj.list[i].atk;
+							document.getElementById("spdOrNot").innerHTML = "공격속도: ";
+							document.getElementById("spd").innerHTML = myObj.list[i].spd;
+						}else if(type == "1") { // 전사계열 방어구 (공격력)
+							document.getElementById("job").innerHTML = "전사";
+							document.getElementById("atkOrMag").innerHTML = "방어력: ";
+							document.getElementById("atk").innerHTML = myObj.list[i].defense;
+						}else if(type == "2") { // 법사계열 무기 (마력)
+							document.getElementById("job").innerHTML = "마법사";
+							document.getElementById("atkOrMag").innerHTML = "마력: ";
+							document.getElementById("atk").innerHTML = myObj.list[i].mag;
+							document.getElementById("spdOrNot").innerHTML = "공격속도: ";
+							document.getElementById("spd").innerHTML = myObj.list[i].spd;
+						}else if(type == "3") { // 법사계열 방어구 (마력)
+							document.getElementById("job").innerHTML = "마법사";
+							document.getElementById("atkOrMag").innerHTML = "방어력: ";
+							document.getElementById("atk").innerHTML = myObj.list[i].defense;
+						}else if(type == "4") { // 궁수계열 무기 (공격력)
+							document.getElementById("job").innerHTML = "궁수";
+							document.getElementById("atkOrMag").innerHTML = "공격력: ";
+							document.getElementById("atk").innerHTML = myObj.list[i].atk;
+							document.getElementById("spdOrNot").innerHTML = "공격속도: ";
+							document.getElementById("spd").innerHTML = myObj.list[i].spd;
+						}else if(type == "5") { // 궁수계열 방어구 (공격력)
+							document.getElementById("job").innerHTML = "궁수";
+							document.getElementById("atkOrMag").innerHTML = "방어력: ";
+							document.getElementById("atk").innerHTML = myObj.list[i].defense;
+						}else if(type == "6") { // 도적계열 무기 (공격력)
+							document.getElementById("job").innerHTML = "도적";
+							document.getElementById("atkOrMag").innerHTML = "공격력: ";
+							document.getElementById("atk").innerHTML = myObj.list[i].atk;
+							document.getElementById("spdOrNot").innerHTML = "공격속도: ";
+							document.getElementById("spd").innerHTML = myObj.list[i].spd;
+						}else if(type == "7") { // 도적계열 방어구 (공격력)
+							document.getElementById("job").innerHTML = "도적";
+							document.getElementById("atkOrMag").innerHTML = "방어력: ";
+							document.getElementById("atk").innerHTML = myObj.list[i].defense;
+						}else if(type == "8") { // 해적계열 무기 (공격력)
+							document.getElementById("job").innerHTML = "해적";
+							document.getElementById("atkOrMag").innerHTML = "공격력: ";
+							document.getElementById("atk").innerHTML = myObj.list[i].atk;
+							document.getElementById("spdOrNot").innerHTML = "공격속도: ";
+							document.getElementById("spd").innerHTML = myObj.list[i].spd;
+						}else if(type == "9") { // 해적계열 방어구 (공격력)
+							document.getElementById("job").innerHTML = "해적";
+							document.getElementById("atkOrMag").innerHTML = "방어력: ";
+							document.getElementById("atk").innerHTML = myObj.list[i].defense;
+						}
+
+						console.log("로딩함수 동작2");
+						done();
+						break;
+					}
+				}
+			}
+		};
+		
+		xmlhttpItem.open("GET", "/data/itemData.txt", true);
+		xmlhttpItem.send();
+		
+		console.log("로딩함수 끝");
+	}
+	
+	
+	loading(function done() {
+		console.log("던함수 실행!");
+		var xmlhttpSet = new XMLHttpRequest();
+		xmlhttpSet.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200)
+			{
+				var myObj = JSON.parse(this.responseText);
+				var id = getParameterByName('id');
+				var setEffectName, jobName
+				var setItemList = "", setEffectList = "";
+
+				if(id.includes("네크로")) {
+					jobName = document.getElementById("job").innerHTML;
+					setEffectName = "네크로 세트(" + jobName + ")";
+					console.log("네크로 세트효과 발동!");
+				}else if(id.includes("로얄 반 레온")) {
+					jobName = document.getElementById("job").innerHTML;
+					setEffectName = "로얄 반 레온 세트(" + jobName + ")";
+					console.log("로얄 반 레온 세트효과 발동!");
+				}else if(id.includes("라이온하트")) {
+					setEffectName = "라이온하트 세트";
+					console.log("라이온하트 세트효과 발동!");
+				}else if(id.includes("드래곤테일")) {
+					setEffectName = "드래곤테일 세트";
+					console.log("드래곤테일 세트효과 발동!");
+				}else if(id.includes("팔콘윙")) {
+					setEffectName = "팔콘윙 세트";
+					console.log("팔콘윙 세트효과 발동!");
+				}else if(id.includes("레이븐혼")) {
+					setEffectName = "레이븐혼 세트";
+					console.log("레이븐혼 세트효과 발동!");
+				}else if(id.includes("샤크투스")) {
+					setEffectName = "샤크투스 세트";
+					console.log("샤크투스 세트효과 발동!");
+				}else if(id.includes("파프니르") || id.includes("하이네스") || id.includes("이글아이") || id.includes("트릭스터")) {
+					jobName = document.getElementById("job").innerHTML;
+					setEffectName = "파프니르 세트(" + jobName + ")";
+					console.log("파프니르 세트효과 발동!");
+				}else{
+					console.log("우찬아 괜찮아 울어도 돼 사실 세트효과 없거든");
+				}
+
+				
+
+				for(var i = 0; i < myObj.list.length; i++) {
+					if(myObj.list[i].title == setEffectName) {
+						setItemList += "<div class=\"setItemTitle\">" + setEffectName + "</div><ul>";
+						for(var j = 0; myObj.list[i].setItem[j] != null; j++) {
+							if (myObj.list[i].setItem[j].type != "무기") {
+								setItemList += "<li class =\"setItemLi\"><span class=\"setItemName\"><a href=\"item?id=" + myObj.list[i].setItem[j].name + "\">" + myObj.list[i].setItem[j].name + "</a></span><span class=\"setItemType\">(" + myObj.list[i].setItem[j].type + ")</span></li>";
+							}else{
+								setItemList += "<li class =\"setItemLi\"><span class=\"setItemName\">" + myObj.list[i].setItem[j].name + "</span><span class=\"setItemType\">(" + myObj.list[i].setItem[j].type + ")</span></li>";
+							}
+						}
+						
+						setItemList += "</ul>";
+						
+						setEffectList += "<div class=\"setItemSection\">"
+						for(var j = 0; myObj.list[i].setEffect[j] != null; j++) {
+							console.log(myObj.list[i].setEffect[j].subject);
+							setEffectList += "<div class=\"setEffectSubject\">" + myObj.list[i].setEffect[j].subject + "</div><ul>";
+							for(var k = 0; myObj.list[i].setEffect[j].effect[k] != null; k++) {
+								setEffectList += "<li class=\"setEffectDes\">" + myObj.list[i].setEffect[j].effect[k].stat + "</li>";
+							}
+							setEffectList += "</ul>";
+						}
+						setEffectList += "</div>"
+
+						document.getElementById("setItem").innerHTML = setItemList + setEffectList;
+						break;
+					}
+				}
+			}
+		};
+
+		xmlhttpSet.open("GET", "/data/setItemData.txt", true);
+		xmlhttpSet.send();
+	})
+	</script>
+
+</body>
+</html>

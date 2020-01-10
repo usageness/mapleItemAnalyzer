@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>메이플 추가옵션 분석기</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="/img/mdb-favicon.ico" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="/css/style.css">
+	<style>
+		body{
+			font-size: 16px;
+			font-family: sans-serif;
+		}
+
+		h1{
+			font-size: 2.618em;
+		}
+
+		h2{
+			font-size: 1.717em;
+		}
+
+		h3{
+			font-size: 1em;
+			line-height: 1.618em;
+			text-transform: uppercase;
+		}
+
+		p{
+			font-size: 1em;
+			line-height: 1.618em;
+		}
+		.md-form.md-outline label {
+			font-size: 0.8em;
+		}
+		
+		@media all and (min-width: 960px) {
+			body{
+				font-size: 16px;
+			}
+		}
+
+		@media all and (max-width: 959px) and (min-width: 600px) {
+			body{
+				font-size: 14px;
+			}
+		}
+
+		@media all and (max-width: 599px) and (min-width: 320px) {
+			body{
+				font-size: 12px;
+			}
+
+		}
+		
+		
+		#name {
+			color: #111111;
+			font-weight: bold;
+			padding-bottom: 20px;
+			border-bottom: 1px dashed #cccccc;
+		}
+		#thumbnail {
+			padding-top: 100px;
+		}
+		#score {
+			color: #313131;
+			font-weight: bold;
+			font-size: 1.4em;
+			margin-right: 3rem;
+		}
+		#rank {
+			color: #848484;
+			font-weight: bold;
+			font-size: 1.4em;
+		}
+		#grade {
+			color: #6610f2;
+			font-weight: bold;
+			font-size: 1em;
+		}
+		.row {
+			padding-top: 3%;
+			padding-bottom: 3%;
+		}
+		.statGradePoint {
+			color: #20c997;
+			font-weight: bold;
+			font-size: 1em;
+			float: none;
+			margin: 0 auto;
+		}
+		.mainContainer {
+			margin-top: 5%;
+			margin-bottom: 5%;
+			overflow: auto;
+		}
+		.statName {
+			color: #111111;
+			font-weight: bold;
+			padding-bottom: 20px;
+			border-bottom: 1px dashed #cccccc;
+		}
+		.md-form.md-outline {
+			margin-top: 0.5rem;
+			margin-bottom: 0.5rem;
+		}
+		.container {
+			display: inline-block;
+			text-align: center;
+			overflow: auto;
+		}
+		.smallDes {
+			font-size: 9pt;
+			color: #cccccc;
+		}
+		.divider {
+			display: block;
+			float: none;
+			width: 100%;
+			height: 1rem;
+			border-bottom: 1px dashed #cccccc;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.grade {
+			float: none;
+			margin: 0 auto;
+		}
+		.detail {
+			float: right;
+			font-weight: bold;
+		}
+		.subtitle {
+			float: left;
+			font-weight: bold;
+			padding-top: 12px;
+		}
+		.card-text {
+			float: none;
+			margin: 0 auto;
+		}
+		.status {
+			width: 100%;
+		}
+		.analyze {
+			width: 94%;
+			margin-left: 3%;
+			margin-right: 3%;
+			margin-bottom: 3%;
+		}
+		.btn {
+			padding: .84em 2.14em;
+		}
+		.nav-link{
+			font-size: 12pt;
+		}
+		.form-control {
+			text-align: center;
+			width: 100%;
+			padding: 0;
+			margin: auto;
+		}
+		label {
+			width: 90%;
+		}
+		h5 {
+			color: #000000;
+		}
+		
+		#additional {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: inline;
+		}
+		
+		#additional li {
+			display: inline;
+		}
+		
+		#additional, #toggle {
+			display: none;
+		}
+		
+		#toggleTitle {
+			font-weight: bold;
+			font-size: 1.618em;
+			color: #000000;
+		}
+		
+		#toggleTitle:hover {
+			color: #888888;
+		}
+		
+		#toggle:checked + #additional {
+			display: inline;
+		}
+		
+	</style>
+</head>
+<body>
+
+  <!-- Start your project here-->  
+	<header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark default-color">
+    <a class="navbar-brand" href="/"><strong>메이플 추가옵션 분석기</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">홈<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/summary">아이템 목록</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/guide">가이드</a>
+        </li>
+		  <li class="nav-item">
+          <a class="nav-link" href="/about">about</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><i class="fab fa-instagram"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  
+		
+		
+  <div class ="mainContainer flex-center flex-column">
+	<div class="container animated fadeIn">
+
+		<div class="row">
+		  <div class="col-md-6 mb-3 mb-md-0">
+			<div class="card">
+			  <div class="card-body">
+				<h5 class="card-title"><p id = name></p></h5>
+				<span class="card-text">
+				  <table class="status">
+					<tr>
+						<td colspan="2"><span id = "thumbnail"></span></td>
+					</tr>
+					<tr>
+						<td>착용레벨: </td>
+						<td><p id = reqlev></p></td>
+					</tr>
+					<tr>
+						<td>대분류: </td>
+						<td><p id = wporar></p></td>
+					</tr>
+					<tr>
+						<td>장비분류: </td>
+						<td><p id = kind></p></td>
+					</tr>
+					<tr>
+						<td><p id = spdOrNot></p></td>
+						<td><p id = spd></p></td>
+					</tr>
+					<tr>
+						<td><p id = atkOrMag></td>
+						<td><p id = atk></p></td>
+					</tr>
+					<tr>
+						<td>주착용직업: </td>
+						<td><p id = job></p></td>
+					</tr>
+				  </table>
+
+				  </span>
+			  </div>
+			</div>
+		  </div>
+
+		  <div class="col-md-6">
+			<div class="card">
+			  <div class="card-body">
+				<h4 class="card-title"><p class="statName">아이템 추가옵션</p></h4>
+				<span class="card-text option">
+				  <div class="row">
+					<div class="col">
+						<div class="md-form form-group md-outline">
+							<input onkeyup="filter()" type="text" id="str" class="form-control">
+							<label for="str">STR</label>
+						</div>
+					</div>
+					<div class="col">
+						<div class="md-form form-group md-outline">
+							<input onkeyup="filter()" type="text" id="dex" class="form-control">
+							<label for="dex">DEX</label>
+						</div>
+					</div>
+					<div class="col">
+						<div class="md-form form-group md-outline">
+							<input onkeyup="filter()" type="text" id="int" class="form-control">
+							<label for="int">INT</label>
+						</div>
+					</div>
+					<div class="col">
+						<div class="md-form form-group md-outline">
+							<input onkeyup="filter()" type="text" id="luk" class="form-control">
+							<label for="luk">LUK</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<div class="md-form form-group md-outline">
+							<input onkeyup="filter()" type="text" id="att" class="form-control">
+							<label for="att">공격력</label>
+						</div>
+					</div>
+					<div class="col">
+						<div class="md-form form-group md-outline">
+							<input onkeyup="filter()" type="text" id="mag" class="form-control">
+							<label for="mag">마력</label>
+						</div>
+					</div>
+					<div class="col">
+						<div class="md-form form-group md-outline">
+							<input onkeyup="filter()" type="text" id="all" class="form-control">
+							<label for="all">올스탯</label>
+						</div>
+					</div>
+					<div class="col">
+						<div class="md-form form-group md-outline">
+							<input onkeyup="filter()" type="text" id="boss" class="form-control">
+							<label for="boss">보스뎀</label>
+						</div>
+					</div>
+				</div>
+					
+				<label id="toggleTitle" for="toggle" onclick>세부 스텟 계산 &#8801; </label>	
+				<input type="checkbox" id ="toggle"/>
+				<ul id ="additional">
+					<li>
+						<div class="row">
+							<div class="col">
+								<div class="md-form form-group md-outline">
+									<input onkeyup="filter()" type="text" id="mylevel" class="form-control">
+									<label for="mylevel">캐릭터 레벨</label>
+								</div>
+							</div>
+							<div class="col">
+								<div class="md-form form-group md-outline">
+									<input onkeyup="filter()" type="text" id="mystat" class="form-control">
+									<label for="mystat">나의 주스텟 수치</label>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			  </span>
+			</div>
+		  </div> <!--card end-->
+	  </div>
+
+
+	<div class="card mt-5 animated fadeIn analyze">
+		  <div class="card-header">
+			<button type="button" class="btn btn-warning rounded detail" onClick="onDetail()">상세정보</button>
+			<h2 class="subtitle">아이템 감정 결과</h2>
+		  </div>
+		  <div class="card-body">
+			  <div class ="divider"></div>
+				<span><strong>아이템 점수 : </strong><span id = score></span></span>
+				<span><strong>아이템 등급 : </strong><span id = rank></span></span>
+				<p class="smallDes">아이템 점수는 아이템의 종류에 따라 다르며, 절대적인 수치가 아닌 참고용입니다. 점수가 높다고 반드시 높은 성능을 내거나 높은 가격대를 형성하지는 않으니 참고용으로 사용해주시기 바랍니다.</p>
+				<div class ="divider"></div>
+
+				<h2 class="subtitle">상세 분석 결과</h2>
+
+				<!-- 무기 / 방어구 급수 -->
+				<table class="table table-striped table-hover table-sm">
+				<thead>
+					<tr>
+						<th>아이템 등급</th>
+						<th>1</th>
+						<th>2</th>
+						<th>3</th>
+						<th>4</th>
+						<th>5</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><font color=red style="font-weight:bold">추가 공격력/마력</font></td>
+						<td><span id="plusAtt1"></span></td>
+						<td><span id="plusAtt2"></span></td>
+						<td><span id="plusAtt3"></span></td>
+						<td><span id="plusAtt4"></span></td>
+						<td><span id="plusAtt5"></span></td>
+					</tr>
+					<tr>
+						<td><font color=blue style="font-weight:bold">주 스텟</font></td>
+						<td colspan="5"><span id="firstStat">0</span></td>
+					</tr>
+				</tbody>
+				</table>
+
+				<p class="grade">공격력/마력 추가 옵션 등급: <span id="grade">-급</span></p>
+				<p class="grade">주스텟 추가 옵션 등급: <span class="statGradePoint"><span id="statGrade">-급</span> (주스텟 <span id="mainstatpoint"></span> + 올스텟 <span id="allstatpoint"></span>)</span></p>
+				<div class ="divider"></div>
+				<p><span id="gradeDes"></span></p>
+
+				</div>
+		  </div>
+
+		</div>
+	</div>
+</div>
+  <!-- End your project here-->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript">
+	function getParameterByName(name) {
+		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search);
+		return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+	  
+	
+	  
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200)
+		{
+			var myObj = JSON.parse(this.responseText);
+			var id = getParameterByName('id');
+			var type;
+			for(var i = 0; i < myObj.list.length; i++) {
+				if(myObj.list[i].name == id) {
+					type = myObj.list[i].type;
+					document.getElementById("name").innerHTML = myObj.list[i].name;
+					document.getElementById("kind").innerHTML = myObj.list[i].kind;
+					
+					document.getElementById("reqlev").innerHTML = myObj.list[i].reqlev;
+					document.getElementById("thumbnail").innerHTML = "<img src=\"/img/items/" + myObj.list[i].imgsrc + " \" width=\"100\" >";
+					
+					
+					// type :: 0 1 4 5 6 7 8 9 공격력 장비, 2 3 마력 장비
+					if(type == "0") { // 전사계열 무기 (공격력)
+			  			document.getElementById("job").innerHTML = "전사계열";
+						document.getElementById("atkOrMag").innerHTML = "공격력: ";
+						document.getElementById("atk").innerHTML = myObj.list[i].atk;
+						document.getElementById("spdOrNot").innerHTML = "공격속도: ";
+						document.getElementById("spd").innerHTML = myObj.list[i].spd;
+						document.getElementById("wporar").innerHTML = "무기";
+		  			}else if(type == "1") { // 전사계열 방어구 (공격력)
+						document.getElementById("job").innerHTML = "전사계열";
+						document.getElementById("atkOrMag").innerHTML = "방어력: ";
+						document.getElementById("atk").innerHTML = myObj.list[i].defense;
+						document.getElementById("wporar").innerHTML = "방어구";
+					}else if(type == "2") { // 법사계열 무기 (마력)
+						document.getElementById("job").innerHTML = "마법사계열";
+						document.getElementById("atkOrMag").innerHTML = "마력: ";
+						document.getElementById("atk").innerHTML = myObj.list[i].mag;
+						document.getElementById("spdOrNot").innerHTML = "공격속도: ";
+						document.getElementById("spd").innerHTML = myObj.list[i].spd;
+						document.getElementById("wporar").innerHTML = "무기";
+					}else if(type == "3") { // 법사계열 방어구 (마력)
+						document.getElementById("job").innerHTML = "마법사계열";
+						document.getElementById("atkOrMag").innerHTML = "방어력: ";
+						document.getElementById("atk").innerHTML = myObj.list[i].defense;
+						document.getElementById("wporar").innerHTML = "방어구";
+					}else if(type == "4") { // 궁수계열 무기 (공격력)
+						document.getElementById("job").innerHTML = "궁수계열";
+						document.getElementById("atkOrMag").innerHTML = "공격력: ";
+						document.getElementById("atk").innerHTML = myObj.list[i].atk;
+						document.getElementById("spdOrNot").innerHTML = "공격속도: ";
+						document.getElementById("spd").innerHTML = myObj.list[i].spd;
+						document.getElementById("wporar").innerHTML = "무기";
+					}else if(type == "5") { // 궁수계열 방어구 (공격력)
+						document.getElementById("job").innerHTML = "궁수계열";
+						document.getElementById("atkOrMag").innerHTML = "방어력: ";
+						document.getElementById("atk").innerHTML = myObj.list[i].defense;
+						document.getElementById("wporar").innerHTML = "방어구";
+					}else if(type == "6") { // 도적계열 무기 (공격력)
+						document.getElementById("job").innerHTML = "도적계열";
+						document.getElementById("atkOrMag").innerHTML = "공격력: ";
+						document.getElementById("atk").innerHTML = myObj.list[i].atk;
+						document.getElementById("spdOrNot").innerHTML = "공격속도: ";
+						document.getElementById("spd").innerHTML = myObj.list[i].spd;
+						document.getElementById("wporar").innerHTML = "무기";
+					}else if(type == "7") { // 도적계열 방어구 (공격력)
+						document.getElementById("job").innerHTML = "도적계열";
+						document.getElementById("atkOrMag").innerHTML = "방어력: ";
+						document.getElementById("atk").innerHTML = myObj.list[i].defense;
+						document.getElementById("wporar").innerHTML = "방어구";
+					}else if(type == "8") { // 해적계열 무기 (공격력)
+						document.getElementById("job").innerHTML = "해적계열";
+						document.getElementById("atkOrMag").innerHTML = "공격력: ";
+						document.getElementById("atk").innerHTML = myObj.list[i].atk;
+						document.getElementById("spdOrNot").innerHTML = "공격속도: ";
+						document.getElementById("spd").innerHTML = myObj.list[i].spd;
+						document.getElementById("wporar").innerHTML = "무기";
+					}else if(type == "9") { // 해적계열 방어구 (공격력)
+						document.getElementById("job").innerHTML = "해적계열";
+						document.getElementById("atkOrMag").innerHTML = "방어력: ";
+						document.getElementById("atk").innerHTML = myObj.list[i].defense;
+						document.getElementById("wporar").innerHTML = "방어구";
+					}else if(type == "10") { // 럭 제논 도적 무기 (공격력)
+						document.getElementById("job").innerHTML = "하이브리드(도적)계열";
+						document.getElementById("atkOrMag").innerHTML = "공격력: ";
+						document.getElementById("atk").innerHTML = myObj.list[i].atk;
+						document.getElementById("spdOrNot").innerHTML = "공격속도: ";
+						document.getElementById("spd").innerHTML = myObj.list[i].spd;
+						document.getElementById("wporar").innerHTML = "무기";
+					}else if(type == "11") { // 덱 제논 해적 무기 (공격력)
+						document.getElementById("job").innerHTML = "하이브리드(해적)계열";
+						document.getElementById("atkOrMag").innerHTML = "공격력: ";
+						document.getElementById("atk").innerHTML = myObj.list[i].atk;
+						document.getElementById("spdOrNot").innerHTML = "공격속도: ";
+						document.getElementById("spd").innerHTML = myObj.list[i].spd;
+						document.getElementById("wporar").innerHTML = "무기";
+					}else if(type == "12") { // 제논 공용 무기 (공격력)
+						document.getElementById("job").innerHTML = "하이브리드계열";
+						document.getElementById("atkOrMag").innerHTML = "공격력: ";
+						document.getElementById("atk").innerHTML = myObj.list[i].atk;
+						document.getElementById("spdOrNot").innerHTML = "공격속도: ";
+						document.getElementById("spd").innerHTML = myObj.list[i].spd;
+						document.getElementById("wporar").innerHTML = "무기";
+					}
+					
+					// 추옵 로드
+					document.getElementById("plusAtt1").innerHTML = myObj.list[i].plusAtt1;
+					document.getElementById("plusAtt2").innerHTML = myObj.list[i].plusAtt2;
+					document.getElementById("plusAtt3").innerHTML = myObj.list[i].plusAtt3;
+					document.getElementById("plusAtt4").innerHTML = myObj.list[i].plusAtt4;
+					document.getElementById("plusAtt5").innerHTML = myObj.list[i].plusAtt5;
+					
+					break;
+				}
+			}
+		}
+	};
+	  
+	xmlhttp.open("GET", "/data/itemData.txt", true);
+	xmlhttp.send();
+	  
+	  function filter(){
+		  var str, dex, int, luk, att, mag, all, boss, type, reqlev, weapontype, itemtype, mystat;
+		  var level = 0;
+		  var plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5;
+
+		  reqlev = Number(document.getElementById("reqlev").innerHTML);
+          str = Number(document.getElementById("str").value);
+		  dex = Number(document.getElementById("dex").value);
+		  int = Number(document.getElementById("int").value);
+		  luk = Number(document.getElementById("luk").value);
+		  att = Number(document.getElementById("att").value);
+		  mag = Number(document.getElementById("mag").value);
+		  all = Number(document.getElementById("all").value);
+		  boss = Number(document.getElementById("boss").value);
+		  type = document.getElementById("job").innerHTML;
+		  weapontype = document.getElementById("kind").innerHTML;
+		  itemtype = document.getElementById("wporar").innerHTML;
+		  
+		  mystat = Number(document.getElementById("mystat").value);
+		  
+		  plusAtt1 = Number(document.getElementById("plusAtt1").innerHTML);
+		  plusAtt2 = Number(document.getElementById("plusAtt2").innerHTML);
+		  plusAtt3 = Number(document.getElementById("plusAtt3").innerHTML);
+		  plusAtt4 = Number(document.getElementById("plusAtt4").innerHTML);
+		  plusAtt5 = Number(document.getElementById("plusAtt5").innerHTML);
+		  
+		  
+		  // type == 0; ()
+		  if(type == "전사계열") {
+			  // STR, DEX
+			  calculate(str, dex, all, att, boss, reqlev, itemtype, mystat);
+			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+		  }else if(type == "마법사계열") {
+			  // INT, LUK
+			  calculate(int, luk, all, mag, boss, reqlev, itemtype, mystat);
+			  description_detail(mag, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+		  }else if(type == "궁수계열") {
+			  // DEX, STR
+			  calculate(dex, str, all, att, boss, reqlev, itemtype, mystat);
+			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+		  }else if(type == "도적계열") {
+			  // LUK, DEX
+			  calculate(luk, dex, all, att, boss, reqlev, itemtype, mystat);
+			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+		  }else if(type == "해적계열") {
+			  if(weapontype == "건") // 건: DEX, STR
+				  calculate(dex, str, all, att, boss, reqlev, itemtype, mystat); 
+			  else // 너클, 핸드캐논: STR, DEX
+				  calculate(str, dex, all, att, boss, reqlev, itemtype, mystat);
+			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+		  }else if(type == "하이브리드(해적)계열") { // 덱 제논 - 세트아이템 (덱을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
+			  calculate(dex, str+luk, all, att, boss, reqlev, itemtype, mystat);
+			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+		  }else if(type == "하이브리드(도적)계열") { // 럭 제논 - 세트아이템 (운을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
+			  calculate(luk, str+dex, all, att, boss, reqlev, itemtype, mystat);
+			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+		  }else if(type == "하이브리드계열") { // 제논 - 비세트아이템 (가장 높은 추옵을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
+			  var stetArray = [str, dex, luk];
+			  
+			  stetArray.sort(function(a, b) {
+				  return b - a; // 내림차순 정렬
+			  });
+			  
+			  console.log("현재 스탯(정렬됨) :" + stetArray[0] + stetArray[1] + stetArray[2]);
+			  
+			  calculate(stetArray[0], stetArray[1]+stetArray[2], all, att, boss, reqlev, itemtype, mystat);
+			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+		  }
+      };
+	  
+	  function calculate(mainStat, subStat, all, att, boss, reqlev, itemtype, mystat) {
+		  var ranked, totalstat, score, realstat;
+		  
+		  if(reqlev <= 120) { // 1. 네크로 장비 (올스텟의 경우 고정 계수 10으로 대체, 보공은 효율이 낮아 하향조정)
+			  if(mystat == "") {
+				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 5*보스데미지%
+			  	  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (5*boss);
+			  }
+			  else {
+				  // 세부 스텟 계산 on
+				  realstat = mystat/100;
+				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (5*boss);
+			  }
+			  
+			  console.log("네크로 장비를 계산합니다");
+			  
+		  }else if(reqlev <= 130) { // 2. 반 레온 장비 (올스텟의 경우 고정 계수 10으로 대체, 보공은 효율이 낮아 하향조정)
+			  if(mystat == "") {
+				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 5*보스데미지%
+				  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (5*boss);
+			  }else {
+				  // 세부 스텟 계산 on
+				  realstat = mystat/100;
+				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (5*boss);
+			  }
+			  console.log("반 레온 장비를 계산합니다");
+			  
+		  }else if(reqlev <= 140) { // 3. 여제 장비 (올스텟의 경우 고정 계수 10으로 대체, 보공 효율은 상대적으로 낮은편)
+			  if(mystat == "") {
+				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 10*보스데미지%
+				  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (10*boss);
+			  }else {
+				  // 세부 스텟 계산 on
+				  realstat = mystat/100;
+				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (10*boss);
+			  }
+			  console.log("여제 장비를 계산합니다");
+			  
+		  }else if(reqlev <= 150) { // 4. 카루타 장비 (올스텟의 경우 고정 계수 10으로 대체, 보공 계수 정상적용)
+			  if(mystat == "") {
+				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 15*보스데미지%
+				  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (15*boss);
+			  }else {
+				  // 세부 스텟 계산 on
+				  realstat = mystat/100;
+				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (15*boss);
+			  }
+			  console.log("루타비스 장비를 계산합니다");
+		  }else if(reqlev <= 160) { // 5. 앱솔랩스 장비 (올스텟의 경우 고정 계수 10으로 대체, 보공 계수 정상적용)
+			  if(mystat == "") {
+				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 15*보스데미지%
+				  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (15*boss);
+			  }else {
+				  // 세부 스텟 계산 on
+				  realstat = mystat/100;
+				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (15*boss);
+			  }
+			  console.log("앱솔랩스 장비를 계산합니다");
+		  }
+		  
+		  cal_rank(score, itemtype);
+		  
+		  if(mystat == "") {
+		      document.getElementById("allstatpoint").innerHTML = all*10;
+			  totalstat = mainStat+(all*10);
+		  }else{
+			  document.getElementById("allstatpoint").innerHTML = all*realstat;
+			  totalstat = mainStat+(all*realstat);
+		  }
+		  
+		  document.getElementById("firstStat").innerHTML = mainStat;
+		  document.getElementById("statGrade").innerHTML = totalstat+"급";
+		  document.getElementById("mainstatpoint").innerHTML = mainStat;
+		  
+	  }
+	  
+	  function cal_rank(score, itemtype) {
+		  var ranked;
+		  
+		  if(itemtype == "무기") {
+			  if(score > 1000)
+				  ranked = "R+";
+			  else if(score > 900)
+				  ranked = "R";
+			  else if(score > 800)
+				  ranked = "SSS";
+			  else if(score > 700)
+				  ranked = "SS";
+			  else if(score > 600)
+				  ranked = "S";
+			  else if(score > 500)
+				  ranked = "A";
+			  else if(score > 400)
+				  ranked = "B";
+			  else if(score > 300)
+				  ranked = "C";
+			  else if(score > 200)
+				  ranked = "D";
+			  else
+				  ranked = "E";
+		  }else if(itemtype == "방어구") {
+			  if(score > 500)
+				  ranked = "R+";
+			  else if(score > 450)
+				  ranked = "R";
+			  else if(score > 400)
+				  ranked = "SSS";
+			  else if(score > 350)
+				  ranked = "SS";
+			  else if(score > 300)
+				  ranked = "S";
+			  else if(score > 250)
+				  ranked = "A";
+			  else if(score > 200)
+				  ranked = "B";
+			  else if(score > 150)
+				  ranked = "C";
+			  else if(score > 100)
+				  ranked = "D";
+			  else
+				  ranked = "E";
+		  }
+
+
+		document.getElementById("score").innerHTML = score;
+		document.getElementById("rank").innerHTML = ranked;
+	  }
+	  
+	  function plusClear() {
+		  document.getElementById("plusAtt1").style.backgroundColor = "#eeeeee";
+		  document.getElementById("plusAtt2").style.backgroundColor = "#eeeeee";
+		  document.getElementById("plusAtt3").style.backgroundColor = "#eeeeee";
+		  document.getElementById("plusAtt4").style.backgroundColor = "#eeeeee";
+		  document.getElementById("plusAtt5").style.backgroundColor = "#eeeeee";
+	  }
+	  
+	  function descript(gd) {
+		  switch (gd){
+			case "5" :
+				document.getElementById("plusAtt5").style.backgroundColor = "#F8C9CE";
+				document.getElementById("grade").innerHTML = "5단계 (매우 높음)";
+				document.getElementById("gradeDes").innerHTML = "이 아이템이 가질 수 있는 최고의 옵션 중 하나를 지니고 있습니다.";
+				break;
+			case "4" :
+				document.getElementById("plusAtt4").style.backgroundColor = "#F8C9CE";
+				document.getElementById("grade").innerHTML = "4단계 (높음)";
+				document.getElementById("gradeDes").innerHTML = "상당히 높은 옵션 중 하나를 지니고 있습니다.";
+				break;
+			case "3" :
+				document.getElementById("plusAtt3").style.backgroundColor = "#F8C9CE";
+				document.getElementById("grade").innerHTML = "3단계 (보통)";
+				document.getElementById("gradeDes").innerHTML = "적당한 옵션을 지니고 있습니다.";
+				break;
+			case "2" :
+				document.getElementById("plusAtt2").style.backgroundColor = "#F8C9CE";
+				document.getElementById("grade").innerHTML = "2단계 (낮음)";
+				document.getElementById("gradeDes").innerHTML = "상대적으로 낮은 옵션을 지니고 있습니다.";
+				break;
+			case "1" :
+				document.getElementById("plusAtt1").style.backgroundColor = "#F8C9CE";
+				document.getElementById("grade").innerHTML = "1단계 (매우 낮음)";
+				document.getElementById("gradeDes").innerHTML = "매우 낮은 옵션을 지니고 있습니다.";
+				break;
+			default :
+				document.getElementById("grade").innerHTML = "0단계 (없음)";
+				document.getElementById("gradeDes").innerHTML = "추가 옵션을 지니고 있지 않습니다.";
+		}
+	}
+	  
+	  
+	  function description_detail(stat, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5) {
+		  if(stat >= plusAtt5) {
+			  plusClear();
+			  descript("5");
+		  }
+		  else if(stat >= plusAtt4) {
+			  plusClear();
+			  descript("4");
+		  }
+		  else if(stat >= plusAtt3){
+			  plusClear();
+			  descript("3");
+		  }
+		  else if(stat >= plusAtt2){
+			  plusClear();
+			  descript("2");
+		  }
+		  else if(stat >= plusAtt1){
+			  plusClear();
+			  descript("1");
+		  }
+		  else {
+			  plusClear();
+			  descript("0");
+		  }
+	  }
+	  
+	  function onDetail() {
+		  let link = document.getElementById("name").innerHTML;
+		  link = "item?id=" + link;
+		  window.location.href = link;
+	  }
+	
+  </script>
+
+</body>
+</html>

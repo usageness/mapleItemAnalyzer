@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>메이플 추가옵션 분석기</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="/img/mdb-favicon.ico" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="/css/style.css">
+	
+	<style>
+		
+		.topscreen {
+			width: 100%;
+			max-height: 10rem;
+			min-height: 10rem;
+			background-image: url('img/background/background-darkforest.png');
+			background-color: #D9E5FF;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: 30%;
+			text-align: center;
+			color: #FFFFFF;
+			
+		}
+		
+		.mainbody {
+			width: 94%;
+			max-width: 1000px;
+			overflow: auto;
+			margin: auto;
+			padding-top: 1%;
+			margin-top: 3%;
+			text-align: center;
+			border: 1px solid #CCCCCC;
+		}
+		
+		.md-form {
+			display:block;
+			width: 90%;
+			max-width: 450px;
+			margin: auto;
+		}
+		
+		.item {
+			width: 100%;
+			min-width: 18rem;
+			min-height: 45px;
+		}
+		
+		.item :hover{
+			background-color: #cccccc;
+		}
+		
+		ul {
+			padding: 0px;
+		}
+		#list-unstyled {
+			min-width: 100%;
+			min-height: 23rem;
+			max-height: 23rem;
+			overflow: auto;
+		}
+		
+		.media {
+			width: 100%;
+		}
+		
+		.media-body {
+			margin-top: 8px;
+			font-weight: bold;
+		}
+		
+		.thumbnail {
+			width: 40px;
+    		height: 40px;
+		}
+		
+		.topdivision {
+			width: 100%;
+			text-align: center;
+		}
+		
+		.topdivision:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		
+		.banner {
+			display: inline-block;
+			width: 90%;
+			max-width: 450px;
+			max-height: 25rem;
+			margin: auto;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+		
+		.banner img {
+   			width: 100%;
+		}
+		
+	</style>
+</head>
+<body>
+
+  <!-- Start your project here-->  
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark default-color">
+    <a class="navbar-brand" href="/"><strong>메이플 추가옵션 분석기</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">홈<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/summary">아이템 목록</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/guide">가이드</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" href="/about">about</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><i class="fab fa-instagram"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+	
+<div class="contain">
+	
+	<div class="topscreen flex-center flex-column">
+		<img src="img/mainlogo-white.png" width="300" class="animated fadeIn mb-3">
+	</div>
+
+	<div class="mainbody rounded flex-center flex-column">
+	
+		<div class="topdivision">
+			
+			<div class="md-form">
+				<div class="searchbox">
+					<div class="header">
+						<input onkeyup="filter()" type="text" id="value" class="form-control">
+						<label for="value">아이템 이름</label>
+					</div>
+				</div>
+
+				<ul id="list-unstyled">
+				<!-- 아이템 목록은 요기요 -->
+				</ul>
+			</div>
+			
+			<p class="animated fadeIn text-muted">등록된 아이템의 수 : </p><p id ="itemlength" class="animated fadeIn text-muted"></p>
+			
+			<div class="banner flex-center flex-column">
+				<img class="fit" src="img/banner/cashshop_bn.png">
+			</div>
+			
+			<div class="banner flex-center flex-column">
+				<img class="fit" src="img/banner/cashshop_bn2.png">
+			</div>
+		</div>
+	</div>
+</div>
+		
+	
+  <!-- End your project here-->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript">
+	  let welcomeText = "#    #   ##   #####  #      ###### # ##### ###### #    #\n##  ##  #  #  #    # #      #      #   #   #      ##  ##\n# ## # #    # #    # #      #####  #   #   #####  # ## #\n#    # ###### #####  #      #      #   #   #      #    #\n#    # #    # #      #      #      #   #   #      #    #\n#    # #    # #      ###### ###### #   #   ###### #    #";
+	  
+	  console.log(welcomeText);
+	  
+      function filter(){
+        var value, name, item, i;
+
+        value = document.getElementById("value").value.toUpperCase();
+        item = document.getElementsByClassName("item");
+
+        for(i=0;i<item.length;i++){
+          name = item[i].getElementsByClassName("name");
+          if(name[0].innerHTML.toUpperCase().indexOf(value) > -1){
+            item[i].style.display = "flex";
+          }else{
+            item[i].style.display = "none";
+          }
+        }
+      }
+	  
+	function getParameterByName(name) {
+		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search);
+		return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+
+    var xmlhttp = new XMLHttpRequest();
+	    xmlhttp.onreadystatechange = function(){
+		    if(this.readyState == 4 && this.status == 200)
+		    {
+		    	console.log("parameter is : " + getParameterByName('id'));
+		    }
+    }
+
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function(){
+		if(this.readyState == 4 && this.status == 200)
+		{
+			var myObj = JSON.parse(this.responseText);
+
+			let newItem = "";
+			for(var i = 0; i < myObj.list.length; i++) {
+				//let list = document.getElementById("list-unstyled").innerHTML;
+				// 동적 생성
+
+				newItem += "<div class=\"item\">"
+				newItem += "<li class=\"media\">"
+				newItem += "<img class=\"d-flex align-self-center mr-3 thumbnail\" src=\"img/items/" + myObj.list[i].imgsrc + "\" alt=\"Generic placeholder image\">"
+				newItem += "<div class=\"media-body\">"
+				newItem += "<span class=\"name\">" + myObj.list[i].name + "</span>"
+				newItem += "</div>"
+				newItem += "</li>"
+				newItem += "</div>"
+
+
+			}
+			document.getElementById("list-unstyled").innerHTML = newItem;
+		}
+		
+		var items = document.querySelectorAll(".item");
+		document.getElementById("itemlength").innerHTML = items.length;
+		//console.log(items);
+
+		for (var i = 0; i < items.length; i++) {
+			items[i].addEventListener("click", function() {
+				//console.log("function start");
+				var nowChildren = this.childNodes;
+				for(var i=0; i<nowChildren.length; i++){
+					if(nowChildren[i].nodeName == "LI") {
+						var media = nowChildren[i];
+						var mediaChildren = media.childNodes;
+						for(var j=0; j<mediaChildren.length; j++){
+							if(mediaChildren[j].nodeName == "DIV") {
+								var mediabody = mediaChildren[j];
+								var mediabodyChildren = mediabody.childNodes;
+								//console.log(mediabodyChildren);
+								var itemId = mediabodyChildren[0].textContent;
+								//console.log(itemId);
+								window.location.href = '/itemInfo?id='+itemId;
+							}
+						}
+					}
+				}
+			});
+			//console.log(i + "번째 이벤트리스너 추가");
+		}
+		
+	};
+
+	xmlhttp.open("GET", "/data/itemData.txt", true);
+	xmlhttp.send();
+	  
+	
+  </script>
+
+</body>
+</html>
