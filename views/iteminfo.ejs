@@ -348,23 +348,17 @@
 					</div>
 					<div class="col">
 						<div class="md-form form-group md-outline">
-							<input onkeyup="filter()" type="text" id="boss" class="form-control">
-							<label for="boss">보스뎀</label>
+							<input onkeyup="filter()" type="text" id="dmg" class="form-control">
+							<label for="dmg">데미지</label>
 						</div>
 					</div>
 				</div>
 					
-				<label id="toggleTitle" for="toggle" onclick>세부 스텟 계산 &#8801; </label>	
+				<label id="toggleTitle" for="toggle" onclick>세부 스텟 계산 &#8801;</label>	
 				<input type="checkbox" id ="toggle"/>
 				<ul id ="additional">
 					<li>
 						<div class="row">
-							<div class="col">
-								<div class="md-form form-group md-outline">
-									<input onkeyup="filter()" type="text" id="mylevel" class="form-control">
-									<label for="mylevel">캐릭터 레벨</label>
-								</div>
-							</div>
 							<div class="col">
 								<div class="md-form form-group md-outline">
 									<input onkeyup="filter()" type="text" id="mystat" class="form-control">
@@ -571,7 +565,7 @@
 	xmlhttp.send();
 	  
 	  function filter(){
-		  var str, dex, int, luk, att, mag, all, boss, type, reqlev, weapontype, itemtype, mystat;
+		  var str, dex, int, luk, att, mag, all, dmg, type, reqlev, weapontype, itemtype, mystat;
 		  var level = 0;
 		  var plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5;
 
@@ -583,7 +577,7 @@
 		  att = Number(document.getElementById("att").value);
 		  mag = Number(document.getElementById("mag").value);
 		  all = Number(document.getElementById("all").value);
-		  boss = Number(document.getElementById("boss").value);
+		  dmg = Number(document.getElementById("dmg").value);
 		  type = document.getElementById("job").innerHTML;
 		  weapontype = document.getElementById("kind").innerHTML;
 		  itemtype = document.getElementById("wporar").innerHTML;
@@ -600,31 +594,31 @@
 		  // type == 0; ()
 		  if(type == "전사계열") {
 			  // STR, DEX
-			  calculate(str, dex, all, att, boss, reqlev, itemtype, mystat);
+			  calculate(str, dex, all, att, dmg, reqlev, itemtype, mystat);
 			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
 		  }else if(type == "마법사계열") {
 			  // INT, LUK
-			  calculate(int, luk, all, mag, boss, reqlev, itemtype, mystat);
+			  calculate(int, luk, all, mag, dmg, reqlev, itemtype, mystat);
 			  description_detail(mag, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
 		  }else if(type == "궁수계열") {
 			  // DEX, STR
-			  calculate(dex, str, all, att, boss, reqlev, itemtype, mystat);
+			  calculate(dex, str, all, att, dmg, reqlev, itemtype, mystat);
 			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
 		  }else if(type == "도적계열") {
 			  // LUK, DEX
-			  calculate(luk, dex, all, att, boss, reqlev, itemtype, mystat);
+			  calculate(luk, dex, all, att, dmg, reqlev, itemtype, mystat);
 			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
 		  }else if(type == "해적계열") {
 			  if(weapontype == "건") // 건: DEX, STR
-				  calculate(dex, str, all, att, boss, reqlev, itemtype, mystat); 
+				  calculate(dex, str, all, att, dmg, reqlev, itemtype, mystat); 
 			  else // 너클, 핸드캐논: STR, DEX
-				  calculate(str, dex, all, att, boss, reqlev, itemtype, mystat);
+				  calculate(str, dex, all, att, dmg, reqlev, itemtype, mystat);
 			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
 		  }else if(type == "하이브리드(해적)계열") { // 덱 제논 - 세트아이템 (덱을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
-			  calculate(dex, str+luk, all, att, boss, reqlev, itemtype, mystat);
+			  calculate(dex, str+luk, all, att, dmg, reqlev, itemtype, mystat);
 			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
 		  }else if(type == "하이브리드(도적)계열") { // 럭 제논 - 세트아이템 (운을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
-			  calculate(luk, str+dex, all, att, boss, reqlev, itemtype, mystat);
+			  calculate(luk, str+dex, all, att, dmg, reqlev, itemtype, mystat);
 			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
 		  }else if(type == "하이브리드계열") { // 제논 - 비세트아이템 (가장 높은 추옵을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
 			  var stetArray = [str, dex, luk];
@@ -635,72 +629,72 @@
 			  
 			  console.log("현재 스탯(정렬됨) :" + stetArray[0] + stetArray[1] + stetArray[2]);
 			  
-			  calculate(stetArray[0], stetArray[1]+stetArray[2], all, att, boss, reqlev, itemtype, mystat);
+			  calculate(stetArray[0], stetArray[1]+stetArray[2], all, att, dmg, reqlev, itemtype, mystat);
 			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
 		  }
       };
 	  
-	  function calculate(mainStat, subStat, all, att, boss, reqlev, itemtype, mystat) {
+	  function calculate(mainStat, subStat, all, att, dmg, reqlev, itemtype, mystat) {
 		  var ranked, totalstat, score, realstat;
 		  
-		  if(reqlev <= 120) { // 1. 네크로 장비 (올스텟의 경우 고정 계수 10으로 대체, 보공은 효율이 낮아 하향조정)
+		  if(reqlev <= 120) { // 1. 네크로 장비 (올스텟의 경우 고정 계수 10으로 대체, 뎀은 효율이 낮아 하향조정)
 			  if(mystat == "") {
 				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 5*보스데미지%
-			  	  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (5*boss);
+			  	  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (5*dmg);
 			  }
-			  else {
+			  else{
 				  // 세부 스텟 계산 on
 				  realstat = mystat/100;
-				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (5*boss);
+				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (5*dmg);
 			  }
 			  
 			  console.log("네크로 장비를 계산합니다");
 			  
-		  }else if(reqlev <= 130) { // 2. 반 레온 장비 (올스텟의 경우 고정 계수 10으로 대체, 보공은 효율이 낮아 하향조정)
+		  }else if(reqlev <= 130) { // 2. 반 레온 장비 (올스텟의 경우 고정 계수 10으로 대체, 뎀은 효율이 낮아 하향조정)
 			  if(mystat == "") {
 				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 5*보스데미지%
-				  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (5*boss);
-			  }else {
+				  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (5*dmg);
+			  }else{
 				  // 세부 스텟 계산 on
 				  realstat = mystat/100;
-				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (5*boss);
+				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (5*dmg);
 			  }
 			  console.log("반 레온 장비를 계산합니다");
 			  
-		  }else if(reqlev <= 140) { // 3. 여제 장비 (올스텟의 경우 고정 계수 10으로 대체, 보공 효율은 상대적으로 낮은편)
+		  }else if(reqlev <= 140) { // 3. 여제 장비 (올스텟의 경우 고정 계수 10으로 대체, 뎀 효율은 상대적으로 낮은편)
 			  if(mystat == "") {
 				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 10*보스데미지%
-				  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (10*boss);
-			  }else {
+				  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (10*dmg);
+			  }else{
 				  // 세부 스텟 계산 on
 				  realstat = mystat/100;
-				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (10*boss);
+				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (10*dmg);
 			  }
 			  console.log("여제 장비를 계산합니다");
 			  
-		  }else if(reqlev <= 150) { // 4. 카루타 장비 (올스텟의 경우 고정 계수 10으로 대체, 보공 계수 정상적용)
+		  }else if(reqlev <= 150) { // 4. 카루타 장비 (올스텟의 경우 고정 계수 10으로 대체, 뎀 계수 정상적용)
 			  if(mystat == "") {
 				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 15*보스데미지%
-				  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (15*boss);
-			  }else {
+				  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (15*dmg);
+			  }else{
 				  // 세부 스텟 계산 on
 				  realstat = mystat/100;
-				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (15*boss);
+				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (15*dmg);
 			  }
 			  console.log("루타비스 장비를 계산합니다");
-		  }else if(reqlev <= 160) { // 5. 앱솔랩스 장비 (올스텟의 경우 고정 계수 10으로 대체, 보공 계수 정상적용)
+		  }else if(reqlev <= 160) { // 5. 앱솔랩스 장비 (올스텟의 경우 고정 계수 10으로 대체, 뎀 계수 정상적용)
 			  if(mystat == "") {
 				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 15*보스데미지%
-				  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (15*boss);
+				  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (15*dmg);
 			  }else {
 				  // 세부 스텟 계산 on
 				  realstat = mystat/100;
-				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (15*boss);
+				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (15*dmg);
 			  }
 			  console.log("앱솔랩스 장비를 계산합니다");
 		  }
 		  
-		  cal_rank(score, itemtype);
+		  cal_rank(score, itemtype, reqlev);
 		  
 		  if(mystat == "") {
 		      document.getElementById("allstatpoint").innerHTML = all*10;
@@ -716,51 +710,145 @@
 		  
 	  }
 	  
-	  function cal_rank(score, itemtype) {
+	  function cal_rank(score, itemtype, reqlev) {
 		  var ranked;
 		  
 		  if(itemtype == "무기") {
-			  if(score > 1000)
-				  ranked = "R+";
-			  else if(score > 900)
-				  ranked = "R";
-			  else if(score > 800)
-				  ranked = "SSS";
-			  else if(score > 700)
-				  ranked = "SS";
-			  else if(score > 600)
-				  ranked = "S";
-			  else if(score > 500)
-				  ranked = "A";
-			  else if(score > 400)
-				  ranked = "B";
-			  else if(score > 300)
-				  ranked = "C";
-			  else if(score > 200)
-				  ranked = "D";
-			  else
-				  ranked = "E";
+			  if(reqlev <= 120) {
+				  // 네크로 장비 극추옵 0 ~ 1163
+				  if(score > 1060)
+					  ranked = "R+";
+				  else if(score > 940)
+					  ranked = "R";
+				  else if(score > 820)
+					  ranked = "SSS";
+				  else if(score > 700)
+					  ranked = "SS";
+				  else if(score > 580)
+					  ranked = "S";
+				  else if(score > 460)
+					  ranked = "A";
+				  else if(score > 340)
+					  ranked = "B";
+				  else if(score > 220)
+					  ranked = "C";
+				  else if(score > 100)
+					  ranked = "D";
+				  else
+					  ranked = "E";
+			  }else if(reqlev <= 130) {
+				  if(score > 1000)
+					  ranked = "R+";
+				  else if(score > 900)
+					  ranked = "R";
+				  else if(score > 800)
+					  ranked = "SSS";
+				  else if(score > 700)
+					  ranked = "SS";
+				  else if(score > 600)
+					  ranked = "S";
+				  else if(score > 500)
+					  ranked = "A";
+				  else if(score > 400)
+					  ranked = "B";
+				  else if(score > 300)
+					  ranked = "C";
+				  else if(score > 200)
+					  ranked = "D";
+				  else
+					  ranked = "E";
+			  }else{
+				  if(score > 1000)
+					  ranked = "R+";
+				  else if(score > 900)
+					  ranked = "R";
+				  else if(score > 800)
+					  ranked = "SSS";
+				  else if(score > 700)
+					  ranked = "SS";
+				  else if(score > 600)
+					  ranked = "S";
+				  else if(score > 500)
+					  ranked = "A";
+				  else if(score > 400)
+					  ranked = "B";
+				  else if(score > 300)
+					  ranked = "C";
+				  else if(score > 200)
+					  ranked = "D";
+				  else
+					  ranked = "E";
+			  }
 		  }else if(itemtype == "방어구") {
-			  if(score > 500)
-				  ranked = "R+";
-			  else if(score > 450)
-				  ranked = "R";
-			  else if(score > 400)
-				  ranked = "SSS";
-			  else if(score > 350)
-				  ranked = "SS";
-			  else if(score > 300)
-				  ranked = "S";
-			  else if(score > 250)
-				  ranked = "A";
-			  else if(score > 200)
-				  ranked = "B";
-			  else if(score > 150)
-				  ranked = "C";
-			  else if(score > 100)
-				  ranked = "D";
-			  else
-				  ranked = "E";
+			  if(reqlev <= 130) {
+				  // 네크로 ~ 반 레온 장비 극추옵 점수 : 0~490
+				  if(score > 480)
+					  ranked = "R+";
+				  else if(score > 415)
+					  ranked = "R";
+				  else if(score > 370)
+					  ranked = "SSS";
+				  else if(score > 325)
+					  ranked = "SS";
+				  else if(score > 280)
+					  ranked = "S";
+				  else if(score > 235)
+					  ranked = "A";
+				  else if(score > 190)
+					  ranked = "B";
+				  else if(score > 145)
+					  ranked = "C";
+				  else if(score > 100)
+					  ranked = "D";
+				  else
+					  ranked = "E";
+			  }else if(reqlev <= 150) {
+				  // 여제 ~ 파프니르 장비 극추옵 점수 : 0~546
+				  if(score > 530)
+					  ranked = "R+";
+				  else if(score > 485)
+					  ranked = "R";
+				  else if(score > 430)
+					  ranked = "SSS";
+				  else if(score > 375)
+					  ranked = "SS";
+				  else if(score > 320)
+					  ranked = "S";
+				  else if(score > 265)
+					  ranked = "A";
+				  else if(score > 210)
+					  ranked = "B";
+				  else if(score > 155)
+					  ranked = "C";
+				  else if(score > 100)
+					  ranked = "D";
+				  else
+					  ranked = "E";
+			  }else if(reqlev <= 160) {
+				  // 앱솔랩스 장비 극추옵 점수 : 0~609
+				  if(score > 600)
+					  ranked = "R+";
+				  else if(score > 555)
+					  ranked = "R";
+				  else if(score > 490)
+					  ranked = "SSS";
+				  else if(score > 425)
+					  ranked = "SS";
+				  else if(score > 360)
+					  ranked = "S";
+				  else if(score > 295)
+					  ranked = "A";
+				  else if(score > 230)
+					  ranked = "B";
+				  else if(score > 165)
+					  ranked = "C";
+				  else if(score > 100)
+					  ranked = "D";
+				  else
+					  ranked = "E";
+			  }else{
+				  console.log("알 수 없는 에러가 발생하였습니다.");
+			  }
 		  }
 
 

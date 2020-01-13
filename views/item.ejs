@@ -128,6 +128,8 @@
 			font-weight: bold;
 			font-size: 1.618em;
 			margin-bottom: 2rem;
+			color: #D7FF23;
+			text-shadow: 0 0 2px #000;
 		}
 		.setItemLi {
 			font-weight: bold;
@@ -137,10 +139,13 @@
 			float: right;
 		}
 		.setEffectSubject {
+			text-align: left;
 			font-weight: bold;
 			margin-top: 2rem;
 			margin-bottom: 1rem;
 			font-size: 1.347em;
+			color: #D7FF23;
+			text-shadow: 0 0 2px #000;
 		}
 		.setEffectDes {
 			font-weight: bold;
@@ -156,6 +161,9 @@
 		li {
 			text-align: left;
 			font-weight: bold;
+		}
+		hr {
+			margin-bottom: -2rem;
 		}
 		
 	</style>
@@ -388,7 +396,7 @@
 					console.log("네크로 세트효과 발동!");
 				}else if(id.includes("로얄 반 레온")) {
 					jobName = document.getElementById("job").innerHTML;
-					setEffectName = "로얄 반 레온 세트(" + jobName + ")";
+					setEffectName = "로얄 반 레온 " + jobName + " 세트";
 					console.log("로얄 반 레온 세트효과 발동!");
 				}else if(id.includes("라이온하트")) {
 					setEffectName = "라이온하트 세트";
@@ -407,8 +415,12 @@
 					console.log("샤크투스 세트효과 발동!");
 				}else if(id.includes("파프니르") || id.includes("하이네스") || id.includes("이글아이") || id.includes("트릭스터")) {
 					jobName = document.getElementById("job").innerHTML;
-					setEffectName = "파프니르 세트(" + jobName + ")";
-					console.log("파프니르 세트효과 발동!");
+					setEffectName = "루타비스 세트(" + jobName + ")";
+					console.log("루타비스 세트효과 발동!");
+				}else if(id.includes("앱솔랩스")) {
+					jobName = document.getElementById("job").innerHTML;
+					setEffectName = "앱솔랩스 세트(" + jobName + ")";
+					console.log("앱솔랩스 세트효과 발동!");
 				}else{
 					console.log("우찬아 괜찮아 울어도 돼 사실 세트효과 없거든");
 				}
@@ -426,7 +438,7 @@
 							}
 						}
 						
-						setItemList += "</ul>";
+						setItemList += "</ul><hr>";
 						
 						setEffectList += "<div class=\"setItemSection\">"
 						for(var j = 0; myObj.list[i].setEffect[j] != null; j++) {
