@@ -654,11 +654,7 @@
 			  if(mystat == "") {
 				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 5*보스데미지%
 				  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (5*dmg);
-<<<<<<< HEAD
 			  }else{
-=======
-			  }else {
->>>>>>> bf6aae27915e9938ffdfc4b77b19a1cd8ed34646
 				  // 세부 스텟 계산 on
 				  realstat = mystat/100;
 				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (5*dmg);
@@ -669,11 +665,7 @@
 			  if(mystat == "") {
 				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 10*보스데미지%
 				  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (10*dmg);
-<<<<<<< HEAD
 			  }else{
-=======
-			  }else {
->>>>>>> bf6aae27915e9938ffdfc4b77b19a1cd8ed34646
 				  // 세부 스텟 계산 on
 				  realstat = mystat/100;
 				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (10*dmg);
@@ -684,11 +676,7 @@
 			  if(mystat == "") {
 				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 15*보스데미지%
 				  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (15*dmg);
-<<<<<<< HEAD
 			  }else{
-=======
-			  }else {
->>>>>>> bf6aae27915e9938ffdfc4b77b19a1cd8ed34646
 				  // 세부 스텟 계산 on
 				  realstat = mystat/100;
 				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (15*dmg);
@@ -727,7 +715,6 @@
 		  
 		  if(itemtype == "무기") {
 			  if(reqlev <= 120) {
-<<<<<<< HEAD
 				  // 네크로 장비 극추옵 0 ~ 1163
 				  if(score > 1060)
 					  ranked = "R+";
@@ -746,74 +733,101 @@
 				  else if(score > 220)
 					  ranked = "C";
 				  else if(score > 100)
-=======
-				  // 네크로 장비
-				  if(score > 1000)
-					  ranked = "R+";
-				  else if(score > 900)
-					  ranked = "R";
-				  else if(score > 800)
-					  ranked = "SSS";
-				  else if(score > 700)
-					  ranked = "SS";
-				  else if(score > 600)
-					  ranked = "S";
-				  else if(score > 500)
-					  ranked = "A";
-				  else if(score > 400)
-					  ranked = "B";
-				  else if(score > 300)
-					  ranked = "C";
-				  else if(score > 200)
->>>>>>> bf6aae27915e9938ffdfc4b77b19a1cd8ed34646
 					  ranked = "D";
 				  else
 					  ranked = "E";
 			  }else if(reqlev <= 130) {
-				  if(score > 1000)
+				  // 반 레온 장비 극추옵 0 ~ 1206
+				  if(score > 1140)
 					  ranked = "R+";
-				  else if(score > 900)
+				  else if(score > 1010)
 					  ranked = "R";
-				  else if(score > 800)
+				  else if(score > 880)
 					  ranked = "SSS";
-				  else if(score > 700)
+				  else if(score > 750)
 					  ranked = "SS";
-				  else if(score > 600)
+				  else if(score > 620)
 					  ranked = "S";
-				  else if(score > 500)
+				  else if(score > 490)
+					  ranked = "A";
+				  else if(score > 360)
+					  ranked = "B";
+				  else if(score > 230)
+					  ranked = "C";
+				  else if(score > 100)
+					  ranked = "D";
+				  else
+					  ranked = "E";
+			  }else if(reqlev <= 140) {
+				  // 여제 장비 극추옵 0 ~ 1346
+				  if(score > 1300)
+					  ranked = "R+";
+				  else if(score > 1150)
+					  ranked = "R";
+				  else if(score > 1000)
+					  ranked = "SSS";
+				  else if(score > 850)
+					  ranked = "SS";
+				  else if(score > 700)
+					  ranked = "S";
+				  else if(score > 550)
 					  ranked = "A";
 				  else if(score > 400)
 					  ranked = "B";
-				  else if(score > 300)
+				  else if(score > 250)
 					  ranked = "C";
-				  else if(score > 200)
+				  else if(score > 100)
+					  ranked = "D";
+				  else
+					  ranked = "E";
+			  }else if(reqlev <= 150) {
+				  // 파프니르 장비 극추옵 0 ~ 1570
+				  if(score > 1460)
+					  ranked = "R+";
+				  else if(score > 1290)
+					  ranked = "R";
+				  else if(score > 1120)
+					  ranked = "SSS";
+				  else if(score > 950)
+					  ranked = "SS";
+				  else if(score > 780)
+					  ranked = "S";
+				  else if(score > 610)
+					  ranked = "A";
+				  else if(score > 440)
+					  ranked = "B";
+				  else if(score > 270)
+					  ranked = "C";
+				  else if(score > 100)
+					  ranked = "D";
+				  else
+					  ranked = "E";
+			  }else if(reqlev <= 160) {
+				  // 앱솔랩스 장비 극추옵 0 ~ 2193
+				  if(score > 2020)
+					  ranked = "R+";
+				  else if(score > 1780)
+					  ranked = "R";
+				  else if(score > 1540)
+					  ranked = "SSS";
+				  else if(score > 1300)
+					  ranked = "SS";
+				  else if(score > 1060)
+					  ranked = "S";
+				  else if(score > 820)
+					  ranked = "A";
+				  else if(score > 580)
+					  ranked = "B";
+				  else if(score > 340)
+					  ranked = "C";
+				  else if(score > 100)
 					  ranked = "D";
 				  else
 					  ranked = "E";
 			  }else{
-				  if(score > 1000)
-					  ranked = "R+";
-				  else if(score > 900)
-					  ranked = "R";
-				  else if(score > 800)
-					  ranked = "SSS";
-				  else if(score > 700)
-					  ranked = "SS";
-				  else if(score > 600)
-					  ranked = "S";
-				  else if(score > 500)
-					  ranked = "A";
-				  else if(score > 400)
-					  ranked = "B";
-				  else if(score > 300)
-					  ranked = "C";
-				  else if(score > 200)
-					  ranked = "D";
-				  else
-					  ranked = "E";
+				  console.log("알 수 없는 에러가 발생하였습니다.");
 			  }
 		  }else if(itemtype == "방어구") {
-<<<<<<< HEAD
 			  if(reqlev <= 130) {
 				  // 네크로 ~ 반 레온 장비 극추옵 점수 : 0~490
 				  if(score > 480)
@@ -831,31 +845,11 @@
 				  else if(score > 190)
 					  ranked = "B";
 				  else if(score > 145)
-=======
-			  if(reqlev <= 120) {
-				  // 네크로 장비
-				  if(score > 500)
-					  ranked = "R+";
-				  else if(score > 450)
-					  ranked = "R";
-				  else if(score > 400)
-					  ranked = "SSS";
-				  else if(score > 350)
-					  ranked = "SS";
-				  else if(score > 300)
-					  ranked = "S";
-				  else if(score > 250)
-					  ranked = "A";
-				  else if(score > 200)
-					  ranked = "B";
-				  else if(score > 150)
->>>>>>> bf6aae27915e9938ffdfc4b77b19a1cd8ed34646
 					  ranked = "C";
 				  else if(score > 100)
 					  ranked = "D";
 				  else
 					  ranked = "E";
-<<<<<<< HEAD
 			  }else if(reqlev <= 150) {
 				  // 여제 ~ 파프니르 장비 극추옵 점수 : 0~546
 				  if(score > 530)
@@ -895,34 +889,13 @@
 				  else if(score > 230)
 					  ranked = "B";
 				  else if(score > 165)
-=======
-			  }else{
-				  if(score > 500)
-					  ranked = "R+";
-				  else if(score > 450)
-					  ranked = "R";
-				  else if(score > 400)
-					  ranked = "SSS";
-				  else if(score > 350)
-					  ranked = "SS";
-				  else if(score > 300)
-					  ranked = "S";
-				  else if(score > 250)
-					  ranked = "A";
-				  else if(score > 200)
-					  ranked = "B";
-				  else if(score > 150)
->>>>>>> bf6aae27915e9938ffdfc4b77b19a1cd8ed34646
 					  ranked = "C";
 				  else if(score > 100)
 					  ranked = "D";
 				  else
 					  ranked = "E";
-<<<<<<< HEAD
 			  }else{
 				  console.log("알 수 없는 에러가 발생하였습니다.");
-=======
->>>>>>> bf6aae27915e9938ffdfc4b77b19a1cd8ed34646
 			  }
 		  }
 
