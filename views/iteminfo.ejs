@@ -170,9 +170,6 @@
 			padding: 0;
 			margin: auto;
 		}
-		label {
-			width: 90%;
-		}
 		h5 {
 			color: #000000;
 		}
@@ -205,6 +202,7 @@
 		#toggle:checked + #additional {
 			display: inline;
 		}
+		
 		
 	</style>
 </head>
@@ -319,15 +317,15 @@
 							<label for="int">INT</label>
 						</div>
 					</div>
+				</div>
+					
+				<div class="row">
 					<div class="col">
 						<div class="md-form form-group md-outline">
 							<input onkeyup="filter()" type="text" id="luk" class="form-control">
 							<label for="luk">LUK</label>
 						</div>
 					</div>
-				</div>
-
-				<div class="row">
 					<div class="col">
 						<div class="md-form form-group md-outline">
 							<input onkeyup="filter()" type="text" id="att" class="form-control">
@@ -340,6 +338,8 @@
 							<label for="mag">마력</label>
 						</div>
 					</div>
+				</div>	
+				<div class="row">
 					<div class="col">
 						<div class="md-form form-group md-outline">
 							<input onkeyup="filter()" type="text" id="all" class="form-control">
@@ -350,6 +350,12 @@
 						<div class="md-form form-group md-outline">
 							<input onkeyup="filter()" type="text" id="dmg" class="form-control">
 							<label for="dmg">데미지</label>
+						</div>
+					</div>
+					<div class="col">
+						<div class="md-form form-group md-outline">
+							<input onkeyup="filter()" type="text" id="maxhp" class="form-control">
+							<label for="maxhp">최대 HP</label>
 						</div>
 					</div>
 				</div>
@@ -380,6 +386,13 @@
 			<h2 class="subtitle">아이템 감정 결과</h2>
 		  </div>
 		  <div class="card-body">
+			  <div id = "demonavangar">
+					<form action="">
+			  		<input onclick="filter()" type="checkbox" name="demon" id="demonchk">데몬어벤져로 계산
+			  		</form>				 
+			  </div>
+			  
+				  
 			  <div class ="divider"></div>
 				<span><strong>아이템 점수 : </strong><span id = score></span></span>
 				<span><strong>아이템 등급 : </strong><span id = rank></span></span>
@@ -420,7 +433,7 @@
 				<p class="grade">주스텟 추가 옵션 등급: <span class="statGradePoint"><span id="statGrade">-급</span> (주스텟 <span id="mainstatpoint"></span> + 올스텟 <span id="allstatpoint"></span>)</span></p>
 				<div class ="divider"></div>
 				<p><span id="gradeDes"></span></p>
-
+			  
 				</div>
 		  </div>
 
@@ -462,6 +475,7 @@
 					
 					document.getElementById("reqlev").innerHTML = myObj.list[i].reqlev;
 					document.getElementById("thumbnail").innerHTML = "<img src=\"/img/items/" + myObj.list[i].imgsrc + " \" width=\"100\" >";
+					
 					
 					
 					// type :: 0 1 4 5 6 7 8 9 공격력 장비, 2 3 마력 장비
@@ -563,10 +577,12 @@
 	  
 	xmlhttp.open("GET", "/data/itemData.txt", true);
 	xmlhttp.send();
+	
+	
 	  
 	  function filter(){
-		  var str, dex, int, luk, att, mag, all, dmg, type, reqlev, weapontype, itemtype, mystat;
-		  var level = 0;
+		  var str, dex, int, luk, att, mag, all, dmg, maxhp, type, reqlev, weapontype, itemtype, mystat;
+		  var level = 0, dmchk = false, demonchk;
 		  var plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5;
 
 		  reqlev = Number(document.getElementById("reqlev").innerHTML);
@@ -578,6 +594,7 @@
 		  mag = Number(document.getElementById("mag").value);
 		  all = Number(document.getElementById("all").value);
 		  dmg = Number(document.getElementById("dmg").value);
+		  maxhp = Number(document.getElementById("maxhp").value);
 		  type = document.getElementById("job").innerHTML;
 		  weapontype = document.getElementById("kind").innerHTML;
 		  itemtype = document.getElementById("wporar").innerHTML;
@@ -590,51 +607,62 @@
 		  plusAtt4 = Number(document.getElementById("plusAtt4").innerHTML);
 		  plusAtt5 = Number(document.getElementById("plusAtt5").innerHTML);
 		  
+		  demonchk = document.getElementById('demonchk');
 		  
-		  // type == 0; ()
-		  if(type == "전사계열") {
-			  // STR, DEX
-			  calculate(str, dex, all, att, dmg, reqlev, itemtype, mystat);
+		  if(demonchk.checked) { dmchk = true; } else { dmchk = false; }
+		  console.log("데벤져 체크 : " + dmchk);
+		  
+		  // 혼자만 체력을 주스텟으로 쓰는 데벤인가요?
+		  if(dmchk) {
+			  maxhp = maxhp / 17.5;
+			  calculate(maxhp, str, 0, att, dmg, reqlev, itemtype, mystat, dmchk);
 			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
-		  }else if(type == "마법사계열") {
-			  // INT, LUK
-			  calculate(int, luk, all, mag, dmg, reqlev, itemtype, mystat);
-			  description_detail(mag, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
-		  }else if(type == "궁수계열") {
-			  // DEX, STR
-			  calculate(dex, str, all, att, dmg, reqlev, itemtype, mystat);
-			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
-		  }else if(type == "도적계열") {
-			  // LUK, DEX
-			  calculate(luk, dex, all, att, dmg, reqlev, itemtype, mystat);
-			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
-		  }else if(type == "해적계열") {
-			  if(weapontype == "건") // 건: DEX, STR
-				  calculate(dex, str, all, att, dmg, reqlev, itemtype, mystat); 
-			  else // 너클, 핸드캐논: STR, DEX
-				  calculate(str, dex, all, att, dmg, reqlev, itemtype, mystat);
-			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
-		  }else if(type == "하이브리드(해적)계열") { // 덱 제논 - 세트아이템 (덱을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
-			  calculate(dex, str+luk, all, att, dmg, reqlev, itemtype, mystat);
-			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
-		  }else if(type == "하이브리드(도적)계열") { // 럭 제논 - 세트아이템 (운을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
-			  calculate(luk, str+dex, all, att, dmg, reqlev, itemtype, mystat);
-			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
-		  }else if(type == "하이브리드계열") { // 제논 - 비세트아이템 (가장 높은 추옵을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
-			  var stetArray = [str, dex, luk];
-			  
-			  stetArray.sort(function(a, b) {
-				  return b - a; // 내림차순 정렬
-			  });
-			  
-			  console.log("현재 스탯(정렬됨) :" + stetArray[0] + stetArray[1] + stetArray[2]);
-			  
-			  calculate(stetArray[0], stetArray[1]+stetArray[2], all, att, dmg, reqlev, itemtype, mystat);
-			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+		  }else{
+			  // type == 0; ()
+			  if(type == "전사계열") {
+				  // STR, DEX
+				  calculate(str, dex, all, att, dmg, reqlev, itemtype, mystat, dmchk);
+				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+			  }else if(type == "마법사계열") {
+				  // INT, LUK
+				  calculate(int, luk, all, mag, dmg, reqlev, itemtype, mystat, dmchk);
+				  description_detail(mag, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+			  }else if(type == "궁수계열") {
+				  // DEX, STR
+				  calculate(dex, str, all, att, dmg, reqlev, itemtype, mystat, dmchk);
+				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+			  }else if(type == "도적계열") {
+				  // LUK, DEX
+				  calculate(luk, dex, all, att, dmg, reqlev, itemtype, mystat, dmchk);
+				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+			  }else if(type == "해적계열") {
+				  if(weapontype == "건") // 건: DEX, STR
+					  calculate(dex, str, all, att, dmg, reqlev, itemtype, mystat, dmchk); 
+				  else // 너클, 핸드캐논: STR, DEX
+					  calculate(str, dex, all, att, dmg, reqlev, itemtype, mystat, dmchk);
+				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+			  }else if(type == "하이브리드(해적)계열") { // 덱 제논 - 세트아이템 (덱을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
+				  calculate(dex, str+luk, all, att, dmg, reqlev, itemtype, mystat, dmchk);
+				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+			  }else if(type == "하이브리드(도적)계열") { // 럭 제논 - 세트아이템 (운을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
+				  calculate(luk, str+dex, all, att, dmg, reqlev, itemtype, mystat, dmchk);
+				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+			  }else if(type == "하이브리드계열") { // 제논 - 비세트아이템 (가장 높은 추옵을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
+				  var stetArray = [str, dex, luk];
+
+				  stetArray.sort(function(a, b) {
+					  return b - a; // 내림차순 정렬
+				  });
+
+				  console.log("현재 스탯(정렬됨) :" + stetArray[0] + stetArray[1] + stetArray[2]);
+
+				  calculate(stetArray[0], stetArray[1]+stetArray[2], all, att, dmg, reqlev, itemtype, mystat, dmchk);
+				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5);
+			  }
 		  }
       };
 	  
-	  function calculate(mainStat, subStat, all, att, dmg, reqlev, itemtype, mystat) {
+	  function calculate(mainStat, subStat, all, att, dmg, reqlev, itemtype, mystat, dmchk) {
 		  var ranked, totalstat, score, realstat;
 		  
 		  if(reqlev <= 120) { // 1. 네크로 장비 (올스텟의 경우 고정 계수 10으로 대체, 뎀은 효율이 낮아 하향조정)
@@ -694,14 +722,25 @@
 			  console.log("앱솔랩스 장비를 계산합니다");
 		  }
 		  
+		  var dm = 1;
+		  
+		  if (dmchk) {
+			  score = Math.round(score);
+			  mainStat = Math.round(mainStat);
+			  dm = 0;
+		  }
+		  else{
+			  dm = 1;
+		  }
+		  
 		  cal_rank(score, itemtype, reqlev);
 		  
 		  if(mystat == "") {
-		      document.getElementById("allstatpoint").innerHTML = all*10;
-			  totalstat = mainStat+(all*10);
+		      document.getElementById("allstatpoint").innerHTML = all*10*dm;
+			  totalstat = mainStat+(all*10*dm);
 		  }else{
-			  document.getElementById("allstatpoint").innerHTML = all*realstat;
-			  totalstat = mainStat+(all*realstat);
+			  document.getElementById("allstatpoint").innerHTML = all*realstat*dm;
+			  totalstat = mainStat+(all*realstat*dm);
 		  }
 		  
 		  document.getElementById("firstStat").innerHTML = mainStat;
@@ -898,8 +937,8 @@
 				  console.log("알 수 없는 에러가 발생하였습니다.");
 			  }
 		  }
-
-
+		
+		  
 		document.getElementById("score").innerHTML = score;
 		document.getElementById("rank").innerHTML = ranked;
 	  }
