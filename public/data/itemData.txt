@@ -281,11 +281,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_warrior_hat.png",
 			"type":"1",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 워리어슈트",
@@ -309,11 +309,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_warrior_suit.png",
 			"type":"1",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 워리어글러브",
@@ -337,11 +337,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_warrior_glove.png",
 			"type":"1",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 워리어슈즈",
@@ -365,11 +365,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_warrior_shoes.png",
 			"type":"1",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 완드",
@@ -524,11 +524,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_magician_hat.png",
 			"type":"3",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 매지션슈트",
@@ -553,11 +553,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_magician_suit.png",
 			"type":"3",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 매지션글로브",
@@ -582,11 +582,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_magician_glove.png",
 			"type":"3",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 매지션슈즈",
@@ -611,11 +611,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_magician_shoes.png",
 			"type":"3",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 롱보우",
@@ -744,11 +744,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_sentinal_hat.png",
 			"type":"5",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 센티널슈트",
@@ -773,11 +773,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_sentinal_suit.png",
 			"type":"5",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 센티널글로브",
@@ -802,11 +802,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_sentinal_glove.png",
 			"type":"5",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 센티널슈즈",
@@ -831,11 +831,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_sentinal_shoes.png",
 			"type":"5",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 슬레이어",
@@ -1042,11 +1042,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_chaser_hat.png",
 			"type":"7",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 체이서슈트",
@@ -1071,11 +1071,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_chaser_suit.png",
 			"type":"7",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 체이서글러브",
@@ -1100,11 +1100,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_chaser_glove.png",
 			"type":"7",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 체이서슈즈",
@@ -1129,11 +1129,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_chaser_shoes.png",
 			"type":"7",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 이글",
@@ -1288,11 +1288,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_skipper_hat.png",
 			"type":"9",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 스키퍼슈트",
@@ -1317,11 +1317,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_skipper_suit.png",
 			"type":"9",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 스키퍼글로브",
@@ -1346,11 +1346,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_skipper_glove.png",
 			"type":"9",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"네크로 스키퍼슈즈",
@@ -1375,11 +1375,11 @@
 			"earnetc":"없음",
 			"imgsrc":"necro_skipper_shoes.png",
 			"type":"9",
-			"plusAtt1":"14",
-			"plusAtt2":"20",
-			"plusAtt3":"28",
-			"plusAtt4":"36",
-			"plusAtt5":"46"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 세이버",
