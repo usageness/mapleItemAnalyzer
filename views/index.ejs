@@ -29,9 +29,31 @@
 			background-position: 30%;
 			text-align: center;
 			color: #FFFFFF;
-			
 		}
-		
+		.notice {
+			width: 100%;
+			min-height: 2rem;
+			background-color: #50BCDF;
+		}
+		.noticePost {
+			text-align: left;
+			font-weight: bold;
+			font-size: 0.9rem;
+			color: #FFFFFF;
+			padding: 0.35rem 0 0.25rem 1.5rem;
+			float: left;
+		}
+		.noticeClose {
+			text-align: right;
+			font-weight: bold;
+			font-size: 0.9rem;
+			color: #FFFFFF;
+			padding: 0.35rem 1.5rem 0.25rem 0;
+			float: right;
+		}
+		.noticeClose:hover {
+			color: #888888;
+		}
 		.mainbody {
 			width: 94%;
 			max-width: 1000px;
@@ -155,6 +177,10 @@
 	
 	<div class="topscreen flex-center flex-column">
 		<img src="img/mainlogo-white.png" width="300" class="animated fadeIn mb-3">
+	</div>
+	<div class="notice" id="notice">
+		<span class="noticePost">[공지] 신규 무기 튜너가 추가되었습니다.</span>
+		<span class="noticeClose" onclick="noticeClose()" aria-hidden="true">X</span>
 	</div>
 
 	<div class="mainbody rounded flex-center flex-column">
@@ -292,7 +318,10 @@
 	xmlhttp.open("GET", "/data/itemData.txt", true);
 	xmlhttp.send();
 	  
-	
+	function noticeClose() {
+		let notice = document.getElementById("notice");
+		notice.style.display ="none";
+	}
   </script>
 
 </body>
