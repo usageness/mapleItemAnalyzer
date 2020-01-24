@@ -261,6 +261,32 @@
 			"plusAtt5":"34"
 		},
 		{
+			"name":"네크로 트러스트",
+			"kind":"튜너",
+			"spd":"빠름",
+			"reqlev":"120",
+			"reqstr":"0",
+			"reqdex":"0",
+			"reqint":"0",
+			"reqluk":"0",
+			"reqpop":"0",
+			"upgrade":"7",
+			"scissors":"10",
+			"starforce":"15",
+			"atk":"110",
+			"earndrop":"힐라",
+			"earnquest":"없음",
+			"earnmake":"없음",
+			"earnetc":"없음",
+			"imgsrc":"necro_trust.png",
+			"type":"0",
+			"plusAtt1":"14",
+			"plusAtt2":"20",
+			"plusAtt3":"27",
+			"plusAtt4":"36",
+			"plusAtt5":"46"
+		},
+		{
 			"name":"네크로 워리어햇",
 			"kind":"모자",
 			"reqlev":"120",
@@ -1642,6 +1668,32 @@
 			"plusAtt5":"37"
 		},
 		{
+			"name":"로얄 반 레온 로열티",
+			"kind":"튜너",
+			"spd":"빠름",
+			"reqlev":"130",
+			"reqstr":"290",
+			"reqdex":"0",
+			"reqint":"0",
+			"reqluk":"0",
+			"reqpop":"0",
+			"upgrade":"8",
+			"scissors":"10",
+			"starforce":"20",
+			"atk":"120",
+			"earndrop":"하드 반 레온",
+			"earnquest":"없음",
+			"earnmake":"없음",
+			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
+			"imgsrc":"royalvonleon_royaltee.png",
+			"type":"0",
+			"plusAtt1":"15",
+			"plusAtt2":"22",
+			"plusAtt3":"30",
+			"plusAtt4":"39",
+			"plusAtt5":"50"
+		},
+		{
 			"name":"로얄 반 레온 워리어 헬름",
 			"kind":"모자",
 			"reqlev":"130",
@@ -1662,11 +1714,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_warrior_helm.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 워리어 슈트",
@@ -1690,11 +1742,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_warrior_suit.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 워리어 핸드",
@@ -1718,11 +1770,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_warrior_hand.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 워리어 부츠",
@@ -1746,11 +1798,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_warrior_boots.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 워리어 케이프",
@@ -1776,11 +1828,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_warrior_cape.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 완드",
@@ -1935,11 +1987,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_mage_helm.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 메이지 슈트",
@@ -1964,11 +2016,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_mage_suit.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 메이지 핸드",
@@ -1993,11 +2045,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_mage_hand.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 메이지 부츠",
@@ -2022,11 +2074,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_mage_boots.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 메이지 케이프",
@@ -2053,11 +2105,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_mage_cape.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 보우",
@@ -2186,11 +2238,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_sentinal_helm.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 센티널 슈트",
@@ -2215,11 +2267,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_sentinal_suit.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 센티널 핸드",
@@ -2244,11 +2296,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_sentinal_hand.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 센티널 부츠",
@@ -2273,11 +2325,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_sentinal_boots.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 센티널 케이프",
@@ -2304,11 +2356,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_sentinal_cape.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 대거",
@@ -2463,11 +2515,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_chaser_helm.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 체이서 슈트",
@@ -2492,11 +2544,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_chaser_suit.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 체이서 핸드",
@@ -2521,11 +2573,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_chaser_hand.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 체이서 부츠",
@@ -2550,11 +2602,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_chaser_boots.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 체이서 케이프",
@@ -2581,11 +2633,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_chaser_cape.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 피스톨",
@@ -2740,11 +2792,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_skipper_helm.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 스키퍼 슈트",
@@ -2769,11 +2821,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_skipper_suit.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 스키퍼 핸드",
@@ -2798,11 +2850,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_skipper_hand.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 스키퍼 부츠",
@@ -2827,11 +2879,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_skipper_boots.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"로얄 반 레온 스키퍼 케이프",
@@ -2858,11 +2910,11 @@
 			"earnetc":"사자왕의 로얄 메달로 NPC 머트에게 교환",
 			"imgsrc":"royalvonleon_skipper_cape.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"라이온하트 커틀러스",
@@ -3125,6 +3177,32 @@
 			"plusAtt5":"42"
 		},
 		{
+			"name":"라이온하트 리스트레인트",
+			"kind":"튜너",
+			"spd":"빠름",
+			"reqlev":"140",
+			"reqstr":"420",
+			"reqdex":"0",
+			"reqint":"0",
+			"reqluk":"0",
+			"reqpop":"0",
+			"upgrade":"8",
+			"scissors":"10",
+			"starforce":"25",
+			"atk":"137",
+			"earndrop":"없음",
+			"earnquest":"없음",
+			"earnmake":"없음",
+			"earnetc":"시그너스 드롭 아이템인 검은 파괴의 조각 15개로 제작",
+			"imgsrc":"lionheart_restraint.png",
+			"type":"0",
+			"plusAtt1":"17",
+			"plusAtt2":"25",
+			"plusAtt3":"34",
+			"plusAtt4":"44",
+			"plusAtt5":"57"
+		},
+		{
 			"name":"라이온하트 배틀헬름",
 			"kind":"모자",
 			"reqlev":"140",
@@ -3146,11 +3224,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"lionheart_battle_helm.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"라이온하트 배틀메일",
@@ -3174,11 +3252,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"lionheart_battle_mail.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"라이온하트 배틀브레이서",
@@ -3202,11 +3280,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"lionheart_battle_braser.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"라이온하트 배틀부츠",
@@ -3230,11 +3308,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"lionheart_battle_boots.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"라이온하트 배틀케이프",
@@ -3258,11 +3336,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"lionheart_battle_cape.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"라이온하트 배틀숄더",
@@ -3447,11 +3525,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"dragontail_mage_sallet.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"드래곤테일 메이지로브",
@@ -3475,11 +3553,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"dragontail_mage_robe.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"드래곤테일 메이지피스트",
@@ -3503,11 +3581,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"dragontail_mage_fist.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"드래곤테일 메이지슈즈",
@@ -3531,11 +3609,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"dragontail_mage_shoes.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"드래곤테일 메이지케이프",
@@ -3559,11 +3637,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"dragontail_mage_cape.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"드래곤테일 메이지숄더",
@@ -3696,11 +3774,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"falconwing_sentinal_cap.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"팔콘윙 센티널슈트",
@@ -3724,11 +3802,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"falconwing_sentinal_suit.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"팔콘윙 센티널글러브",
@@ -3752,11 +3830,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"falconwing_sentinal_glove.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"팔콘윙 센티널부츠",
@@ -3780,11 +3858,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"falconwing_sentinal_boots.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"팔콘윙 센티널케이프",
@@ -3808,11 +3886,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"falconwing_sentinal_cape.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"팔콘윙 센티널숄더",
@@ -4023,11 +4101,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"ravenhorn_chaser_hat.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"레이븐혼 체이서아머",
@@ -4051,11 +4129,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"ravenhorn_chaser_armor.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"레이븐혼 체이서글러브",
@@ -4079,11 +4157,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"ravenhorn_chaser_glove.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"레이븐혼 체이서부츠",
@@ -4107,11 +4185,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"ravenhorn_chaser_boots.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"레이븐혼 체이서케이프",
@@ -4135,11 +4213,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"ravenhorn_chaser_cape.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"레이븐혼 체이서숄더",
@@ -4324,11 +4402,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"sharktooth_skipper_hat.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"샤크투스 스키퍼코트",
@@ -4352,11 +4430,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"sharktooth_skipper_coat.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"샤크투스 스키퍼글러브",
@@ -4380,11 +4458,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"sharktooth_skipper_glove.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"샤크투스 스키퍼부츠",
@@ -4408,11 +4486,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"sharktooth_skipper_boots.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"샤크투스 스키퍼케이프",
@@ -4436,11 +4514,11 @@
 			"earnetc":"시그너스 드롭 아이템인 검은 수호의 조각 5개로 제작",
 			"imgsrc":"sharktooth_skipper_cape.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"샤크투스 스키퍼숄더",
@@ -4734,6 +4812,32 @@
 			"plusAtt5":"53"
 		},
 		{
+			"name":"파프니르 포기브니스",
+			"kind":"튜너",
+			"spd":"빠름",
+			"reqlev":"150",
+			"reqstr":"450",
+			"reqdex":"0",
+			"reqint":"0",
+			"reqluk":"0",
+			"reqpop":"0",
+			"upgrade":"8",
+			"scissors":"10",
+			"starforce":"25",
+			"atk":"171",
+			"earndrop":"없음",
+			"earnquest":"없음",
+			"earnmake":"없음",
+			"earnetc":"벨룸(카오스) 드롭 아이템인 파멸의 조각 15개로 제작",
+			"imgsrc":"fafnir_forgiveness.png",
+			"type":"0",
+			"plusAtt1":"21",
+			"plusAtt2":"31",
+			"plusAtt3":"42",
+			"plusAtt4":"55",
+			"plusAtt5":"71"
+		},
+		{
 			"name":"하이네스 워리어헬름",
 			"kind":"모자",
 			"reqlev":"150",
@@ -4755,11 +4859,11 @@
 			"earnetc":"블러디 퀸(카오스) 드롭 아이템인 절규의 조각 5개로 제작",
 			"imgsrc":"highness_warrior_helm.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"이글아이 워리어아머",
@@ -4783,11 +4887,11 @@
 			"earnetc":"반반(카오스) 드롭 아이템인 시간의 조각 5개로 제작",
 			"imgsrc":"eagleeye_warrior_armor.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"트릭스터 워리어팬츠",
@@ -4811,11 +4915,11 @@
 			"earnetc":"피에르(카오스) 드롭 아이템인 조롱의 조각 5개로 제작",
 			"imgsrc":"trickster_warrior_pants.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"파프니르 마나테이커",
@@ -4969,11 +5073,11 @@
 			"earnetc":"블러디 퀸(카오스) 드롭 아이템인 절규의 조각 5개로 제작",
 			"imgsrc":"highness_dunwich_hat.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"이글아이 던위치로브",
@@ -4997,11 +5101,11 @@
 			"earnetc":"반반(카오스) 드롭 아이템인 시간의 조각 5개로 제작",
 			"imgsrc":"eagleeye_dunwich_rob.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"트릭스터 던위치팬츠",
@@ -5025,11 +5129,11 @@
 			"earnetc":"피에르(카오스) 드롭 아이템인 조롱의 조각 5개로 제작",
 			"imgsrc":"trickster_dunwich_pants.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"파프니르 윈드체이서",
@@ -5157,11 +5261,11 @@
 			"earnetc":"블러디 퀸(카오스) 드롭 아이템인 절규의 조각 5개로 제작",
 			"imgsrc":"highness_ranger_bere.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"이글아이 레인져후드",
@@ -5185,11 +5289,11 @@
 			"earnetc":"반반(카오스) 드롭 아이템인 시간의 조각 5개로 제작",
 			"imgsrc":"eagleeye_ranger_hood.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"트릭스터 레인져팬츠",
@@ -5213,11 +5317,11 @@
 			"earnetc":"피에르(카오스) 드롭 아이템인 조롱의 조각 5개로 제작",
 			"imgsrc":"trickster_ranger_hood.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"파프니르 다마스커스",
@@ -5397,11 +5501,11 @@
 			"earnetc":"블러디 퀸(카오스) 드롭 아이템인 절규의 조각 5개로 제작",
 			"imgsrc":"highness_assasin_bonnet.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"이글아이 어새신셔츠",
@@ -5425,11 +5529,11 @@
 			"earnetc":"반반(카오스) 드롭 아이템인 시간의 조각 5개로 제작",
 			"imgsrc":"eagleeye_assasin_shirt.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"트릭스터 어새신팬츠",
@@ -5453,11 +5557,11 @@
 			"earnetc":"피에르(카오스) 드롭 아이템인 조롱의 조각 5개로 제작",
 			"imgsrc":"trickster_assasin_pant.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"파프니르 첼리스카",
@@ -5611,11 +5715,11 @@
 			"earnetc":"블러디 퀸(카오스) 드롭 아이템인 절규의 조각 5개로 제작",
 			"imgsrc":"highness_wanderer_hat.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"이글아이 원더러코트",
@@ -5639,11 +5743,11 @@
 			"earnetc":"반반(카오스) 드롭 아이템인 시간의 조각 5개로 제작",
 			"imgsrc":"eagleeye_wanderer_coat.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"트릭스터 원더러팬츠",
@@ -5667,11 +5771,11 @@
 			"earnetc":"피에르(카오스) 드롭 아이템인 조롱의 조각 5개로 제작",
 			"imgsrc":"trickster_wanderer_pant.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 세이버",
@@ -5934,6 +6038,32 @@
 			"plusAtt5":"79"
 		},
 		{
+			"name":"앱솔랩스 튜너",
+			"kind":"튜너",
+			"spd":"빠름",
+			"reqlev":"160",
+			"reqstr":"480",
+			"reqdex":"0",
+			"reqint":"0",
+			"reqluk":"0",
+			"reqpop":"0",
+			"upgrade":"8",
+			"scissors":"10",
+			"starforce":"25",
+			"atk":"205",
+			"earndrop":"없음",
+			"earnquest":"없음",
+			"earnmake":"없음",
+			"earnetc":"앱솔랩스 코인 5개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 5개로 스티그마 코인샵에서 구매",
+			"imgsrc":"absolabs_tuner.png",
+			"type":"0",
+			"plusAtt1":"31",
+			"plusAtt2":"46",
+			"plusAtt3":"63",
+			"plusAtt4":"82",
+			"plusAtt5":"106"
+		},
+		{
 			"name":"앱솔랩스 나이트헬름",
 			"kind":"모자",
 			"reqlev":"160",
@@ -5955,11 +6085,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_knight_helm.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 나이트슈트",
@@ -5983,11 +6113,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_knight_suit.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 나이트글러브",
@@ -6011,11 +6141,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_knight_glove.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 나이트슈즈",
@@ -6039,11 +6169,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_knight_shoes.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 나이트케이프",
@@ -6070,11 +6200,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_knight_cape.png",
 			"type":"1",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 나이트숄더",
@@ -6259,11 +6389,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_mage_crown.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 메이지슈트",
@@ -6287,11 +6417,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_mage_suit.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 메이지글러브",
@@ -6315,11 +6445,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_mage_glove.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 메이지슈즈",
@@ -6343,11 +6473,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_mage_shoes.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 메이지케이프",
@@ -6374,11 +6504,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_mage_cape.png",
 			"type":"3",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 메이지숄더",
@@ -6537,11 +6667,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_archer_hood.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 아처슈트",
@@ -6565,11 +6695,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_archer_suit.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 아처글러브",
@@ -6593,11 +6723,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_archer_glove.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 아처슈즈",
@@ -6621,11 +6751,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_archer_shoes.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 아처케이프",
@@ -6652,11 +6782,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_archer_cape.png",
 			"type":"5",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 아처숄더",
@@ -6867,11 +6997,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_thief_cap.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 시프슈트",
@@ -6895,11 +7025,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_thief_suit.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 시프글러브",
@@ -6923,11 +7053,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_thief_glove.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 시프슈즈",
@@ -6951,11 +7081,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_thief_shoes.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 시프케이프",
@@ -6982,11 +7112,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_thief_cape.png",
 			"type":"7",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 시프숄더",
@@ -7171,11 +7301,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_pirate_pedora.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 파이렛슈트",
@@ -7199,11 +7329,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_pirate_suit.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 파이렛글러브",
@@ -7227,11 +7357,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_pirate_glove.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 파이렛슈즈",
@@ -7255,11 +7385,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_pirate_shoes.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 파이렛케이프",
@@ -7286,11 +7416,11 @@
 			"earnetc":"앱솔랩스 코인 2개로 앱솔랩스 코인샵에서 구매, 스티그마 코인 2개로 스티그마 코인샵에서 구매",
 			"imgsrc":"absolabs_pirate_cape.png",
 			"type":"9",
-			"plusAtt1":"0",
-			"plusAtt2":"0",
-			"plusAtt3":"0",
-			"plusAtt4":"0",
-			"plusAtt5":"0"
+			"plusAtt1":"3",
+			"plusAtt2":"4",
+			"plusAtt3":"5",
+			"plusAtt4":"6",
+			"plusAtt5":"7"
 		},
 		{
 			"name":"앱솔랩스 파이렛숄더",

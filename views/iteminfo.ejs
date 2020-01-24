@@ -457,25 +457,25 @@
 						<td id="accno" colspan="1">80급</td>
 					</tr>
 					<tr>
-						<td><font color=blue style="font-weight:bold">저자본</font></td>
+						<td><font color="#009BC6" style="font-weight:bold">저자본</font></td>
 						<td id="wplow" colspan="1">2단계</td>
 						<td id="armlow" colspan="1">100급</td>
 						<td id="acclow" colspan="1">90급</td>
 					</tr>
 					<tr>
-						<td><font color=blue style="font-weight:bold">중자본</font></td>
+						<td><font color="#8002C8" style="font-weight:bold">중자본</font></td>
 						<td id="wpmid" colspan="1">2단계</td>
 						<td id="armmid" colspan="1">110급</td>
 						<td id="accmid" colspan="1">100급</td>
 					</tr>
 					<tr>
-						<td><font color=blue style="font-weight:bold">고자본</font></td>
+						<td><font color="#F4A800" style="font-weight:bold">고자본</font></td>
 						<td id="wphigh" colspan="1">1단계</td>
 						<td id="armhigh" colspan="1">120급</td>
 						<td id="acchigh" colspan="1">110급</td>
 					</tr>
 					<tr>
-						<td><font color=blue style="font-weight:bold">극추옵</font></td>
+						<td><font color="#00CE9C" style="font-weight:bold">극추옵</font></td>
 						<td id="wpab" colspan="1">1단계</td>
 						<td id="armab" colspan="1">120급</td>
 						<td id="accab" colspan="1">120급</td>
@@ -1003,19 +1003,19 @@
 		  document.getElementById("plusAtt4").style.backgroundColor = "#eeeeee";
 		  document.getElementById("plusAtt5").style.backgroundColor = "#eeeeee";
 		  document.getElementById("wpab").style.backgroundColor = "#eeeeee";
-		  document.getElementById("wphigh").style.backgroundColor = "#eeeeee";
+		  document.getElementById("wphigh").style.backgroundColor = "#ffffff";
 		  document.getElementById("wpmid").style.backgroundColor = "#eeeeee";
-		  document.getElementById("wplow").style.backgroundColor = "#eeeeee";
+		  document.getElementById("wplow").style.backgroundColor = "#ffffff";
 		  document.getElementById("wpno").style.backgroundColor = "#eeeeee";
 		  document.getElementById("armab").style.backgroundColor = "#eeeeee";
-		  document.getElementById("armhigh").style.backgroundColor = "#eeeeee";
+		  document.getElementById("armhigh").style.backgroundColor = "#ffffff";
 		  document.getElementById("armmid").style.backgroundColor = "#eeeeee";
-		  document.getElementById("armlow").style.backgroundColor = "#eeeeee";
+		  document.getElementById("armlow").style.backgroundColor = "#ffffff";
 		  document.getElementById("armno").style.backgroundColor = "#eeeeee";
 		  document.getElementById("accab").style.backgroundColor = "#eeeeee";
-		  document.getElementById("acchigh").style.backgroundColor = "#eeeeee";
+		  document.getElementById("acchigh").style.backgroundColor = "#ffffff";
 		  document.getElementById("accmid").style.backgroundColor = "#eeeeee";
-		  document.getElementById("acclow").style.backgroundColor = "#eeeeee";
+		  document.getElementById("acclow").style.backgroundColor = "#ffffff";
 		  document.getElementById("accno").style.backgroundColor = "#eeeeee";
 	  }
 	  
@@ -1107,7 +1107,7 @@
 		  }else if(type == "방어구") { // 방어구
 			  let mainstat = Number(document.getElementById("mainstatpoint").innerHTML);
 			  let allstat = Number(document.getElementById("allstatpoint").innerHTML);
-			  console.log(mainstat+allstat);
+			  mainstat = mainstat + allstat;
 			  
 			  if (mainstat >= 120) {
 				  document.getElementById("armab").style.backgroundColor = "#F8C9CE";
