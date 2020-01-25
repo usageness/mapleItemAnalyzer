@@ -17,7 +17,50 @@
   <link rel="stylesheet" href="/css/style.css">
 	
 	<style>
-		
+		body{
+			font-size: 16px;
+			font-family: sans-serif;
+		}
+
+		h1{
+			font-size: 2.618em;
+		}
+
+		h2{
+			font-size: 1.717em;
+		}
+
+		h3{
+			font-size: 1em;
+			line-height: 1.618em;
+			text-transform: uppercase;
+		}
+
+		p{
+			font-size: 1em;
+			line-height: 1.618em;
+		}
+		@media all and (min-width: 960px) {
+			body{
+				font-size: 16px;
+			}
+		}
+
+		@media all and (max-width: 959px) and (min-width: 600px) {
+			body{
+				font-size: 14px;
+			}
+		}
+
+		@media all and (max-width: 599px) and (min-width: 320px) {
+			body{
+				font-size: 12px;
+			}
+
+		}
+		.contain {
+			background-color: #D8D8D8;
+		}
 		.topscreen {
 			width: 100%;
 			max-height: 10rem;
@@ -33,14 +76,14 @@
 		.notice {
 			width: 100%;
 			min-height: 2rem;
-			background-color: #50BCDF;
+			background-color: #FFBB00;
 		}
 		.noticePost {
 			text-align: left;
 			font-weight: bold;
 			font-size: 0.9rem;
 			color: #FFFFFF;
-			padding: 0.35rem 0 0.25rem 1.5rem;
+			padding: 0.35rem 0 0.25rem 1rem;
 			float: left;
 		}
 		.noticeClose {
@@ -48,7 +91,7 @@
 			font-weight: bold;
 			font-size: 0.9rem;
 			color: #FFFFFF;
-			padding: 0.35rem 1.5rem 0.25rem 0;
+			padding: 0.35rem 1rem 0.25rem 0;
 			float: right;
 		}
 		.noticeClose:hover {
@@ -62,20 +105,13 @@
 			padding-top: 1%;
 			margin-top: 3%;
 			text-align: center;
-			border: 1px solid #CCCCCC;
-		}
-		
-		.md-form {
-			display:block;
-			width: 90%;
-			max-width: 450px;
-			margin: auto;
 		}
 		
 		.item {
 			width: 100%;
 			min-width: 18rem;
 			min-height: 45px;
+			padding: 0.3rem 1rem;
 		}
 		
 		.item :hover{
@@ -86,10 +122,15 @@
 			padding: 0px;
 		}
 		#list-unstyled {
-			min-width: 100%;
+			background-color: #ffffff;
+			min-width: 270px;
+			max-width: 540px;
+			width: 100%;
 			min-height: 23rem;
 			max-height: 23rem;
-			overflow: auto;
+			overflow-x: hidden;
+			overflow-y: auto;
+			margin: auto;
 		}
 		
 		.media {
@@ -109,11 +150,13 @@
 		.topdivision {
 			width: 100%;
 			text-align: center;
+			padding-top: 5rem;
+			background-color: #eeeeee;
 		}
 		
 		.topdivision:after {
 			content: "";
-			display: block;
+			display: inline-block;
 			clear: both;
 		}
 		
@@ -126,9 +169,36 @@
 			margin-top: 1rem;
 			margin-bottom: 1rem;
 		}
-		
+		.searchbox {
+			width: 90%;
+			display: inline-block;
+		}
+		.form-inline {
+			display: block;
+			margin: auto;
+		}
+		.form-inline .form-control {
+			min-width: 235px;
+			width: 60%;
+		}
 		.banner img {
    			width: 100%;
+		}
+		.active-cyan-4 input[type=text]:focus:not([readonly]) {
+			border: 1px solid #4dd0e1;
+			box-shadow: 0 0 0 1px #4dd0e1;
+		}
+		.pbox {
+			background-color: #ffffff;
+			display: inline-block;
+			width: 2rem;
+			height: 35px;
+			padding: 7px 0 8px 0;
+			margin-right: -5px;
+		}
+		.sbox {
+			max-width: 540px;
+			margin: auto;
 		}
 		
 	</style>
@@ -187,20 +257,22 @@
 	
 		<div class="topdivision">
 			
-			<div class="md-form">
-				<div class="searchbox">
-					<div class="header">
-						<input onkeyup="filter()" type="text" id="value" class="form-control">
-						<label for="value">아이템 이름</label>
-					</div>
+			<div class="searchbox">
+				
+				<div class="input-group active-cyan-4 form-sm form-1 pl-0 sbox">
+				  <div class="input-group-prepend">
+					<span class="input-group-text purple lighten-3" id="basic-text1"><i class="fas fa-search text-white"
+						aria-hidden="true"></i></span>
+				  </div>
+				  <input class="form-control my-0 py-1" onkeyup="filter()" type="text" id="value" placeholder="아이템 이름" aria-label="Search">
 				</div>
-
-				<ul id="list-unstyled">
-				<!-- 아이템 목록은 요기요 -->
-				</ul>
+				
+					<ul id="list-unstyled">
+					<!-- 아이템 목록은 요기요 -->
+					</ul>
 			</div>
+
 			
-			<p class="animated fadeIn text-muted">등록된 아이템의 수 : </p><p id ="itemlength" class="animated fadeIn text-muted"></p>
 			
 			<div class="banner flex-center flex-column">
 				<img class="fit" src="img/banner/cashshop_bn.png">
@@ -282,18 +354,18 @@
 
 
 			}
+			
 			document.getElementById("list-unstyled").innerHTML = newItem;
 		}
 		
 		var items = document.querySelectorAll(".item");
-		document.getElementById("itemlength").innerHTML = items.length;
-		//console.log(items);
 
 		for (var i = 0; i < items.length; i++) {
 			items[i].addEventListener("click", function() {
-				//console.log("function start");
+				console.log("function start");
 				var nowChildren = this.childNodes;
 				for(var i=0; i<nowChildren.length; i++){
+					console.log("nowChildren : " + nowChildren[i]);
 					if(nowChildren[i].nodeName == "LI") {
 						var media = nowChildren[i];
 						var mediaChildren = media.childNodes;
