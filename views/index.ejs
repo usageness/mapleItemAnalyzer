@@ -131,6 +131,7 @@
 			overflow-x: hidden;
 			overflow-y: auto;
 			margin: auto;
+			visibility: hidden;
 		}
 		
 		.media {
@@ -302,6 +303,8 @@
 	  
 	  console.log(welcomeText);
 	  
+	  
+	  
       function filter(){
         var value, name, item, i;
 
@@ -394,6 +397,18 @@
 		let notice = document.getElementById("notice");
 		notice.style.display ="none";
 	}
+	  
+	let list = document.getElementById("list-unstyled");
+	let value = document.getElementById("value");
+	  
+	value.addEventListener("focus", function() {
+		list.style.visibility = "visible";
+		//console.log("func start");
+	});
+	  
+	value.addEventListener("blur", function() {
+		//list.style.visibility = "hidden";
+	});
   </script>
 
 </body>
