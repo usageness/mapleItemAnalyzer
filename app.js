@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var item = require('./routes/item');
 var iteminfo = require('./routes/iteminfo');
+var guide = require('./routes/guide');
 
 var app = express();
 
@@ -24,10 +25,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// 메소드와 관계없이 아래 url로 시작하는건 route 폴더의 모듈에서 처리하기로 함
 app.use('/', index);
 app.use('/users', users);
 app.use('/item', item);
 app.use('/iteminfo', iteminfo);
+app.use('/guide', guide);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

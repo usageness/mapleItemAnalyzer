@@ -19,8 +19,6 @@
 	<style>
 		.mainbody {
 			background-color: #D8D8D8;
-			width: auto;
-			height: 300%;
 		}
 		.table {
 			width: 70%;
@@ -53,7 +51,7 @@
 		.content {
 			border: 1px solid #CCCCCC;
 			padding: 20px;
-			margin: 5rem 3rem 5rem 0;
+			margin-right: 3rem;
 		}
 		
 		.content-item {
@@ -127,20 +125,95 @@
 	<div class="card">
 	  <div class="card-body">
 		  
-		<h3 class="card-title">가이드</h3>
-		
-		<div>
-			환영합니다!<br>이 페이지는 메이플 추가옵션 분석기를 사용할때 필요한 내용이 적힌 가이드 페이지 입니다.<br><br>글 제목을 누르면 해당 페이지로 이동할 수 있습니다.
-		</div>
+		<h3 class="card-title">아이템 품질 및 잠재능력</h3>
 		  
 		<div class="content">
-			<h4>
-				글 목록
-			</h4>
 			<span class="content-item"><a href="/guide">가이드 메인화면</a></span>
 			<span class="content-item">· <a href="/guide_picker">추가옵션 분석기 사용법</a></span>
 			<span class="content-item">· <a href="/guide_item">아이템 품질 및 잠재능력</a></span>
 		</div>
+		  
+		<span class="card-text">
+			<h5>- 메이플스토리의 아이템</h5>
+			<p class="animated fadeIn text-muted">메이플스토리의 아이템은 다양한 능력치를 지니고 있습니다. 구체적인 내용은 다음과 같습니다.</p><br><br>
+			<h5>- 아이템 품질</h5>
+			<p class="animated fadeIn text-muted">아이템의 품질은 기본옵션 외의 추가옵션의 합산 수치에 따라 7단계로 나누어지며, 이는 아이템 이름의 색상으로 표시됩니다. 추가옵션이 붙은 능력치는 파란색으로 표시됩니다.</p>
+			<table class="table table-striped table-hover table-sm">
+				<thead>
+					<tr>
+						<th>아이템 색상</th>
+						<th>품질명</th>
+						<th>추가옵션</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><font color="#C2C2C2" style="font-weight:bold">회색</font></td>
+						<td>하품</td>
+						<td>0 미만</td>
+					</tr>
+					<tr>
+						<td><p class="text_border"><font color="white" style="font-weight:bold">하얀색</font></p></td>
+						<td>중품</td>
+						<td>0 ~ 7</td>
+					</tr>
+					<tr>
+						<td><font color="#7AFCE4" style="font-weight:bold">파란색</font></td>
+						<td>상품</td>
+						<td>8 ~ 20</td>
+					</tr>
+					<tr>
+						<td><font color="#906ECF" style="font-weight:bold">보라색</font></td>
+						<td>최상품</td>
+						<td>21 ~ 39</td>
+					</tr>
+					<tr>
+						<td><font color="#E8D000" style="font-weight:bold">노란색</font></td>
+						<td>프리미엄 클래스</td>
+						<td>40 ~ 58</td>
+					</tr>
+					<tr>
+						<td><font color="#D7FF23" style="font-weight:bold">녹색</font></td>
+						<td>스페셜 클래스</td>
+						<td>59 ~ 69</td>
+					</tr>
+					<tr>
+						<td><font color="#FF0368" style="font-weight:bold">빨간색</font></td>
+						<td>엑셀런트 클래스</td>
+						<td>70 이상</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h5>- 잠재능력</h5>
+			<p class="animated fadeIn text-muted">기본 옵션 외에도 잠재능력을 가진 장비가 있습니다. 봉인된 잠재능력은 장비 아이템을 감정하여 확인할 수 있습니다.<br>잠재능력은 총 네가지 등급이 있으며 등급에 따라 획득 확률과 능력의 질에 차이가 있습니다.<br></p>
+			<table class="table table-striped table-hover table-sm">
+				<thead>
+					<tr>
+						<th>아이템 색상</th>
+						<th>등급명</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><font color="#009BC6" style="font-weight:bold">파란색</font></td>
+						<td>레어</td>
+					</tr>
+					<tr>
+						<td><font color="#8002C8" style="font-weight:bold">보라색</font></td>
+						<td>에픽</td>
+					</tr>
+					<tr>
+						<td><font color="#F4A800" style="font-weight:bold">노란색</font></td>
+						<td>유니크</td>
+					</tr>
+					<tr>
+						<td><font color="#00CE9C" style="font-weight:bold">청록색</font></td>
+						<td>레전드리</td>
+					</tr>
+				</tbody>
+			</table>
+		</span>
 		</div>
 	</div>
 </div>

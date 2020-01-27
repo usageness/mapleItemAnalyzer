@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -20,7 +18,16 @@ router.get('/guide', function(req, res, next) {
   res.render('guide', { title: 'Express' });
 });
 
+router.get('/guide_picker', function(req, res, next) {
+  res.render('guide_picker', { title: 'Express' });
+});
+
+router.get('/guide_item', function(req, res, next) {
+  res.render('guide_item', { title: 'Express' });
+});
+
 router.get('/about', function(req, res, next) {
   res.render('about', { title: 'Express' });
 });
+
 module.exports = router;
