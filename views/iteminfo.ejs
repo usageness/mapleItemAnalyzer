@@ -387,8 +387,10 @@
 
 	<div class="card mt-5 animated fadeIn analyze">
 		  <div class="card-header">
-			<button type="button" class="btn btn-warning rounded detail" onClick="onDetail()">상세정보</button>
 			<h2 class="subtitle">아이템 감정 결과</h2>
+			<button type="button" class="btn btn-warning rounded detail" onClick="onDetail()">상세정보</button>
+			<button type="button" class="btn btn-primary rounded detail" onClick="onTwitter()">트위터로 공유</button>
+			
 		  </div>
 		  <div class="card-body">
 			  
@@ -1140,6 +1142,16 @@
 		  let link = document.getElementById("name").innerHTML;
 		  link = "item?id=" + link;
 		  window.location.href = link;
+	  }
+	  
+	  function onTwitter() {
+		  let url = "https://mapleitem.run.goorm.io/"
+		  let name = document.getElementById("name").innerHTML;
+		  let rank = document.getElementById("rank").innerHTML;
+		  let score = document.getElementById("score").innerHTML;
+		  
+		  let text = score + "점의 " + rank + "급 " + name + " 획득!";
+		  window.open("https://twitter.com/intent/tweet?text=" + text + "&url=" + url);
 	  }
 	
   </script>
