@@ -394,6 +394,15 @@
 					jobName = document.getElementById("job").innerHTML;
 					setEffectName = "네크로 세트(" + jobName + ")";
 					console.log("네크로 세트효과 발동!");
+				}else if(id.includes("무스펠") || id.includes("쟈이힌")) {
+					jobName = document.getElementById("job").innerHTML;
+					if (jobName == "전사") jobName = "워리어";
+					else if (jobName == "마법사") jobName = "메이지";
+					else if (jobName == "궁수") jobName = "아처";
+					else if (jobName == "도적") jobName = "로그";
+					else if (jobName == "해적") jobName = "파이렛";
+					setEffectName = "7th " + jobName + " 세트";
+					console.log("무스펠/쟈이힌 세트효과 발동!");
 				}else if(id.includes("로얄 반 레온")) {
 					jobName = document.getElementById("job").innerHTML;
 					setEffectName = "로얄 반 레온 " + jobName + " 세트";
