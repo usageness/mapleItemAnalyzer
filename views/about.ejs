@@ -16,9 +16,16 @@
   <!-- Your custom styles (optional) -->
   <link rel="stylesheet" href="/css/style.css">
 	<style>
+		
+		html, body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+		
 		.mainbody {
 			background-color: #D8D8D8;
-			padding: 17% 0;
+			height: 100%;
 		}
 		.txt {
 			text-align: center;
@@ -68,12 +75,17 @@
       </ul>
     </div>
   </nav>
+</header>
 
 	
   
 <div class="mainbody flex-center flex-column">
-	<img class="logo" src="img/usage_logo.png">
-  <span class="txt animated fadeIn mb-3">Power by MDBootstrap<br>Develop by usage :: usage.tistory.com<br><br>special thanks to ID.Aram of Luna, Hiki of Reboot</span>
+	<!-- <img class="logo" src="img/usage_logo.png"> -->
+  <span class="txt animated fadeIn mb-3">Power by MDBootstrap<br>Develop by <a href="https://usage.tistory.com">usage</a><br><br>special thanks to ID.Aram of Luna, Hiki of Reboot
+	</span>
+	
+	<button type="button" class="btn btn-light rounded detail" onClick="onPatchNote()">패치노트</button>
+	
 </div>
   <!-- End your project here-->
 
@@ -86,7 +98,14 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="/js/mdb.min.js"></script>
   <!-- Your custom scripts (optional) -->
-  <script type="text/javascript"></script>
+  <script type="text/javascript">
+	function onPatchNote() {
+		  let url = "https://blog.naver.com/PostList.nhn?blogId=kyr9389&categoryNo=9&from=postList&parentCategoryNo=9"
+		  
+		  window.open(url);
+	  }
+	
+	</script>
 
 </body>
 </html>
