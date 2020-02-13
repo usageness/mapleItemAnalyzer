@@ -235,6 +235,7 @@
 				  <li>REQ LUK : <span id = reqluk></span></li>
 				  <li>REQ POP : <span id = reqpop></span></li>
 			  </ul>
+				<button type="button" class="btn btn-info rounded" onClick="onAnalyze()">추가옵션 분석</button>
 			</div>	
 		</div>
 
@@ -471,6 +472,12 @@
 		xmlhttpSet.open("GET", "/data/setItemData.txt", true);
 		xmlhttpSet.send();
 	})
+	  
+	  function onAnalyze() {
+		  let link = document.getElementById("name").innerHTML;
+		  link = "iteminfo?id=" + link;
+		  window.location.href = link;
+	  }
 	</script>
 
 </body>
