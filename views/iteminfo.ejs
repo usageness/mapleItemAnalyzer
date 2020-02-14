@@ -389,7 +389,9 @@
 		  <div class="card-header">
 			<h2 class="subtitle">아이템 감정 결과</h2>
 			<button type="button" class="btn btn-warning rounded detail" onClick="onDetail()">상세정보</button>
-			<button type="button" class="btn btn-primary rounded detail" onClick="onTwitter()">트위터로 공유</button>
+			<button type="button" class="btn btn-info rounded detail" onClick="onTwitter()"><i class="fab fa-twitter"></i></button>
+			<button type="button" class="btn btn-primary rounded detail" onClick="onFacebook()"><i class="fab fa-facebook-f"></i></button>
+			<button type="button" class="btn btn-success rounded detail" onClick="onLine()">Line</button>
 			
 		  </div>
 		  <div class="card-body">
@@ -1153,7 +1155,23 @@
 		  let text = score + "점의 " + rank + "급 " + name + " 획득!";
 		  window.open("https://twitter.com/intent/tweet?text=" + text + "&url=" + url);
 	  }
-	
+	  
+	  function onFacebook() {
+		  let url = "https://mapleitem.run.goorm.io/"
+		  window.open("https://www.facebook.com/sharer/sharer.php?u=" + url);
+	  }
+	  
+	  function onLine() {
+		  let url = "https://mapleitem.run.goorm.io/"
+		  let name = document.getElementById("name").innerHTML;
+		  let rank = document.getElementById("rank").innerHTML;
+		  let score = document.getElementById("score").innerHTML;
+		  let br = "\n";
+		  
+		  let text = score + "점의 " + rank + "급 " + name + " 획득!";
+		  window.open("http://line.me/R/msg/text/?" + text + br + url);
+	  	  
+	  }
   </script>
 
 </body>
