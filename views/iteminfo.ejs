@@ -207,7 +207,15 @@
 		#toggle:checked + #additional {
 			display: inline;
 		}
+		.sns {
+			padding: .84em 1.04em;
+		}
 		
+		.linebtn {
+			padding: 0;
+        	width: 40px;
+        	height: 40px;
+		}
 		
 	</style>
 </head>
@@ -388,10 +396,7 @@
 	<div class="card mt-5 animated fadeIn analyze">
 		  <div class="card-header">
 			<h2 class="subtitle">아이템 감정 결과</h2>
-			<button type="button" class="btn btn-warning rounded detail" onClick="onDetail()">상세정보</button>
-			<button type="button" class="btn btn-info rounded detail" onClick="onTwitter()"><i class="fab fa-twitter"></i></button>
-			<button type="button" class="btn btn-primary rounded detail" onClick="onFacebook()"><i class="fab fa-facebook-f"></i></button>
-			<button type="button" class="btn btn-success rounded detail" onClick="onLine()">Line</button>
+			<button type="button" class="btn sns btn-warning rounded detail" onClick="onDetail()">상세정보</button>
 			
 		  </div>
 		  <div class="card-body">
@@ -486,6 +491,11 @@
 					</tr>
 				</tbody>
 				</table>
+			  
+			  
+			<button type="button" class="btn sns btn-info rounded detail" onClick="onTwitter()"><i class="fab fa-twitter"></i></button>
+			<button type="button" class="btn sns btn-primary rounded detail" onClick="onFacebook()"><i class="fab fa-facebook-f"></i></button>
+			<button type="button" class="btn linebtn btn-success rounded detail" onClick="online()"><img src="img/icon/share_line.png" width="40"></button>
 				</div>
 		  </div>
 
