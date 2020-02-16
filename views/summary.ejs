@@ -81,6 +81,7 @@
 			padding: 1rem 0.1rem;
 			margin: 1rem 0.5rem;
 			border: 1px solid #bbbbbb;
+			transition: background-color 0.2s;
 		}
 		.item:hover {
 			background-color: #cccccc;
@@ -157,7 +158,7 @@
 <div class="mainbody">
 	
 	<div class="container">
-		<div class="title">
+		<div class="title animated fadeIn">
 			아이템 목록
 		</div>
 		<div class="row" id="itemlist">
@@ -198,12 +199,7 @@
 				//let list = document.getElementById("list-unstyled").innerHTML;
 				// 동적 생성
 
-				newItem += "<div class=\"item rounded col-xs-1 col-sm-1 col-md-1 col-lg-1\">"
-				newItem += "<img class=\"align-self-center thumbnail\" src=\"img/items/" + myObj.list[i].imgsrc + "\" alt=\"Generic placeholder image\">"
-				newItem += "<div class=\"media-body\">"
-				newItem += "<span class=\"name\">" + myObj.list[i].name + "</span>"
-				newItem += "</div></div>"
-
+				newItem += "<div class=\"item rounded col-xs-1 col-sm-1 col-md-1 col-lg-1\"><img class=\"align-self-center thumbnail\" src=\"img/items/" + myObj.list[i].imgsrc + "\" title=\"" + myObj.list[i].name + "\"></div>"
 
 			}
 			document.getElementById("itemlist").innerHTML = newItem;
@@ -217,8 +213,9 @@
 			items[i].addEventListener("click", function() {
 				console.log("function start");
 				var nowChildren = this.childNodes;
-				var itemId = nowChildren[1].textContent;
-				//console.log(itemId);
+				console.log("nowChildren : " + nowChildren);
+				var itemId = nowChildren[0].title;
+				console.log(itemId);
 				window.location.href = '/item?id='+itemId;
 			});
 			console.log(i + "번째 이벤트리스너 추가");
