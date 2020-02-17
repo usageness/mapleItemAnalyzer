@@ -120,6 +120,7 @@
 		
 		ul {
 			padding: 0px;
+			list-style: none;
 		}
 		
 		#list-unstyled {
@@ -171,9 +172,28 @@
 			margin-top: 1rem;
 			margin-bottom: 1rem;
 		}
-		.searchbox {
-			width: 90%;
+		.searchSection {
 			display: inline-block;
+			vertical-align: top;
+			min-width: 270px;
+			width: 90%;
+			margin: auto;
+		}
+		.searchRank {
+			display: inline-block;
+			vertical-align: top;
+			width: 100%;
+			min-width: 270px;
+			max-width: 350px;
+			border: 1px solid #cccccc;
+			background-color: #FFFFFF;
+			padding: 1rem;
+		}
+		.searchbox {
+			width: 100%;
+			max-width: 540px;
+			display: inline-block;
+			margin-bottom: 1rem;
 		}
 		.form-inline {
 			display: block;
@@ -199,6 +219,7 @@
 			margin-right: -5px;
 		}
 		.sbox {
+			min-width: 270px;
 			max-width: 540px;
 			margin: auto;
 		}
@@ -256,24 +277,39 @@
 	</div>
 
 	<div class="mainbody rounded flex-center flex-column">
-	
 		<div class="topdivision">
-			
-			<div class="searchbox">
-				
-				<div class="input-group active-cyan-4 form-sm form-1 pl-0 sbox">
-				  <div class="input-group-prepend">
-					<span class="input-group-text purple lighten-3" id="basic-text1"><i class="fas fa-search text-white"
-						aria-hidden="true"></i></span>
-				  </div>
-				  <input class="form-control my-0 py-1" onkeyup="filter()" type="text" id="value" placeholder="아이템 이름" aria-label="Search">
-				</div>
-				
+			<div class="searchSection">
+				<div class="searchbox">
+					<div class="input-group active-cyan-4 form-sm form-1 pl-0 sbox">
+					  <div class="input-group-prepend">
+						<span class="input-group-text purple lighten-3" id="basic-text1"><i class="fas fa-search text-white"
+							aria-hidden="true"></i></span>
+					  </div>
+					  <input class="form-control my-0 py-1" onkeyup="filter()" type="text" id="value" placeholder="아이템 이름" aria-label="Search">
+					</div>
+
 					<ul id="list-unstyled">
 					<!-- 아이템 목록은 요기요 -->
 					</ul>
+				</div>
+				
+				<div class="searchRank flex-center flex-column">
+					<ul>
+						<li>검색어 순위</li>
+						<li>검색어 순위</li>
+						<li>검색어 순위</li>
+						<li>검색어 순위</li>
+						<li>검색어 순위</li>
+						<li>검색어 순위</li>
+						<li>검색어 순위</li>
+						<li>검색어 순위</li>
+						<li>검색어 순위</li>
+					</ul>
+				</div>
 			</div>
-
+			
+			
+			
 			
 			
 			<div class="banner flex-center flex-column">
