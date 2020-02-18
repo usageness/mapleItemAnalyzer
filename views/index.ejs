@@ -187,7 +187,7 @@
 			max-width: 350px;
 			border: 1px solid #cccccc;
 			background-color: #FFFFFF;
-			padding: 1rem;
+			padding: 1rem 1rem 0 1rem;
 		}
 		.searchbox {
 			width: 100%;
@@ -222,6 +222,14 @@
 			min-width: 270px;
 			max-width: 540px;
 			margin: auto;
+		}
+		.trend {
+			margin-bottom: 1.5rem;
+			font-weight: bold;
+		}
+		
+		.searchRank ul .trendBar {
+			margin: 0.8rem 0;
 		}
 		
 	</style>
@@ -293,18 +301,8 @@
 					</ul>
 				</div>
 				
-				<div class="searchRank flex-center flex-column">
-					<ul>
-						<li>검색어 순위</li>
-						<li>검색어 순위</li>
-						<li>검색어 순위</li>
-						<li>검색어 순위</li>
-						<li>검색어 순위</li>
-						<li>검색어 순위</li>
-						<li>검색어 순위</li>
-						<li>검색어 순위</li>
-						<li>검색어 순위</li>
-					</ul>
+				<div class="searchRank flex-column" id="trendlist">
+					<!-- 인기 검색어 목록은 요기요 -->
 				</div>
 			</div>
 			
@@ -361,71 +359,95 @@
 		return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	}
 
-    var xmlhttp = new XMLHttpRequest();
-	    xmlhttp.onreadystatechange = function(){
-		    if(this.readyState == 4 && this.status == 200)
-		    {
-		    	console.log("parameter is : " + getParameterByName('id'));
-		    }
-    }
-
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function(){
-		if(this.readyState == 4 && this.status == 200)
-		{
-			var myObj = JSON.parse(this.responseText);
-
-			let newItem = "";
-			for(var i = 0; i < myObj.list.length; i++) {
-				//let list = document.getElementById("list-unstyled").innerHTML;
-				// 동적 생성
-
-				newItem += "<div class=\"item\">"
-				newItem += "<li class=\"media\">"
-				newItem += "<img class=\"d-flex align-self-center mr-3 thumbnail\" src=\"img/items/" + myObj.list[i].imgsrc + "\" alt=\"Generic placeholder image\">"
-				newItem += "<div class=\"media-body\">"
-				newItem += "<span class=\"name\">" + myObj.list[i].name + "</span>"
-				newItem += "</div>"
-				newItem += "</li>"
-				newItem += "</div>"
-
-
-			}
-			
-			document.getElementById("list-unstyled").innerHTML = newItem;
-		}
+    
 		
-		var items = document.querySelectorAll(".item");
+	var loading = function(done) {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200)
+			{
+				var myObj = JSON.parse(this.responseText);
 
-		for (var i = 0; i < items.length; i++) {
-			items[i].addEventListener("click", function() {
-				console.log("function start");
-				var nowChildren = this.childNodes;
-				for(var i=0; i<nowChildren.length; i++){
-					console.log("nowChildren : " + nowChildren[i]);
-					if(nowChildren[i].nodeName == "LI") {
-						var media = nowChildren[i];
-						var mediaChildren = media.childNodes;
-						for(var j=0; j<mediaChildren.length; j++){
-							if(mediaChildren[j].nodeName == "DIV") {
-								var mediabody = mediaChildren[j];
-								var mediabodyChildren = mediabody.childNodes;
-								//console.log(mediabodyChildren);
-								var itemId = mediabodyChildren[0].textContent;
-								//console.log(itemId);
-								window.location.href = '/itemInfo?id='+itemId;
+				let newItem = "";
+				for(var i = 0; i < myObj.list.length; i++) {
+					//let list = document.getElementById("list-unstyled").innerHTML;
+					// 동적 생성
+
+					newItem += "<div class=\"item\">"
+					newItem += "<li class=\"media\">"
+					newItem += "<img class=\"d-flex align-self-center mr-3 thumbnail\" src=\"img/items/" + myObj.list[i].imgsrc + "\" alt=\"Generic placeholder image\">"
+					newItem += "<div class=\"media-body\">"
+					newItem += "<span class=\"name\">" + myObj.list[i].name + "</span>"
+					newItem += "</div>"
+					newItem += "</li>"
+					newItem += "</div>"
+
+
+				}
+
+				document.getElementById("list-unstyled").innerHTML = newItem;
+			}
+
+			var items = document.querySelectorAll(".item");
+
+			for (var i = 0; i < items.length; i++) {
+				items[i].addEventListener("click", function() {
+					console.log("function start");
+					var nowChildren = this.childNodes;
+					for(var i=0; i<nowChildren.length; i++){
+						console.log("nowChildren : " + nowChildren[i]);
+						if(nowChildren[i].nodeName == "LI") {
+							var media = nowChildren[i];
+							var mediaChildren = media.childNodes;
+							for(var j=0; j<mediaChildren.length; j++){
+								if(mediaChildren[j].nodeName == "DIV") {
+									var mediabody = mediaChildren[j];
+									var mediabodyChildren = mediabody.childNodes;
+									//console.log(mediabodyChildren);
+									var itemId = mediabodyChildren[0].textContent;
+									//console.log(itemId);
+									window.location.href = '/itemInfo?id='+itemId;
+								}
 							}
 						}
 					}
-				}
-			});
-			//console.log(i + "번째 이벤트리스너 추가");
-		}
-		
-	};
+				});
+				//console.log(i + "번째 이벤트리스너 추가");
+			}
+			
+			console.log("검색창 아이템 로딩 완료! 인기아이템 리스트 로딩 시작!");
+			done();
 
-	xmlhttp.open("GET", "/data/itemData.txt", true);
-	xmlhttp.send();
+		};
+
+		xmlhttp.open("GET", "/data/itemData.txt", true);
+		xmlhttp.send();
+	}
+	  
+	loading(function done() {
+		console.log("인기아이템 리스트 로딩을 시작합니다.");
+		var xmlhttpSet = new XMLHttpRequest();
+		xmlhttpSet.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200)
+			{
+				var myObj = JSON.parse(this.responseText);
+				var list = "<ul><h2 class=\"trend\">인기 검색어</h2>";
+				
+
+				for(var i = 0; i < myObj.list.length; i++) list += "<li class=\"trendBar\"><a href=\"/itemInfo?id=" + myObj.list[i].name + "\">" + myObj.list[i].name + "</a></li>";
+					
+				list += "</ul>";
+						
+				document.getElementById("trendlist").innerHTML = list;
+				
+			}
+		};
+
+		xmlhttpSet.open("GET", "/data/trend.txt", true);
+		xmlhttpSet.send();
+	})    
+	  
+	  
 	  
 	function noticeClose() {
 		let notice = document.getElementById("notice");
