@@ -6,24 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/item', function(req, res, next) {
-  res.render('item', { title: 'Express' });
-});
-
 router.get('/summary', function(req, res, next) {
   res.render('summary', { title: 'Express' });
-});
-
-router.get('/guide', function(req, res, next) {
-  res.render('guide', { title: 'Express' });
-});
-
-router.get('/guide_picker', function(req, res, next) {
-  res.render('guide_picker', { title: 'Express' });
-});
-
-router.get('/guide_item', function(req, res, next) {
-  res.render('guide_item', { title: 'Express' });
 });
 
 router.get('/about', function(req, res, next) {

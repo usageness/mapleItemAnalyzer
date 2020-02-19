@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 var item = require('./routes/item');
 var iteminfo = require('./routes/iteminfo');
 var guide = require('./routes/guide');
@@ -27,7 +26,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // 메소드와 관계없이 아래 url로 시작하는건 route 폴더의 모듈에서 처리하기로 함
 app.use('/', index);
-app.use('/users', users);
 app.use('/item', item);
 app.use('/iteminfo', iteminfo);
 app.use('/guide', guide);
@@ -41,12 +39,14 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
+	/*
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
   res.status(err.status || 500);
+  */
   res.render('error');
 });
 
