@@ -410,6 +410,15 @@
 					jobName = document.getElementById("job").innerHTML;
 					setEffectName = "로얄 반 레온 " + jobName + " 세트";
 					console.log("로얄 반 레온 세트효과 발동!");
+				}else if(id.includes("우트가르드") || id.includes("펜살리르")) {
+					jobName = document.getElementById("job").innerHTML;
+					if (jobName == "전사") jobName = "워리어";
+					else if (jobName == "마법사") jobName = "메이지";
+					else if (jobName == "궁수") jobName = "아처";
+					else if (jobName == "도적") jobName = "로그";
+					else if (jobName == "해적") jobName = "파이렛";
+					setEffectName = "8th " + jobName + " 세트";
+					console.log("우트가르드/펜살리르 세트효과 발동!");
 				}else if(id.includes("라이온하트")) {
 					setEffectName = "라이온하트 세트";
 					console.log("라이온하트 세트효과 발동!");
