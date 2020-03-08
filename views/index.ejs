@@ -388,10 +388,10 @@
 
 			for (var i = 0; i < items.length; i++) {
 				items[i].addEventListener("click", function() {
-					console.log("function start");
+					//console.log("function start");
 					var nowChildren = this.childNodes;
 					for(var i=0; i<nowChildren.length; i++){
-						console.log("nowChildren : " + nowChildren[i]);
+						//console.log("nowChildren : " + nowChildren[i]);
 						if(nowChildren[i].nodeName == "LI") {
 							var media = nowChildren[i];
 							var mediaChildren = media.childNodes;
@@ -411,7 +411,7 @@
 				//console.log(i + "번째 이벤트리스너 추가");
 			}
 			
-			console.log("검색창 아이템 로딩 완료! 인기아이템 리스트 로딩 시작!");
+			//console.log("검색창 아이템 로딩 완료! 인기아이템 리스트 로딩 시작!");
 			done();
 
 		};
@@ -421,7 +421,7 @@
 	}
 	  
 	loading(function done() {
-		console.log("인기아이템 리스트 로딩을 시작합니다.");
+		//console.log("인기아이템 리스트 로딩을 시작합니다.");
 		var xmlhttpSet = new XMLHttpRequest();
 		xmlhttpSet.onreadystatechange = function(){
 			if(this.readyState == 4 && this.status == 200)

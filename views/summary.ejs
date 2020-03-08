@@ -145,7 +145,7 @@
           <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"><i class="fab fa-twitter"></i></a>
+          <a class="nav-link" href="https://twitter.com/mapleitempicker"><i class="fab fa-twitter"></i></a>
         </li>
         <li class="nav-item">
           <a class="nav-link"><i class="fab fa-instagram"></i></a>
@@ -184,7 +184,7 @@
 	xmlhttp.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200)
 		{
-			console.log("parameter is : " + getParameterByName('id'));
+			//console.log("parameter is : " + getParameterByName('id'));
 		}
     }
 
@@ -206,19 +206,19 @@
 		}
 		
 		var items = document.querySelectorAll(".item");
-		console.log(items);
-		console.log(items.length);
+		//console.log(items);
+		//console.log(items.length);
 
 		for (var i = 0; i < items.length; i++) {
 			items[i].addEventListener("click", function() {
-				console.log("function start");
+				//console.log("function start");
 				var nowChildren = this.childNodes;
-				console.log("nowChildren : " + nowChildren);
+				//console.log("nowChildren : " + nowChildren);
 				var itemId = nowChildren[0].title;
-				console.log(itemId);
+				//console.log(itemId);
 				window.location.href = '/item?id='+itemId;
 			});
-			console.log(i + "번째 이벤트리스너 추가");
+			//console.log(i + "번째 이벤트리스너 추가");
 		}
 		
 	};
