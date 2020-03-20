@@ -12,7 +12,12 @@ router.get('/', function(req, res, next) {
 	else {
 		subject = "메이플 추가옵션 분석기";
 	}
-	console.log("[정보] ",id,"의 정보요청이 들어왔습니다.");
+	
+	let d = new Date();
+    let curDate = d.getFullYear() + "/" + ( d.getMonth() + 1 ) + "/" + d.getDate();
+    let curTime = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+    const nowip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+	console.log("[" + curDate + curTime + "] ", id, "의 정보요청이 들어왔습니다. (", nowip, ")");
 	res.render('item', { title: 'Express', id: subject, method: "get" });
 });
 
