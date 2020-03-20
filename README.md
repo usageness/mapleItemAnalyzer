@@ -29,7 +29,7 @@
 
 
 
-### 이 프로젝트는 아래 주소에서 테스트 가능합니다.
+### 이 프로젝트는 아래 주소에서 이용 가능합니다.
 
 * https://mapleitem.com/
 
@@ -41,9 +41,9 @@
 
 ### 기술 스택
 
-* Node.js
-* express.js
-* MDBootstrap
+* [Node.js](https://nodejs.org/ko/)
+* [express.js](https://expressjs.com/ko/)
+* [MDBootstrap](https://mdbootstrap.com/)
 
 
 ### License
