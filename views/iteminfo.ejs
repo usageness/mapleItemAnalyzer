@@ -442,7 +442,7 @@
 				</table>
 
 				<p class="grade">공격력/마력 추가 옵션 단계: <span id="grade">-단계</span></p>
-				<p class="grade">주스텟 추가 옵션 등급: <span class="statGradePoint"><span id="statGrade">-급</span> (주스텟 <span id="mainstatpoint"></span> + 올스텟 <span id="allstatpoint"></span>)</span></p>
+				<p class="grade">주스텟 추가 옵션 등급: <span class="statGradePoint"><span id="statGrade">-</span>급 (주스텟 <span id="mainstatpoint"></span> + 올스텟 <span id="allstatpoint"></span>)</span></p>
 				
 				<p><span id="gradeDes"></span></p>
 			    <div class ="divider"></div>
@@ -498,7 +498,6 @@
 			<button type="button" class="btn linebtn btn-success rounded detail" onClick="online()"><img src="img/icon/share_line.png" width="40"></button>
 				</div>
 		  </div>
-
 		</div>
 	</div>
 </div>
@@ -540,7 +539,7 @@
 					
 					
 					
-					// type :: 0 1 4 5 6 7 8 9 공격력 장비, 2 3 마력 장비
+					// type :: 0 1 4 5 6 7 8 9 공격력 장비, 2 3 마력 장비 
 					if(type == "0") { // 전사계열 무기 (공격력)
 			  			document.getElementById("job").innerHTML = "전사계열";
 						document.getElementById("atkOrMag").innerHTML = "공격력: ";
@@ -617,13 +616,11 @@
 						document.getElementById("spdOrNot").innerHTML = "공격속도: ";
 						document.getElementById("spd").innerHTML = myObj.list[i].spd;
 						document.getElementById("wporar").innerHTML = "무기";
-					}else if(type == "12") { // 제논 공용 무기 (공격력)
-						document.getElementById("job").innerHTML = "하이브리드계열";
-						document.getElementById("atkOrMag").innerHTML = "공격력: ";
+					}else if(type == "12") { // 장신구
+						document.getElementById("job").innerHTML = "전직업(장신구)";
+						document.getElementById("atkOrMag").innerHTML = "공격력/마력: ";
 						document.getElementById("atk").innerHTML = myObj.list[i].atk;
-						document.getElementById("spdOrNot").innerHTML = "공격속도: ";
-						document.getElementById("spd").innerHTML = myObj.list[i].spd;
-						document.getElementById("wporar").innerHTML = "무기";
+						document.getElementById("wporar").innerHTML = "장신구";
 					}
 					
 					// 추옵 로드
@@ -715,7 +712,7 @@
 				  calculate(luk, str+dex, all, att, dmg, reqlev, itemtype, mystat, dmchk);
 				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, itemtype);
 			  }else if(type == "하이브리드계열") { // 제논 - 비세트아이템 (가장 높은 추옵을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
-				  var stetArray = [str, dex, luk];
+				  let stetArray = [str, dex, luk];
 
 				  stetArray.sort(function(a, b) {
 					  return b - a; // 내림차순 정렬
@@ -725,6 +722,26 @@
 
 				  calculate(stetArray[0], stetArray[1]+stetArray[2], all, att, dmg, reqlev, itemtype, mystat, dmchk);
 				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, itemtype);
+			  }else if(type == "전직업(장신구)") { // 장신구 (가장 높은 스탯이 주스탯)
+				  let stetArray = [str, dex, luk];
+
+				  stetArray.sort(function(a, b) {
+					  return b - a; // 내림차순 정렬
+				  });
+				  
+				  let attmag;
+				  let mainstet;
+					  
+				  if(stetArray[0] > int) {
+					  attmag = att;
+					  mainstet = stetArray[0];
+				  }else {
+					  attmag = mag;
+					  mainstet = int;
+				  }
+
+				  calculate(mainstet, 0, all, attmag, dmg, reqlev, itemtype, mystat, dmchk);
+				  description_detail(attmag, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, itemtype);
 			  }
 		  }
       };
@@ -732,7 +749,21 @@
 	  function calculate(mainStat, subStat, all, att, dmg, reqlev, itemtype, mystat, dmchk) {
 		  var ranked, totalstat, score, realstat;
 		  
-		  if(reqlev <= 120) { // 1. 네크로 장비 (올스텟의 경우 고정 계수 10으로 대체, 뎀은 효율이 낮아 하향조정)
+		   if(reqlev <= 100) { // 0. 아쿠아틱 레터 눈장식 (일단 레벨로 끊고, 나중에 장신구 구별 변수 추가)
+			  if(mystat == "") {
+				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 5*보스데미지%
+			  	  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (5*dmg);
+			  }
+			  else{
+				  // 세부 스텟 계산 on
+				  realstat = mystat/100;
+				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (5*dmg);
+			  }
+			  
+			  //console.log("자쿰 악세사리 장비를 계산합니다");
+			  
+		  
+	  	  }else if(reqlev <= 120) { // 1. 네크로 장비 (올스텟의 경우 고정 계수 10으로 대체, 뎀은 효율이 낮아 하향조정)
 			  if(mystat == "") {
 				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 5*보스데미지%
 			  	  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (5*dmg);
@@ -811,7 +842,7 @@
 		  }
 		  
 		  document.getElementById("firstStat").innerHTML = mainStat;
-		  document.getElementById("statGrade").innerHTML = totalstat+"단계";
+		  document.getElementById("statGrade").innerHTML = totalstat;
 		  document.getElementById("mainstatpoint").innerHTML = mainStat;
 		  
 	  }
@@ -1003,6 +1034,32 @@
 			  }else{
 				  //console.log("알 수 없는 에러가 발생하였습니다.");
 			  }
+		  }else if(itemtype == "장신구") {
+			  if(reqlev <= 100) {
+				  // 아쿠아틱 레터 눈장식 극추옵 점수 : 0~490
+				  if(score > 300)
+					  ranked = "R+";
+				  else if(score > 275)
+					  ranked = "R";
+				  else if(score > 250)
+					  ranked = "SSS";
+				  else if(score > 225)
+					  ranked = "SS";
+				  else if(score > 200)
+					  ranked = "S";
+				  else if(score > 175)
+					  ranked = "A";
+				  else if(score > 150)
+					  ranked = "B";
+				  else if(score > 125)
+					  ranked = "C";
+				  else if(score > 100)
+					  ranked = "D";
+				  else
+					  ranked = "E";
+			  }else{
+				  //console.log("알 수 없는 에러가 발생하였습니다.");
+			  }
 		  }
 		
 		  
@@ -1101,7 +1158,7 @@
 	  }
 	  
 	  function recommend(type, atkmag) {
-		  document.getElementById("statGrade").value;
+		  
 		  if(type == "무기") { // 무기
 			  switch (atkmag){
 				case "1" :
@@ -1134,7 +1191,8 @@
 				  document.getElementById("armno").style.backgroundColor = "#F8C9CE";
 			  }
 		  }else { // 장신구
-			  let mainstat = Number(document.getElementById("statGrade").value);
+			  let mainstat = Number(document.getElementById("statGrade").innerHTML);
+			  console.log(mainstat);
 			  
 			  if (mainstat >= 120) {
 				  document.getElementById("accab").style.backgroundColor = "#F8C9CE";
@@ -1157,7 +1215,7 @@
 	  }
 	  
 	  function onTwitter() {
-		  let url = "https://mapleitem.run.goorm.io/"
+		  let url = "http://mapleitem.com/"
 		  let name = document.getElementById("name").innerHTML;
 		  let rank = document.getElementById("rank").innerHTML;
 		  let score = document.getElementById("score").innerHTML;
@@ -1167,12 +1225,12 @@
 	  }
 	  
 	  function onFacebook() {
-		  let url = "https://mapleitem.run.goorm.io/"
+		  let url = "http://mapleitem.com/"
 		  window.open("https://www.facebook.com/sharer/sharer.php?u=" + url);
 	  }
 	  
 	  function onLine() {
-		  let url = "https://mapleitem.run.goorm.io/"
+		  let url = "http://mapleitem.com/"
 		  let name = document.getElementById("name").innerHTML;
 		  let rank = document.getElementById("rank").innerHTML;
 		  let score = document.getElementById("score").innerHTML;

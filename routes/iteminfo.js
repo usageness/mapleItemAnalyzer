@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
     let curDate = d.getFullYear() + "/" + ( d.getMonth() + 1 ) + "/" + d.getDate();
     let curTime = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
     const nowip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-	console.log("[" + curDate + curTime + "] ", id, "의 상세정보 요청이 들어왔습니다. (", nowip, ")");
+	console.log("[", curDate, curTime, "] ", id, "의 분석요청이 들어왔습니다. (", nowip, ")");
 	res.render('iteminfo', { title: 'Express', id: subject, method: "get" });
 });
 
