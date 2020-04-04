@@ -444,7 +444,6 @@
 				<p class="grade">공격력/마력 추가 옵션 단계: <span id="grade">-단계</span></p>
 				<p class="grade">주스텟 추가 옵션 등급: <span class="statGradePoint"><span id="statGrade">-</span>급 (주스텟 <span id="mainstatpoint"></span> + 올스텟 <span id="allstatpoint"></span>)</span></p>
 				
-				<p><span id="gradeDes"></span></p>
 			    <div class ="divider"></div>
 			  
 			    <h2 class="subtitle">내게 맞는 장비 찾기</h2>
@@ -749,19 +748,17 @@
 	  function calculate(mainStat, subStat, all, att, dmg, reqlev, itemtype, mystat, dmchk) {
 		  var ranked, totalstat, score, realstat;
 		  
-		   if(reqlev <= 100) { // 0. 아쿠아틱 레터 눈장식 (일단 레벨로 끊고, 나중에 장신구 구별 변수 추가)
-			  if(mystat == "") {
-				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 5*보스데미지%
-			  	  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (5*dmg);
-			  }
-			  else{
-				  // 세부 스텟 계산 on
-				  realstat = mystat/100;
-				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (5*dmg);
-			  }
-			  
-			  //console.log("자쿰 악세사리 장비를 계산합니다");
-			  
+		  if(itemtype == "장신구") {
+				  if(mystat == "") {
+					  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 5*보스데미지%
+					  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (5*dmg);
+				  }
+				  else{
+					  // 세부 스텟 계산 on
+					  realstat = mystat/100;
+					  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (5*dmg);
+				  }
+				  //console.log("악세사리를 계산합니다");
 		  
 	  	  }else if(reqlev <= 120) { // 1. 네크로 장비 (올스텟의 경우 고정 계수 10으로 대체, 뎀은 효율이 낮아 하향조정)
 			  if(mystat == "") {
@@ -1035,25 +1032,116 @@
 				  //console.log("알 수 없는 에러가 발생하였습니다.");
 			  }
 		  }else if(itemtype == "장신구") {
-			  if(reqlev <= 100) {
-				  // 아쿠아틱 레터 눈장식 극추옵 점수 : 0~490
-				  if(score > 300)
+			  
+			  let id = getParameterByName('id');
+			  
+			  if(id == "아쿠아틱 레터 눈장식" || id == "응축된 힘의 결정석") {
+				  // 자쿰 눈, 얼굴장식 극추옵 점수 : 0~490
+				  if(score > 460)
 					  ranked = "R+";
-				  else if(score > 275)
+				  else if(score > 415)
 					  ranked = "R";
-				  else if(score > 250)
+				  else if(score > 370)
 					  ranked = "SSS";
-				  else if(score > 225)
+				  else if(score > 325)
 					  ranked = "SS";
-				  else if(score > 200)
+				  else if(score > 280)
 					  ranked = "S";
-				  else if(score > 175)
+				  else if(score > 235)
 					  ranked = "A";
-				  else if(score > 150)
+				  else if(score > 190)
 					  ranked = "B";
-				  else if(score > 125)
+				  else if(score > 145)
 					  ranked = "C";
 				  else if(score > 100)
+					  ranked = "D";
+				  else
+					  ranked = "E";
+			  }else if(id == "혼테일의 목걸이" || id == "카오스 혼테일의 목걸이") {
+				  // 혼테일 팬던트 극추옵 점수 : 0~350
+				  if(score > 340)
+					  ranked = "R+";
+				  else if(score > 310)
+					  ranked = "R";
+				  else if(score > 280)
+					  ranked = "SSS";
+				  else if(score > 250)
+					  ranked = "SS";
+				  else if(score > 220)
+					  ranked = "S";
+				  else if(score > 190)
+					  ranked = "A";
+				  else if(score > 160)
+					  ranked = "B";
+				  else if(score > 130)
+					  ranked = "C";
+				  else if(score > 100)
+					  ranked = "D";
+				  else
+					  ranked = "E";
+			  }else if(id == "매커네이터 펜던트" || id == "데아 시두스 이어링") {
+				  // 매커네이터 펜던트 극추옵 점수 : 0~490
+				  if(score > 460)
+					  ranked = "R+";
+				  else if(score > 415)
+					  ranked = "R";
+				  else if(score > 370)
+					  ranked = "SSS";
+				  else if(score > 325)
+					  ranked = "SS";
+				  else if(score > 280)
+					  ranked = "S";
+				  else if(score > 235)
+					  ranked = "A";
+				  else if(score > 190)
+					  ranked = "B";
+				  else if(score > 145)
+					  ranked = "C";
+				  else if(score > 100)
+					  ranked = "D";
+				  else
+					  ranked = "E";
+			  }else if(id == "도미네이터 펜던트" || id == "핑크빛 성배" || id == "골든 클로버 벨트") {
+				  // 도미네이터 펜던트 극추옵 점수 : 0~518
+				  if(score > 500)
+					  ranked = "R+";
+				  else if(score > 450)
+					  ranked = "R";
+				  else if(score > 400)
+					  ranked = "SSS";
+				  else if(score > 350)
+					  ranked = "SS";
+				  else if(score > 300)
+					  ranked = "S";
+				  else if(score > 250)
+					  ranked = "A";
+				  else if(score > 200)
+					  ranked = "B";
+				  else if(score > 150)
+					  ranked = "C";
+				  else if(score > 100)
+					  ranked = "D";
+				  else
+					  ranked = "E";
+			  }else if(id == "영생의 돌") {
+				  // 영생의 돌 극추옵 점수 : 0~186
+				  if(score > 180)
+					  ranked = "R+";
+				  else if(score > 160)
+					  ranked = "R";
+				  else if(score > 140)
+					  ranked = "SSS";
+				  else if(score > 120)
+					  ranked = "SS";
+				  else if(score > 100)
+					  ranked = "S";
+				  else if(score > 80)
+					  ranked = "A";
+				  else if(score > 60)
+					  ranked = "B";
+				  else if(score > 40)
+					  ranked = "C";
+				  else if(score > 20)
 					  ranked = "D";
 				  else
 					  ranked = "E";
@@ -1095,31 +1183,25 @@
 			case "5" :
 				document.getElementById("plusAtt5").style.backgroundColor = "#F8C9CE";
 				document.getElementById("grade").innerHTML = "1단계 (매우 높음)";
-				document.getElementById("gradeDes").innerHTML = "이 아이템이 가질 수 있는 최고의 옵션 중 하나를 지니고 있습니다.";
 				break;
 			case "4" :
 				document.getElementById("plusAtt4").style.backgroundColor = "#F8C9CE";
 				document.getElementById("grade").innerHTML = "2단계 (높음)";
-				document.getElementById("gradeDes").innerHTML = "상당히 높은 옵션 중 하나를 지니고 있습니다.";
 				break;
 			case "3" :
 				document.getElementById("plusAtt3").style.backgroundColor = "#F8C9CE";
 				document.getElementById("grade").innerHTML = "3단계 (보통)";
-				document.getElementById("gradeDes").innerHTML = "적당한 옵션을 지니고 있습니다.";
 				break;
 			case "2" :
 				document.getElementById("plusAtt2").style.backgroundColor = "#F8C9CE";
 				document.getElementById("grade").innerHTML = "4단계 (낮음)";
-				document.getElementById("gradeDes").innerHTML = "상대적으로 낮은 옵션을 지니고 있습니다.";
 				break;
 			case "1" :
 				document.getElementById("plusAtt1").style.backgroundColor = "#F8C9CE";
 				document.getElementById("grade").innerHTML = "5단계 (매우 낮음)";
-				document.getElementById("gradeDes").innerHTML = "매우 낮은 옵션을 지니고 있습니다.";
 				break;
 			default :
 				document.getElementById("grade").innerHTML = "추옵 없음";
-				document.getElementById("gradeDes").innerHTML = "추가 옵션을 지니고 있지 않습니다.";
 		}
 	}
 	  

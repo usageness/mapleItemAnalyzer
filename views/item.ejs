@@ -365,6 +365,10 @@
 							document.getElementById("job").innerHTML = "해적";
 							document.getElementById("atkOrMag").innerHTML = "방어력: ";
 							document.getElementById("atk").innerHTML = myObj.list[i].defense;
+						}else if(type == "12") { // 장신구 (공격력/마력)
+							document.getElementById("job").innerHTML = "전직업";
+							document.getElementById("atkOrMag").innerHTML = "방어력: ";
+							document.getElementById("atk").innerHTML = myObj.list[i].defense;
 						}
 
 						//console.log("로딩함수 동작2");
@@ -442,8 +446,13 @@
 					jobName = document.getElementById("job").innerHTML;
 					setEffectName = "앱솔랩스 세트(" + jobName + ")";
 					//console.log("앱솔랩스 세트효과 발동!");
-				}else{
-					//console.log("우찬아 괜찮아 울어도 돼 사실 세트효과 없거든");
+				}else if(id == "아쿠아틱 레터 눈장식" || id == "응축된 힘의 결정석" || id.includes("혼테일의 목걸이") || id.includes("네이터 펜던트") || id == "골든 클로버 벨트" || id == "데아 시두스 이어링" || id == "영생의 돌" || id == "핑크빛 성배") {
+					jobName = document.getElementById("job").innerHTML;
+					setEffectName = "보스 장신구 세트";
+					//console.log("보스 장신구 세트효과 발동!");
+				}
+				else {
+				
 				}
 
 				
