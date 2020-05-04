@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <!-- open graph START -->
+  <meta property="og:url"                content="http://mapleitem.com" />
+  <meta property="og:type"               content="website" />
+  <meta property="og:title"              content="메이플 추가옵션 분석기" />
+  <meta property="og:description"        content="추가옵션을 통해 아이템의 가치를 분석합니다." />
+  <meta property="og:image"              content="http://mapleitem.com/img/mainlogo-black.png" />
+  <!-- open graph END -->
   <title>메이플 추가옵션 분석기</title>
   <!-- MDB icon -->
   <link rel="icon" href="/img/mdb-favicon.ico" type="image/x-icon">
@@ -15,6 +22,8 @@
   <link rel="stylesheet" href="/css/mdb.min.css">
   <!-- Your custom styles (optional) -->
   <link rel="stylesheet" href="/css/style.css">
+	<!-- Google 애드센스 -->
+  <script data-ad-client="ca-pub-4534105962815162" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	
 	<style>
 		body{
@@ -186,8 +195,9 @@
 			min-width: 270px;
 			max-width: 350px;
 			border: 1px solid #cccccc;
+			border-radius: 5px;
 			background-color: #FFFFFF;
-			padding: 1rem 1rem 0 1rem;
+			padding: 1rem 1rem 0rem 1rem;
 		}
 		.searchbox {
 			width: 100%;
@@ -202,6 +212,10 @@
 		.form-inline .form-control {
 			min-width: 235px;
 			width: 60%;
+		}
+		.bannerdiv {
+			width: 100%;
+			border-radius: 15px;
 		}
 		.banner img {
    			width: 100%;
@@ -232,6 +246,54 @@
 			margin: 0.8rem 0;
 		}
 		
+		.trendtable {
+			margin-left: 10%;
+		}
+		
+		.trendtable td {
+			text-align: left;
+			font-weight: bold;
+			padding: 0 0.5rem;
+		}
+		.patchBanner {
+			display: inline-block;
+			width: 100%;
+			font-weight: bold;
+			background-color: #FFFFFF;
+			border: 1px solid #cccccc;
+			border-radius: 5px;
+			margin-top: 1rem;
+		}
+		.patchBanner ul li {
+			padding: 0.5rem 0 0 0;
+		}
+		.patchBanner ul .buttonli {
+			padding: 1rem;
+			text-align: center;
+			font-size: 1.414em;
+			margin: 0;
+		}
+		.patchBanner ul a .buttonli{
+			color: #000000;
+		}
+		.patchBanner ul .buttonli:hover{
+			background-color: #eeeeee;
+		}
+		.bg-rabbit {
+			background-image: url("/img/background/background-rabbit.png");
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+		.bg-rabbit2 {
+			background-image: url("/img/background/background-rabbit2.png");
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+		.bg-pinkbean {
+			background-image: url("/img/background/background-pinkbean.png");
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
 	</style>
 </head>
 <body>
@@ -306,12 +368,60 @@
 				</div>
 			</div>
 			
-			<div class="banner flex-center flex-column">
-				<a href="https://maplestory.nexon.com/News/CashShop/Sale/116"><img class="fit" src="img/banner/cashshop_bn.png"></a>
-			</div>
+			<!-- 배너부분 -->
+			<div class="container">
+				<div class="row">
+						<div class="col-lg-6 col-sm-12">
+						<!--Carousel Wrapper-->
+						<div id="carousel-example-1z" class="carousel slide carousel-fade banner" data-ride="carousel">
+						  <!--Indicators-->
+						  <ol class="carousel-indicators">
+							<li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel-example-1z" data-slide-to="1"></li>
+						  </ol>
+						  <!--/.Indicators-->
+						  <!--Slides-->
+						  <div class="carousel-inner" role="listbox">
+							<!--First slide-->
+							<div class="carousel-item active">
+							  <a href="https://maplestory.nexon.com/News/CashShop/Sale/122"><img class="d-block w-100" src="img/banner/cashshop_bn.png"
+								alt="First slide"></a>
+							</div>
+							<!--/First slide-->
+							<!--Second slide-->
+							<div class="carousel-item">
+							  <a href="https://maplestory.nexon.com/News/CashShop/Sale/114"><img class="d-block w-100" src="img/banner/cashshop_bn2.png"
+								alt="Second slide"></a>
+							</div>
+							<!--/Second slide-->
+						  </div>
+						  <!--/.Slides-->
+						  <!--Controls-->
+						  <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						  </a>
+						  <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						  </a>
+						  <!--/.Controls-->
+						</div>
+							
+							</div>
+						<!--/.Carousel Wrapper-->
+							<div class="col-lg-5 col-sm-12">
+								<div class="patchBanner">
+								<ul>
+									<li>메이플 주요정보</li>
+									<a href="https://maplestory.nexon.com/News/Update/InformationCenter"><li class="buttonli bg-rabbit">업데이트 정보센터</li></a>
+									<a href="https://maplestory.nexon.com/News/Notice/Inspection"><li class="buttonli bg-rabbit2">점검내역</li></a>
+									<a href="https://maplestory.nexon.com/News/Notice/Notice"><li class="buttonli bg-pinkbean">공지사항</li></a>
+								</ul>
+							</div>
+					</div>
+				</div>
 			
-			<div class="banner flex-center flex-column">
-				<a href="https://maplestory.nexon.com/News/CashShop/Sale/114"><img class="fit" src="img/banner/cashshop_bn2.png"></a>
 			</div>
 		</div>
 	</div>
@@ -427,10 +537,10 @@
 			if(this.readyState == 4 && this.status == 200)
 			{
 				var myObj = JSON.parse(this.responseText);
-				var list = "<ul><h2 class=\"trend\">인기 검색어</h2>";
+				var list = "<ul>";
 				
 
-				for(var i = 0; i < myObj.list.length; i++) list += "<li class=\"trendBar\"><a href=\"/itemInfo?id=" + myObj.list[i].name + "\">" + myObj.list[i].name + "</a></li>";
+				for(var i = 0; i < myObj.list.length; i++) list += "<li class=\"trendBar\"><table class=\"trendtable\"><tr><td>" + (i+1) + "</td><td><a href=\"/itemInfo?id=" + myObj.list[i].name + "\">" + myObj.list[i].name + "</a></td></tr></table></li>";
 					
 				list += "</ul>";
 						
