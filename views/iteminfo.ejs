@@ -421,27 +421,13 @@
 				<!-- 무기 / 방어구 급수 -->
 				<table class="table table-striped table-hover table-sm">
 				<thead>
-					<tr>
-						<th>아이템 등급</th>
-						<th>5</th>
-						<th>4</th>
-						<th>3</th>
-						<th>2</th>
-						<th>1</th>
+					<tr id="plushead">
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td><font color=red style="font-weight:bold">추가 공격력/마력</font></td>
-						<td><span id="plusAtt1"></span></td>
-						<td><span id="plusAtt2"></span></td>
-						<td><span id="plusAtt3"></span></td>
-						<td><span id="plusAtt4"></span></td>
-						<td><span id="plusAtt5"></span></td>
+					<tr id="plusAtt">
 					</tr>
-					<tr>
-						<td><font color=blue style="font-weight:bold">주 스텟</font></td>
-						<td colspan="5"><span id="firstStat">0</span></td>
+					<tr id="statAtt">
 					</tr>
 				</tbody>
 				</table>
@@ -627,12 +613,46 @@
 						document.getElementById("wporar").innerHTML = "장신구";
 					}
 					
+					// 쟈이힌 체크 (추옵 7단계)
+					
+					let lev5 = myObj.list[i].plusAtt6 != null ? true : false;
+					
+					if(lev5) {
+						document.getElementById("plusAtt").innerHTML = "<td><font color=red style=\"font-weight:bold\">추가 공격력/마력</font></td><td><span id=\"plusAtt1\"></span></td><td><span id=\"plusAtt2\"></span></td><td><span id=\"plusAtt3\"></span></td><td><span id=\"plusAtt4\"></span></td><td><span id=\"plusAtt5\"></span></td><td><span id=\"plusAtt6\"></span></td><td><span id=\"plusAtt7\"></span></td>";
+						
+						document.getElementById("plushead").innerHTML = "<th>아이템 등급</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th>"
+						
+						document.getElementById("plusAtt1").innerHTML = myObj.list[i].plusAtt1;
+						document.getElementById("plusAtt2").innerHTML = myObj.list[i].plusAtt2;
+						document.getElementById("plusAtt3").innerHTML = myObj.list[i].plusAtt3;
+						document.getElementById("plusAtt4").innerHTML = myObj.list[i].plusAtt4;
+						document.getElementById("plusAtt5").innerHTML = myObj.list[i].plusAtt5;
+						document.getElementById("plusAtt6").innerHTML = myObj.list[i].plusAtt6;
+						document.getElementById("plusAtt7").innerHTML = myObj.list[i].plusAtt7;
+						
+						
+						document.getElementById("statAtt").innerHTML = "<td><font color=blue style=\"font-weight:bold\">주 스텟</font></td><td id=\"stattable\" colspan=\"7\"><span id=\"firstStat\">0</span></td>";
+						
+						//console.log("쟈이힌 같은데" + myObj.list[i].plusAtt6);
+					}else{
+						document.getElementById("plusAtt").innerHTML = "<td><font color=red style=\"font-weight:bold\">추가 공격력/마력</font></td><td><span id=\"plusAtt1\"></span></td><td><span id=\"plusAtt2\"></span></td><td><span id=\"plusAtt3\"></span></td><td><span id=\"plusAtt4\"></span></td><td><span id=\"plusAtt5\"></span></td>";
+						
+						document.getElementById("plushead").innerHTML = "<th>아이템 등급</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th>"
+						
+						document.getElementById("plusAtt1").innerHTML = myObj.list[i].plusAtt1;
+						document.getElementById("plusAtt2").innerHTML = myObj.list[i].plusAtt2;
+						document.getElementById("plusAtt3").innerHTML = myObj.list[i].plusAtt3;
+						document.getElementById("plusAtt4").innerHTML = myObj.list[i].plusAtt4;
+						document.getElementById("plusAtt5").innerHTML = myObj.list[i].plusAtt5;
+						
+						document.getElementById("statAtt").innerHTML = "<td><font color=blue style=\"font-weight:bold\">주 스텟</font></td><td id=\"stattable\" colspan=\"5\"><span id=\"firstStat\">0</span></td>";
+						
+						//console.log("쟈이힌 아닌거같은데" + myObj.list[i].plusAtt6);
+					}
+					
+					
 					// 추옵 로드
-					document.getElementById("plusAtt1").innerHTML = myObj.list[i].plusAtt1;
-					document.getElementById("plusAtt2").innerHTML = myObj.list[i].plusAtt2;
-					document.getElementById("plusAtt3").innerHTML = myObj.list[i].plusAtt3;
-					document.getElementById("plusAtt4").innerHTML = myObj.list[i].plusAtt4;
-					document.getElementById("plusAtt5").innerHTML = myObj.list[i].plusAtt5;
+					
 					
 					break;
 				}
@@ -646,9 +666,9 @@
 	
 	  
 	  function filter(){
-		  var str, dex, int, luk, att, mag, all, dmg, maxhp, type, reqlev, weapontype, itemtype, mystat;
+		  var str, dex, int, luk, att, mag, all, dmg, maxhp, type, reqlev, weapontype, itemtype, mystat, lev5;
 		  var level = 0, dmchk = false, demonchk;
-		  var plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5;
+		  var plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6 = -1, plusAtt7 = -1;
 
 		  reqlev = Number(document.getElementById("reqlev").innerHTML);
           str = Number(document.getElementById("str").value);
@@ -664,6 +684,8 @@
 		  weapontype = document.getElementById("kind").innerHTML;
 		  itemtype = document.getElementById("wporar").innerHTML;
 		  
+		  lev5 = document.getElementById("plusAtt6") != null ? true : false;
+		  
 		  mystat = Number(document.getElementById("mystat").value);
 		  
 		  plusAtt1 = Number(document.getElementById("plusAtt1").innerHTML);
@@ -671,6 +693,11 @@
 		  plusAtt3 = Number(document.getElementById("plusAtt3").innerHTML);
 		  plusAtt4 = Number(document.getElementById("plusAtt4").innerHTML);
 		  plusAtt5 = Number(document.getElementById("plusAtt5").innerHTML);
+		  
+		  if(lev5) {
+		  	plusAtt6 = Number(document.getElementById("plusAtt6").innerHTML);
+		  	plusAtt7 = Number(document.getElementById("plusAtt7").innerHTML);
+		  }
 		  
 		  if(type == "전사계열") {
 		  
@@ -684,37 +711,37 @@
 		  if(dmchk) {
 			  maxhp = maxhp / 17.5;
 			  calculate(maxhp, str, 0, att, dmg, reqlev, itemtype, mystat, dmchk);
-			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, itemtype);
+			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5);
 		  }else{
 			  // type == 0; ()
 			  if(type == "전사계열") {
 				  // STR, DEX
 				  calculate(str, dex, all, att, dmg, reqlev, itemtype, mystat, dmchk);
-				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, itemtype);
+				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5);
 			  }else if(type == "마법사계열") {
 				  // INT, LUK
 				  calculate(int, luk, all, mag, dmg, reqlev, itemtype, mystat, dmchk);
-				  description_detail(mag, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, itemtype);
+				  description_detail(mag, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5);
 			  }else if(type == "궁수계열") {
 				  // DEX, STR
 				  calculate(dex, str, all, att, dmg, reqlev, itemtype, mystat, dmchk);
-				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, itemtype);
+				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5);
 			  }else if(type == "도적계열") {
 				  // LUK, DEX
 				  calculate(luk, dex, all, att, dmg, reqlev, itemtype, mystat, dmchk);
-				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, itemtype);
+				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5);
 			  }else if(type == "해적계열") {
 				  if(weapontype == "건") // 건: DEX, STR
 					  calculate(dex, str, all, att, dmg, reqlev, itemtype, mystat, dmchk); 
 				  else // 너클, 핸드캐논: STR, DEX
 					  calculate(str, dex, all, att, dmg, reqlev, itemtype, mystat, dmchk);
-				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, itemtype);
+				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5);
 			  }else if(type == "하이브리드(해적)계열") { // 덱 제논 - 세트아이템 (덱을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
 				  calculate(dex, str+luk, all, att, dmg, reqlev, itemtype, mystat, dmchk);
-				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, itemtype);
+				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5);
 			  }else if(type == "하이브리드(도적)계열") { // 럭 제논 - 세트아이템 (운을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
 				  calculate(luk, str+dex, all, att, dmg, reqlev, itemtype, mystat, dmchk);
-				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, itemtype);
+				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5);
 			  }else if(type == "하이브리드계열") { // 제논 - 비세트아이템 (가장 높은 추옵을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
 				  let stetArray = [str, dex, luk];
 
@@ -725,7 +752,7 @@
 				  //console.log("현재 스탯(정렬됨) :" + stetArray[0] + stetArray[1] + stetArray[2]);
 
 				  calculate(stetArray[0], stetArray[1]+stetArray[2], all, att, dmg, reqlev, itemtype, mystat, dmchk);
-				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, itemtype);
+				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5);
 			  }else if(type == "전직업(장신구)") { // 장신구 (가장 높은 스탯이 주스탯)
 				  let stetArray = [str, dex, luk];
 
@@ -745,7 +772,7 @@
 				  }
 
 				  calculate(mainstet, 0, all, attmag, dmg, reqlev, itemtype, mystat, dmchk);
-				  description_detail(attmag, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, itemtype);
+				  description_detail(attmag, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5);
 			  }
 		  }
       };
@@ -1166,6 +1193,12 @@
 		  document.getElementById("plusAtt3").style.backgroundColor = "#eeeeee";
 		  document.getElementById("plusAtt4").style.backgroundColor = "#eeeeee";
 		  document.getElementById("plusAtt5").style.backgroundColor = "#eeeeee";
+		  
+		  if(document.getElementById("plusAtt6") != null) {
+			  document.getElementById("plusAtt6").style.backgroundColor = "#eeeeee";
+			  document.getElementById("plusAtt7").style.backgroundColor = "#eeeeee";
+		  }
+		  
 		  document.getElementById("wpab").style.backgroundColor = "#eeeeee";
 		  document.getElementById("wphigh").style.backgroundColor = "#ffffff";
 		  document.getElementById("wpmid").style.backgroundColor = "#eeeeee";
@@ -1183,64 +1216,142 @@
 		  document.getElementById("accno").style.backgroundColor = "#eeeeee";
 	  }
 	  
-	  function descript(gd) {
-		  switch (gd){
-			case "5" :
-				document.getElementById("plusAtt5").style.backgroundColor = "#F8C9CE";
-				document.getElementById("grade").innerHTML = "1단계 (매우 높음)";
-				break;
-			case "4" :
-				document.getElementById("plusAtt4").style.backgroundColor = "#F8C9CE";
-				document.getElementById("grade").innerHTML = "2단계 (높음)";
-				break;
-			case "3" :
-				document.getElementById("plusAtt3").style.backgroundColor = "#F8C9CE";
-				document.getElementById("grade").innerHTML = "3단계 (보통)";
-				break;
-			case "2" :
-				document.getElementById("plusAtt2").style.backgroundColor = "#F8C9CE";
-				document.getElementById("grade").innerHTML = "4단계 (낮음)";
-				break;
-			case "1" :
-				document.getElementById("plusAtt1").style.backgroundColor = "#F8C9CE";
-				document.getElementById("grade").innerHTML = "5단계 (매우 낮음)";
-				break;
-			default :
-				document.getElementById("grade").innerHTML = "추옵 없음";
+	  function descript(gd, lev5) {
+		  if(!lev5)
+			  switch (gd){
+				case "5" :
+					document.getElementById("plusAtt5").style.backgroundColor = "#F8C9CE";
+					document.getElementById("grade").innerHTML = "1단계 (매우 높음)";
+					break;
+				case "4" :
+					document.getElementById("plusAtt4").style.backgroundColor = "#F8C9CE";
+					document.getElementById("grade").innerHTML = "2단계 (높음)";
+					break;
+				case "3" :
+					document.getElementById("plusAtt3").style.backgroundColor = "#F8C9CE";
+					document.getElementById("grade").innerHTML = "3단계 (보통)";
+					break;
+				case "2" :
+					document.getElementById("plusAtt2").style.backgroundColor = "#F8C9CE";
+					document.getElementById("grade").innerHTML = "4단계 (낮음)";
+					break;
+				case "1" :
+					document.getElementById("plusAtt1").style.backgroundColor = "#F8C9CE";
+					document.getElementById("grade").innerHTML = "5단계 (매우 낮음)";
+					break;
+				default :
+					document.getElementById("grade").innerHTML = "추옵 없음";
+			}
+		else {
+			switch (gd){
+				case "7" :
+					document.getElementById("plusAtt7").style.backgroundColor = "#F8C9CE";
+					document.getElementById("grade").innerHTML = "1단계 (매우 높음)";
+					break;
+				case "6" :
+					document.getElementById("plusAtt6").style.backgroundColor = "#F8C9CE";
+					document.getElementById("grade").innerHTML = "2단계 (높음)";
+					break;
+				case "5" :
+					document.getElementById("plusAtt5").style.backgroundColor = "#F8C9CE";
+					document.getElementById("grade").innerHTML = "3단계 (다소 높음)";
+					break;
+				case "4" :
+					document.getElementById("plusAtt4").style.backgroundColor = "#F8C9CE";
+					document.getElementById("grade").innerHTML = "4단계 (보통)";
+					break;
+				case "3" :
+					document.getElementById("plusAtt3").style.backgroundColor = "#F8C9CE";
+					document.getElementById("grade").innerHTML = "5단계 (다소 낮음)";
+					break;
+				case "2" :
+					document.getElementById("plusAtt2").style.backgroundColor = "#F8C9CE";
+					document.getElementById("grade").innerHTML = "6단계 (낮음)";
+					break;
+				case "1" :
+					document.getElementById("plusAtt1").style.backgroundColor = "#F8C9CE";
+					document.getElementById("grade").innerHTML = "7단계 (매우 낮음)";
+					break;
+				default :
+					document.getElementById("grade").innerHTML = "추옵 없음";
+			}
 		}
 	}
 	  
 	  
-	  function description_detail(stat, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, itemtype) {
-		  if(stat >= plusAtt5) {
-			  plusClear();
-			  descript("5");
-			  recommend(itemtype, "1");
+	  function description_detail(stat, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5) {
+		  if(lev5) {
+			  if(stat >= plusAtt7) {
+				  plusClear();
+				  descript("7", lev5);
+				  recommend(itemtype, "1");
+			  }
+			  else if(stat >= plusAtt6) {
+				  plusClear();
+				  descript("6", lev5);
+				  recommend(itemtype, "2");
+			  }
+			  else if(stat >= plusAtt5){
+				  plusClear();
+				  descript("5", lev5);
+				  recommend(itemtype, "3");
+			  } else if(stat >= plusAtt4) {
+				  plusClear();
+				  descript("4", lev5);
+				  recommend(itemtype, "4");
+			  }
+			  else if(stat >= plusAtt3){
+				  plusClear();
+				  descript("3", lev5);
+				  recommend(itemtype, "5");
+			  }
+			  else if(stat >= plusAtt2){
+				  plusClear();
+				  descript("2", lev5);
+				  recommend(itemtype, "6");
+			  }
+			  else if(stat >= plusAtt1){
+				  plusClear();
+				  descript("1", lev5);
+				  recommend(itemtype, "7");
+			  }
+			  else {
+				  plusClear();
+				  descript("0", lev5);
+				  recommend(itemtype, "0");
+			  }
 		  }
-		  else if(stat >= plusAtt4) {
-			  plusClear();
-			  descript("4");
-			  recommend(itemtype, "2");
-		  }
-		  else if(stat >= plusAtt3){
-			  plusClear();
-			  descript("3");
-			  recommend(itemtype, "3");
-		  }
-		  else if(stat >= plusAtt2){
-			  plusClear();
-			  descript("2");
-			  recommend(itemtype, "4");
-		  }
-		  else if(stat >= plusAtt1){
-			  plusClear();
-			  descript("1");
-			  recommend(itemtype, "5");
-		  }
-		  else {
-			  plusClear();
-			  descript("0");
-			  recommend(itemtype, "0");
+		  else{
+			  if(stat >= plusAtt5) {
+				  plusClear();
+				  descript("5", lev5);
+				  recommend(itemtype, "1");
+			  }
+			  else if(stat >= plusAtt4) {
+				  plusClear();
+				  descript("4", lev5);
+				  recommend(itemtype, "2");
+			  }
+			  else if(stat >= plusAtt3){
+				  plusClear();
+				  descript("3", lev5);
+				  recommend(itemtype, "3");
+			  }
+			  else if(stat >= plusAtt2){
+				  plusClear();
+				  descript("2", lev5);
+				  recommend(itemtype, "4");
+			  }
+			  else if(stat >= plusAtt1){
+				  plusClear();
+				  descript("1", lev5);
+				  recommend(itemtype, "5");
+			  }
+			  else {
+				  plusClear();
+				  descript("0", lev5);
+				  recommend(itemtype, "0");
+			  }
 		  }
 	  }
 	  

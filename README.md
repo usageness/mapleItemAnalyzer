@@ -31,7 +31,7 @@
 
 ### 이 프로젝트는 아래 주소에서 이용 가능합니다.
 
-* https://mapleitem.com/
+* http://mapleitem.com/
 
 
 ### 패치노트
