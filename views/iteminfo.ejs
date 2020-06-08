@@ -437,6 +437,74 @@
 				
 			    <div class ="divider"></div>
 			  
+			  
+			  
+			    <div>
+					
+			    <h2 class="subtitle">상세 옵션 분석</h2>
+			  
+			    <table class="table table-striped table-hover table-sm">
+			  
+					<thead>
+						<tr>
+							<th style="font-weight:bold">종류</th>
+							<th colspan="5" style="font-weight:bold">수치</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr id = "solostat">
+						</tr>
+						<tr id = "bistat">
+						</tr>
+						<tr>
+							<td style="font-weight:bold">올스텟</td>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr id = "atkstat">
+						</tr>
+						<tr>
+							<td style="font-weight:bold">착용레벨감소</td>
+							<td>15</td>
+							<td>20</td>
+							<td>25</td>
+							<td>30</td>
+							<td>35</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td style="font-weight:bold">이동속도</td>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td style="font-weight:bold">점프력</td>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td></td>
+							<td></td>
+						</tr>
+
+					</tbody>
+				</table>
+			    </div>
+					
+			    <div class ="divider"></div>
+			  
 			    <h2 class="subtitle">내게 맞는 장비 찾기</h2>
 			  
 			    <table class="table table-striped table-hover table-sm">
@@ -521,10 +589,11 @@
 			for(var i = 0; i < myObj.list.length; i++) {
 				if(myObj.list[i].name == id) {
 					type = myObj.list[i].type;
+					let level = myObj.list[i].reqlev;
 					document.getElementById("name").innerHTML = myObj.list[i].name;
 					document.getElementById("kind").innerHTML = myObj.list[i].kind;
 					
-					document.getElementById("reqlev").innerHTML = myObj.list[i].reqlev;
+					document.getElementById("reqlev").innerHTML = level;
 					document.getElementById("thumbnail").innerHTML = "<img src=\"/img/items/" + myObj.list[i].imgsrc + " \" width=\"100\" >";
 					
 					
@@ -616,6 +685,8 @@
 					// 쟈이힌 체크 (추옵 7단계)
 					
 					let lev5 = myObj.list[i].plusAtt6 != null ? true : false;
+					let coefficient_solostat = (Math.floor(level / 20) + 1);
+					let coefficient_bistat = (Math.floor(level / 40) + 1);
 					
 					if(lev5) {
 						document.getElementById("plusAtt").innerHTML = "<td><font color=red style=\"font-weight:bold\">추가 공격력/마력</font></td><td><span id=\"plusAtt1\"></span></td><td><span id=\"plusAtt2\"></span></td><td><span id=\"plusAtt3\"></span></td><td><span id=\"plusAtt4\"></span></td><td><span id=\"plusAtt5\"></span></td><td><span id=\"plusAtt6\"></span></td><td><span id=\"plusAtt7\"></span></td>";
@@ -634,6 +705,8 @@
 						document.getElementById("statAtt").innerHTML = "<td><font color=blue style=\"font-weight:bold\">주 스텟</font></td><td id=\"stattable\" colspan=\"7\"><span id=\"firstStat\">0</span></td>";
 						
 						//console.log("쟈이힌 같은데" + myObj.list[i].plusAtt6);
+						
+						document.getElementById("atkstat").innerHTML = "<td style=\"font-weight:bold\">공격력/마력</td><td>"+myObj.list[i].plusAtt1+"</td><td>"+myObj.list[i].plusAtt2+"</td><td>"+myObj.list[i].plusAtt3+"</td><td>"+myObj.list[i].plusAtt4+"</td><td>"+myObj.list[i].plusAtt5+"</td><td>"+myObj.list[i].plusAtt6+"</td><td>"+myObj.list[i].plusAtt7+"</td>";
 					}else{
 						document.getElementById("plusAtt").innerHTML = "<td><font color=red style=\"font-weight:bold\">추가 공격력/마력</font></td><td><span id=\"plusAtt1\"></span></td><td><span id=\"plusAtt2\"></span></td><td><span id=\"plusAtt3\"></span></td><td><span id=\"plusAtt4\"></span></td><td><span id=\"plusAtt5\"></span></td>";
 						
@@ -648,8 +721,14 @@
 						document.getElementById("statAtt").innerHTML = "<td><font color=blue style=\"font-weight:bold\">주 스텟</font></td><td id=\"stattable\" colspan=\"5\"><span id=\"firstStat\">0</span></td>";
 						
 						//console.log("쟈이힌 아닌거같은데" + myObj.list[i].plusAtt6);
+						
+						document.getElementById("atkstat").innerHTML = "<td style=\"font-weight:bold\">공격력/마력</td><td>"+myObj.list[i].plusAtt1+"</td><td>"+myObj.list[i].plusAtt2+"</td><td>"+myObj.list[i].plusAtt3+"</td><td>"+myObj.list[i].plusAtt4+"</td><td>"+myObj.list[i].plusAtt5+"</td>";
+						
 					}
 					
+					document.getElementById("solostat").innerHTML = "<td style=\"font-weight:bold\">단일스텟</td><td>"+(coefficient_solostat*3)+"</td><td>"+(coefficient_solostat*4)+"</td><td>"+(coefficient_solostat*5)+"</td><td>"+(coefficient_solostat*6)+"</td><td>"+(coefficient_solostat*7)+"</td><td></td><td></td>";
+						
+						document.getElementById("bistat").innerHTML = "<td style=\"font-weight:bold\">이중스텟</td><td>"+(coefficient_bistat*3)+"</td><td>"+(coefficient_bistat*4)+"</td><td>"+(coefficient_bistat*5)+"</td><td>"+(coefficient_bistat*6)+"</td><td>"+(coefficient_bistat*7)+"</td><td></td><td></td>";
 					
 					// 추옵 로드
 					
