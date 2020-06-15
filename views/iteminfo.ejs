@@ -410,6 +410,10 @@
 									 
 			  </div>
 			  
+			  <div id = "zenon">
+									 
+			  </div>
+			  
 				  
 			  <div class ="divider"></div>
 				<span><strong>아이템 점수 : </strong><span id = score></span></span>
@@ -649,6 +653,7 @@
 						document.getElementById("atkOrMag").innerHTML = "방어력: ";
 						document.getElementById("atk").innerHTML = myObj.list[i].defense;
 						document.getElementById("wporar").innerHTML = "방어구";
+						document.getElementById("zenon").innerHTML = "<form action=\"\"><input onclick=\"filter()\" type=\"checkbox\" name=\"zen\" id=\"zenonchk\">제논으로 계산</form>";
 					}else if(type == "8") { // 해적계열 무기 (공격력)
 						document.getElementById("job").innerHTML = "해적계열";
 						document.getElementById("atkOrMag").innerHTML = "공격력: ";
@@ -661,6 +666,7 @@
 						document.getElementById("atkOrMag").innerHTML = "방어력: ";
 						document.getElementById("atk").innerHTML = myObj.list[i].defense;
 						document.getElementById("wporar").innerHTML = "방어구";
+						document.getElementById("zenon").innerHTML = "<form action=\"\"><input onclick=\"filter()\" type=\"checkbox\" name=\"zen\" id=\"zenonchk\">제논으로 계산</form>";
 					}else if(type == "10") { // 럭 제논 도적 무기 (공격력)
 						document.getElementById("job").innerHTML = "하이브리드(도적)계열";
 						document.getElementById("atkOrMag").innerHTML = "공격력: ";
@@ -746,7 +752,7 @@
 	  
 	  function filter(){
 		  var str, dex, int, luk, att, mag, all, dmg, maxhp, type, reqlev, weapontype, itemtype, mystat, lev5;
-		  var level = 0, dmchk = false, demonchk;
+		  var level = 0, dmchk = false, znchk = false, demonchk, zenonchk;
 		  var plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6 = -1, plusAtt7 = -1;
 
 		  reqlev = Number(document.getElementById("reqlev").innerHTML);
@@ -786,11 +792,32 @@
 		 	 //console.log("데벤져 체크 : " + dmchk);
 		  }
 		  
+		  if(type == "도적계열" || type == "해적계열") {
+		  
+		  	zenonchk = document.getElementById('zenonchk');
+		  
+		  	if(zenonchk.checked) { znchk = true; } else { znchk = false; }
+		 	 //console.log("제논 체크 : " + znchk);
+		  }
+		  
 		  // 데벤져인가요?
 		  if(dmchk) {
 			  maxhp = maxhp / 17.5;
 			  calculate(maxhp, str, 0, att, dmg, reqlev, itemtype, mystat, dmchk);
 			  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5);
+		  }
+		  // 제논인가요?
+		  else if(znchk || type == "하이브리드계열") {
+			  let stetArray = [str, dex, luk];
+
+				  stetArray.sort(function(a, b) {
+					  return b - a; // 내림차순 정렬
+				  });
+
+				  //console.log("현재 스탯(정렬됨) :" + stetArray[0] + stetArray[1] + stetArray[2]);
+
+				  calculate(stetArray[0], stetArray[1]+stetArray[2], all, att, dmg, reqlev, itemtype, mystat, dmchk);
+				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5);
 		  }else{
 			  // type == 0; ()
 			  if(type == "전사계열") {
@@ -820,17 +847,6 @@
 				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5);
 			  }else if(type == "하이브리드(도적)계열") { // 럭 제논 - 세트아이템 (운을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
 				  calculate(luk, str+dex, all, att, dmg, reqlev, itemtype, mystat, dmchk);
-				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5);
-			  }else if(type == "하이브리드계열") { // 제논 - 비세트아이템 (가장 높은 추옵을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
-				  let stetArray = [str, dex, luk];
-
-				  stetArray.sort(function(a, b) {
-					  return b - a; // 내림차순 정렬
-				  });
-
-				  //console.log("현재 스탯(정렬됨) :" + stetArray[0] + stetArray[1] + stetArray[2]);
-
-				  calculate(stetArray[0], stetArray[1]+stetArray[2], all, att, dmg, reqlev, itemtype, mystat, dmchk);
 				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5);
 			  }else if(type == "전직업(장신구)") { // 장신구 (가장 높은 스탯이 주스탯)
 				  let stetArray = [str, dex, luk];
