@@ -105,12 +105,9 @@
 			color: #888888;
 		}
 		.mainbody {
-			width: 94%;
-			max-width: 1000px;
+			width: 100%;
 			overflow: auto;
 			margin: auto;
-			padding-top: 1%;
-			margin-top: 3%;
 			text-align: center;
 		}
 		
@@ -180,29 +177,25 @@
 			margin-bottom: 1rem;
 		}
 		.searchSection {
-			display: inline-block;
-			vertical-align: top;
-			min-width: 270px;
-			width: 90%;
-			margin: auto;
+			width: 100%;
+			background-color: #333333;
 		}
 		.searchRank {
 			display: inline-block;
 			vertical-align: top;
 			width: 100%;
 			min-width: 270px;
-			max-width: 350px;
-			border: 1px solid #cccccc;
 			border-radius: 5px;
 			background-color: #FFFFFF;
 			padding: 1rem 1rem 0rem 1rem;
 			margin-bottom: 1rem;
 		}
+		
 		.searchbox {
 			width: 100%;
 			max-width: 540px;
 			display: inline-block;
-			margin-bottom: 1rem;
+			margin: 1rem 0;
 		}
 		.form-inline {
 			display: block;
@@ -218,6 +211,7 @@
 		}
 		.banner img {
    			width: 100%;
+			object-fit: cover;
 		}
 		.active-cyan-4 input[type=text]:focus:not([readonly]) {
 			border: 1px solid #4dd0e1;
@@ -254,26 +248,44 @@
 			font-weight: bold;
 			padding: 0 0.5rem;
 		}
+		
+		.buttonSection {
+			display:inline-block;
+			margin-bottom: 1rem;
+			vertical-align: top;
+			border-radius: 5px;
+		}
+		.listhead {
+			background-color: #333333;
+			color: #eeeeee;
+			border-radius: 5px 5px 0 0;
+		}
+		.buttonimg {
+			height: 12rem;
+		}
+		
 		.patchBanner {
 			display: inline-block;
 			width: 100%;
 			font-weight: bold;
 			background-color: #FFFFFF;
-			border: 1px solid #cccccc;
 			border-radius: 5px;
-			margin-top: 1rem;
 		}
 		.patchBanner ul li {
-			padding: 0.5rem 0 0 0;
+			padding: 1rem;
+			font-size: 1.414em;
+			text-align: center;
 		}
 		.patchBanner ul .buttonli {
 			padding: 1rem;
 			text-align: center;
 			font-size: 1.414em;
 			margin: 0;
+			border-top: 1px #eeeeee solid;
 		}
 		.patchBanner ul a .buttonli{
-			color: #000000;
+			color: #333333;
+			font-weight: normal;
 		}
 		.patchBanner ul .buttonli:hover{
 			background-color: #eeeeee;
@@ -292,6 +304,18 @@
 			background-image: url("/img/background/background-pinkbean.png");
 			background-repeat: no-repeat;
 			background-position: center center;
+		}
+		.bt-guide {
+			background-image: url("/img/background/button-guide.png");
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+		}
+		.bt-guide2 {
+			background-image: url("/img/background/button-guide2.png");
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
 		}
 	</style>
 </head>
@@ -346,34 +370,68 @@
 	</div>
 
 	<div class="mainbody rounded flex-center flex-column">
-		<div class="topdivision">
-			<div class="searchSection">
-				<div class="searchbox">
-					<div class="input-group active-cyan-4 form-sm form-1 pl-0 sbox">
-					  <div class="input-group-prepend">
-						<span class="input-group-text purple lighten-3" id="basic-text1"><i class="fas fa-search text-white"
-							aria-hidden="true"></i></span>
-					  </div>
-					  <input class="form-control my-0 py-1" onkeyup="filter()" type="text" id="value" placeholder="아이템 이름" aria-label="Search">
-					</div>
-
-					<ul id="list-unstyled">
-					<!-- 아이템 목록은 요기요 -->
-					</ul>
+		
+		<!-- 검색창입니다 -->
+		<div class="searchSection">
+			<div class="searchbox">
+				<div class="input-group active-cyan-4 form-sm form-1 pl-0 sbox">
+				  <div class="input-group-prepend">
+					<span class="input-group-text purple lighten-3" id="basic-text1"><i class="fas fa-search text-white" aria-hidden="true"></i></span>
+				  </div>
+				  <input class="form-control my-0 py-1" onkeyup="filter()" type="text" id="value" placeholder="아이템 이름" aria-label="Search">
 				</div>
-				
-				<div class="searchRank flex-column" id="trendlist">
+
+				<!-- 아이템 목록은 요기요 -->
+				<ul id="list-unstyled">
+				</ul>
+
+			</div>
+		</div>
+		
+		
+		
+		<!-- 애드핏 광고 -->
+		<ins class="kakao_ad_area" style="display:none;" 
+		 data-ad-unit    = "DAN-u82cwvyzzsxj" 
+		 data-ad-width   = "320" 
+		 data-ad-height  = "100"></ins> 
+		<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+		
+		
+		<div class="topdivision">
+			<div class="container">
+				<div class="row">	
 					<!-- 인기 검색어 목록은 요기요 -->
+					<div class="searchRank flex-column col-lg-4 col-sm-12" id="trendlist">
+
+					</div>
+					
+					<!-- 주요 정보 탭 -->
+					<div class="buttonSection flex-column col-lg-4 col-sm-12">
+						<div class="patchBanner">
+							<ul>
+								<li class="listhead">메이플 주요정보</li>
+								<a href="https://maplestory.nexon.com/News/Update/InformationCenter"><li class="buttonli">업데이트</li></a>
+								<a href="https://maplestory.nexon.com/News/Notice/Inspection"><li class="buttonli">점검내역</li></a>
+								<a href="https://maplestory.nexon.com/News/Notice/Notice"><li class="buttonli">공지사항</li></a>
+								<a href="https://maplestory.nexon.com/News/Event"><li class="buttonli">이벤트</li></a>
+								<a href="https://maplestory.nexon.com/News/CashShop"><li class="buttonli">캐시샵</li></a>
+							</ul>
+						</div>
+					</div>
+					
+					<!-- 바로가기 버튼 탭 -->
+					<div class="buttonSection flex-column col-lg-4 col-sm-12">
+						<div class="patchBanner">
+							<ul>
+								<a href="/guide/picker"><li class="bt-guide buttonimg"></li></a>
+								<a href="/guide/item"><li class="bt-guide2 buttonimg"></li></a>
+							</ul>
+						</div>
+					</div>
+					
 				</div>
 			</div>
-			
-			<!-- 애드핏 광고 -->
-			<ins class="kakao_ad_area" style="display:none;" 
-			 data-ad-unit    = "DAN-u82cwvyzzsxj" 
-			 data-ad-width   = "320" 
-			 data-ad-height  = "100"></ins> 
-			<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-			
 			
 			
 			<!-- 배너부분 -->
@@ -388,41 +446,34 @@
 							<li data-target="#carousel-example-1z" data-slide-to="1"></li>
 							<li data-target="#carousel-example-1z" data-slide-to="2"></li>
 							<li data-target="#carousel-example-1z" data-slide-to="3"></li>
-							<li data-target="#carousel-example-1z" data-slide-to="4"></li>
 						  </ol>
 						  <!--/.Indicators-->
 						  <!--Slides-->
 						  <div class="carousel-inner" role="listbox">
 							<!--First slide-->
 							<div class="carousel-item active">
-							  <a href="https://maplestory.nexon.com/News/CashShop/Sale/129"><img class="d-block w-100" src="img/banner/cashshop_bn_01.png"
+							  <a href="https://maplestory.nexon.com/News/CashShop/Sale/130"><img class="d-block fill" src="img/banner/cashshop_bn_01.png"
 								alt="First slide"></a>
 							</div>
 							<!--/First slide-->
 							<!--Second slide-->
 							<div class="carousel-item">
-							  <a href="https://maplestory.nexon.com/News/CashShop/Sale/128"><img class="d-block w-100" src="img/banner/cashshop_bn_02.png"
+							  <a href="https://maplestory.nexon.com/News/CashShop/Sale/131"><img class="d-block fill" src="img/banner/cashshop_bn_02.png"
 								alt="Second slide"></a>
 							</div>
 							<!--/Second slide-->
 							<!--3 slide-->
 							<div class="carousel-item">
-							  <a href="https://maplestory.nexon.com/News/CashShop/Sale/127"><img class="d-block w-100" src="img/banner/cashshop_bn_03.png"
-								alt="Second slide"></a>
+							  <a href="https://maplestory.nexon.com/News/CashShop/Sale/113"><img class="d-block fill" src="img/banner/cashshop_bn_03.png"
+								alt="Third slide"></a>
 							</div>
 							<!--/3 slide-->
 							<!--4 slide-->
 							<div class="carousel-item">
-							  <a href="https://maplestory.nexon.com/News/CashShop/Sale/113"><img class="d-block w-100" src="img/banner/cashshop_bn_04.png"
-								alt="Second slide"></a>
+							  <a href="https://maplestory.nexon.com/News/CashShop/Sale/114"><img class="d-block fill" src="img/banner/cashshop_bn_04.png"
+								alt="Fourth slide"></a>
 							</div>
 							<!--/4 slide-->
-							<!--5 slide-->
-							<div class="carousel-item">
-							  <a href="https://maplestory.nexon.com/News/CashShop/Sale/114"><img class="d-block w-100" src="img/banner/cashshop_bn_05.png"
-								alt="Second slide"></a>
-							</div>
-							<!--/5 slide-->
 						  </div>
 						  <!--/.Slides-->
 						  <!--Controls-->
@@ -439,16 +490,7 @@
 							
 					</div>
 					<!--/.Carousel Wrapper-->
-					<div class="col-lg-5 col-sm-12">
-						<div class="patchBanner">
-							<ul>
-								<li>메이플 주요정보</li>
-								<a href="https://maplestory.nexon.com/News/Update/InformationCenter"><li class="buttonli bg-rabbit">업데이트 정보센터</li></a>
-								<a href="https://maplestory.nexon.com/News/Notice/Inspection"><li class="buttonli bg-rabbit2">점검내역</li></a>
-								<a href="https://maplestory.nexon.com/News/Notice/Notice"><li class="buttonli bg-pinkbean">공지사항</li></a>
-							</ul>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>
