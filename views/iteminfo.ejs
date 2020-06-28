@@ -847,20 +847,20 @@
 			  }else if(type == "하이브리드(도적)계열") { // 럭 제논 - 세트아이템 (운을 주스탯으로, 나머지를 합쳐서 부스탯으로 봄)
 				  calculate(luk, str+dex, all, att, dmg, reqlev, itemtype, mystat, dmchk);
 				  description_detail(att, plusAtt1, plusAtt2, plusAtt3, plusAtt4, plusAtt5, plusAtt6, plusAtt7, itemtype, lev5);
-			  }else if(type == "전직업(장신구)") { // 장신구 (가장 높은 스탯이 주스탯)
-				  let stetArray = [str, dex, luk];
-
-				  stetArray.sort(function(a, b) {
-					  return b - a; // 내림차순 정렬
-				  });
-				  
+			  }else if(type == "전직업(장신구)") { // 장신구 (가장 높은 스탯이 주스탯)				  
 				  let attmag;
 				  let mainstet;
 					  
-				  if(stetArray[0] > int) {
+				  if(str + 4*att > int + 4*mag) {
 					  attmag = att;
-					  mainstet = stetArray[0];
-				  }else {
+					  mainstet = str;
+				  }else if(dex + 4*att > int + 4*mag) {
+					  attmag = att;
+					  mainstet = dex;
+				  }else if(luk + 4*att > int + 4*mag) {
+					  attmag = att;
+					  mainstet = luk;
+				  }else{
 					  attmag = mag;
 					  mainstet = int;
 				  }
@@ -1161,7 +1161,7 @@
 			  
 			  let id = getParameterByName('id');
 			  
-			  if(id == "아쿠아틱 레터 눈장식" || id == "응축된 힘의 결정석") {
+			  if(id == "아쿠아틱 레터 눈장식" || id == "응축된 힘의 결정석") { // 레벨 100
 				  // 자쿰 눈, 얼굴장식 극추옵 점수 : 0~490
 				  if(score > 460)
 					  ranked = "R+";
@@ -1183,7 +1183,7 @@
 					  ranked = "D";
 				  else
 					  ranked = "E";
-			  }else if(id == "혼테일의 목걸이" || id == "카오스 혼테일의 목걸이") {
+			  }else if(id == "혼테일의 목걸이" || id == "카오스 혼테일의 목걸이") { 
 				  // 혼테일 팬던트 극추옵 점수 : 0~350
 				  if(score > 340)
 					  ranked = "R+";
@@ -1205,7 +1205,7 @@
 					  ranked = "D";
 				  else
 					  ranked = "E";
-			  }else if(id == "매커네이터 펜던트" || id == "데아 시두스 이어링") {
+			  }else if(id == "매커네이터 펜던트" || id == "데아 시두스 이어링" || id == "지옥의 불꽃") { // 레벨 130대
 				  // 매커네이터 펜던트 극추옵 점수 : 0~490
 				  if(score > 460)
 					  ranked = "R+";
@@ -1227,7 +1227,7 @@
 					  ranked = "D";
 				  else
 					  ranked = "E";
-			  }else if(id == "도미네이터 펜던트" || id == "핑크빛 성배" || id == "골든 클로버 벨트") {
+			  }else if(id == "도미네이터 펜던트" || id == "핑크빛 성배" || id == "골든 클로버 벨트" || id == "블랙빈 마크" || id == "파풀라투스 마크" || id == "분노한 자쿰의 벨트") { // 레벨 140대
 				  // 도미네이터 펜던트 극추옵 점수 : 0~518
 				  if(score > 500)
 					  ranked = "R+";
