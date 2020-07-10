@@ -23,6 +23,7 @@
 * 여제(시그너스) 세트 아이템
 * 카오스 루타비스 세트 아이템
 * 앱솔랩스 세트 아이템
+* 보스 몬스터 장신구 아이템
 
 
 이 외에도 다양한 아이템들이 지속적으로 추가 예정입니다.
@@ -45,6 +46,10 @@
 * [express.js](https://expressjs.com/ko/)
 * [MDBootstrap](https://mdbootstrap.com/)
 
+
+### 외부 링크
+* [공식 트위터](https://twitter.com/mapleitempicker)
+* [공식 페이지](https://www.facebook.com/mapleitempicker/)
 
 ### License
 -------
