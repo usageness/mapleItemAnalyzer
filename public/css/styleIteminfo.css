@@ -1,0 +1,201 @@
+body{
+	font-size: 16px;
+	font-family: sans-serif;
+	background-color: #D8D8D8;
+}
+
+h1{
+	font-size: 2.618em;
+}
+
+h2{
+	font-size: 1.717em;
+}
+
+h3{
+	font-size: 1em;
+	line-height: 1.618em;
+	text-transform: uppercase;
+}
+
+p{
+	font-size: 1em;
+	line-height: 1.618em;
+}
+.md-form.md-outline label {
+	font-size: 0.8em;
+}
+
+@media all and (min-width: 960px) {
+	body{
+		font-size: 16px;
+	}
+}
+
+@media all and (max-width: 959px) and (min-width: 600px) {
+	body{
+		font-size: 14px;
+	}
+}
+
+@media all and (max-width: 599px) and (min-width: 320px) {
+	body{
+		font-size: 12px;
+	}
+
+}
+
+
+#name {
+	color: #111111;
+	font-weight: bold;
+	padding-bottom: 20px;
+	border-bottom: 1px dashed #cccccc;
+}
+#thumbnail {
+	padding-top: 100px;
+}
+#score {
+	color: #313131;
+	font-weight: bold;
+	font-size: 1.4em;
+	margin-right: 3rem;
+}
+#rank {
+	color: #848484;
+	font-weight: bold;
+	font-size: 1.4em;
+}
+#grade {
+	color: #6610f2;
+	font-weight: bold;
+	font-size: 1em;
+}
+.row {
+	padding-top: 0.402rem;
+	padding-bottom: 0.474rem;
+}
+.statGradePoint {
+	color: #20c997;
+	font-weight: bold;
+	font-size: 1em;
+	float: none;
+	margin: 0 auto;
+}
+.mainContainer {
+	background-color: #D8D8D8;
+	padding-top: 5% 0;
+	overflow: auto;
+}
+.statName {
+	color: #111111;
+	font-weight: bold;
+	padding-bottom: 20px;
+	border-bottom: 1px dashed #cccccc;
+}
+.md-form.md-outline {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+.container {
+	display: inline-block;
+	text-align: center;
+	overflow: auto;
+	margin-top: 2rem;
+}
+.smallDes {
+	font-size: 9pt;
+	color: #cccccc;
+}
+.divider {
+	display: block;
+	float: none;
+	width: 100%;
+	height: 1rem;
+	border-bottom: 1px dashed #cccccc;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.grade {
+	float: none;
+	margin: 0 auto;
+}
+.detail {
+	float: right;
+	font-weight: bold;
+}
+.subtitle {
+	float: left;
+	font-weight: bold;
+	padding-top: 12px;
+}
+.card .card-body h2 {
+	float: left;
+	font-weight: bold;
+	padding-top: 12px;
+}
+.card-text {
+	float: none;
+	margin: 0 auto;
+}
+.status {
+	width: 100%;
+}
+.analyze {
+	width: 94%;
+	margin-bottom: 3%;
+	margin: auto;
+}
+.btn {
+	padding: .84em 2.14em;
+}
+.nav-link{
+	font-size: 12pt;
+}
+.form-control {
+	text-align: center;
+	width: 100%;
+	padding: 0;
+	margin: auto;
+}
+h5 {
+	color: #000000;
+}
+
+#additional {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: inline;
+}
+
+#additional li {
+	display: inline;
+}
+
+#additional, #toggle {
+	display: none;
+}
+
+#toggleTitle {
+	font-weight: bold;
+	font-size: 1.618em;
+	color: #000000;
+}
+
+#toggleTitle:hover {
+	color: #888888;
+}
+
+#toggle:checked + #additional {
+	display: inline;
+}
+.sns {
+	padding: .84em 1.04em;
+}
+
+.linebtn {
+	padding: 0;
+	width: 40px;
+	height: 40px;
+}
