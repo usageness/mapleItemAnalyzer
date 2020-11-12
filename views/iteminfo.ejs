@@ -737,6 +737,16 @@
 				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (15*dmg);
 			  }
 			  //console.log("앱솔랩스 장비를 계산합니다");
+		  }else if(reqlev <= 200) { // 6. 아케인셰이드 장비 (올스텟의 경우 고정 계수 10으로 대체, 뎀 계수 정상적용)
+			  if(mystat == "") {
+				  // 4*주스텟 + 1*부스텟 + 10*올스텟% + 16*공격력 + 15*보스데미지%
+				  score = (4*mainStat) + (1*subStat) + (10*all) + (16*att) + (15*dmg);
+			  }else {
+				  // 세부 스텟 계산 on
+				  realstat = mystat/100;
+				  score = (4*mainStat) + (1*subStat) + (realstat*all) + (16*att) + (15*dmg);
+			  }
+			  //console.log("아케인셰이드 장비를 계산합니다");
 		  }
 		  
 		  var dm = 1;
@@ -880,6 +890,28 @@
 					  ranked = "D";
 				  else
 					  ranked = "E";
+			  }else if(reqlev <= 200) {
+				  // 아케인셰이드 장비 극추옵 0 ~ 3430
+				  if(score > 3300)
+					  ranked = "R+";
+				  else if(score > 2900)
+					  ranked = "R";
+				  else if(score > 2500)
+					  ranked = "SSS";
+				  else if(score > 2100)
+					  ranked = "SS";
+				  else if(score > 1700)
+					  ranked = "S";
+				  else if(score > 1300)
+					  ranked = "A";
+				  else if(score > 900)
+					  ranked = "B";
+				  else if(score > 500)
+					  ranked = "C";
+				  else if(score > 100)
+					  ranked = "D";
+				  else
+					  ranked = "E";
 			  }else{
 				  //console.log("알 수 없는 에러가 발생하였습니다.");
 			  }
@@ -945,6 +977,28 @@
 				  else if(score > 230)
 					  ranked = "B";
 				  else if(score > 165)
+					  ranked = "C";
+				  else if(score > 100)
+					  ranked = "D";
+				  else
+					  ranked = "E";
+			  }else if(reqlev <= 200) {
+				  // 아케인셰이드 장비 극추옵 점수 : 0~700
+				  if(score > 690)
+					  ranked = "R+";
+				  else if(score > 616)
+					  ranked = "R";
+				  else if(score > 542)
+					  ranked = "SSS";
+				  else if(score > 468)
+					  ranked = "SS";
+				  else if(score > 395)
+					  ranked = "S";
+				  else if(score > 321)
+					  ranked = "A";
+				  else if(score > 247)
+					  ranked = "B";
+				  else if(score > 173)
 					  ranked = "C";
 				  else if(score > 100)
 					  ranked = "D";
