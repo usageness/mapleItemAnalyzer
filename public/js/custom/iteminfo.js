@@ -219,7 +219,7 @@ function getParameterByName(name) {
 		  
 		  	zenonchk = document.getElementById('zenonchk');
 		  
-		  	if(zenonchk.checked) { znchk = true; } else { znchk = false; }
+		  	if(zenonchk !== null && zenonchk.checked) { znchk = true; } else { znchk = false; }
 		 	 //console.log("제논 체크 : " + znchk);
 		  }
 		  
