@@ -1,21 +1,21 @@
 console.log('%c메이플 추가옵션 분석기\nDevelop by usage','color:#3E71B3; font-size:30px; font-weight:bold;');
 	  
 	  
-      function filter(){
-        var value, name, item, i;
+  function filter(){
+	var value, name, item, i;
 
-        value = document.getElementById("value").value.toUpperCase();
-        item = document.getElementsByClassName("item");
+	value = document.getElementById("value").value.toUpperCase();
+	item = document.getElementsByClassName("item");
 
-        for(i=0;i<item.length;i++){
-          name = item[i].getElementsByClassName("name");
-          if(name[0].innerHTML.toUpperCase().indexOf(value) > -1){
-            item[i].style.display = "flex";
-          }else{
-            item[i].style.display = "none";
-          }
-        }
-      }
+	for(i=0;i<item.length;i++){
+	  name = item[i].getElementsByClassName("name");
+	  if(name[0].innerHTML.toUpperCase().indexOf(value) > -1){
+		item[i].style.display = "flex";
+	  }else{
+		item[i].style.display = "none";
+	  }
+	}
+  }
 	  
 	function getParameterByName(name) {
 		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
