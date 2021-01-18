@@ -1,7 +1,9 @@
 # 메이플 아이템 분석기
 
-메이플 아이템 분석기는 메이플스토리 아이템의 옵션을 기반으로 성능과 가치를 분석해줍니다.
+![image](https://user-images.githubusercontent.com/28296575/104917208-73773e00-59d6-11eb-824d-6477ef84dddf.png)
 
+
+메이플 아이템 분석기는 메이플스토리 아이템의 옵션을 기반으로 성능과 가치를 분석해줍니다.
 
 
 
@@ -34,6 +36,16 @@
 ### 이 프로젝트는 아래 주소에서 이용 가능합니다.
 
 * http://mapleitem.com/
+
+
+### 사용 방법
+
+![image](http://mapleitem.com/img/guide/guide_01.png)
+
+![image](http://mapleitem.com/img/guide/guide_02.png)
+
+**자세한 사용방법은 [가이드](http://mapleitem.com/guide/picker)를 참고해주세요.**
+
 
 
 ### 패치노트
