@@ -1,0 +1,11 @@
+# no log files
+*.log
+Useful_Resources.pdf
+
+# no files that do not affect
+README.txt
+
+# no ide configuration files
+goorm.manifest
+
+# Node modules are uploaded to github on demand.
