@@ -95,7 +95,7 @@ console.log('%c메이플 추가옵션 분석기\nDevelop by usage','color:#3E71B
 			if(this.readyState == 4 && this.status == 200)
 			{
 				var myObj = JSON.parse(this.responseText);
-				var list = "<ul><h3 class=\"trend\">인기 아이템</h3>";
+				var list = "<ul class=\"ul-populate\"><h3 class=\"trend\">인기 아이템</h3>";
 				
 
 				for(var i = 0; i < myObj.list.length; i++) list += "<li class=\"trendBar\"><table class=\"trendtable\"><tr><td>" + (i+1) + "</td><td><a href=\"/itemInfo?id=" + myObj.list[i].name + "\">" + myObj.list[i].name + "</a></td></tr></table></li>";

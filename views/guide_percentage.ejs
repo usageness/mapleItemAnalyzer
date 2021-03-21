@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>가이드</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="/img/mdb-favicon.ico" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="/css/style.css">
+	
+	<style>
+		.mainbody {
+			background-color: #D8D8D8;
+		}
+		.table {
+			width: 70%;
+			min-width: 280px;
+			margin: auto;
+			text-align: center;
+			border: 1px solid #dddddd;
+			margin-top: 4%;
+			margin-bottom: 4%;
+		}
+		
+		.text_border {
+			text-shadow: 0 0 2px #000;
+		}
+		
+		.card {
+			max-width: 800px;
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+		
+		.card-title {
+			margin-top: 1rem;
+		}
+		
+		.card-body {
+			padding: 1rem;
+		}
+		
+		.content {
+			border: 1px solid #CCCCCC;
+			padding: 20px;
+			margin-right: 3rem;
+		}
+		
+		.content-item {
+			display: block;
+		}
+		
+		h5 {
+			color:#000000;
+			margin-top:2rem;
+			margin-bottom:1rem;
+		}
+		
+		h3 {
+			margin-top: 0px;
+		}
+		
+		img {
+			width: 80%;
+			max-width: 700px;
+			margin: auto;
+			margin-top: 1.5rem;
+			margin-bottom: 1.5rem;
+		}
+	</style>
+</head>
+<body>
+
+  <!-- Start your project here-->  
+	<header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark default-color">
+    <a class="navbar-brand" href="/"><strong>메이플 추가옵션 분석기</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">홈<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/summary">아이템 목록</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/guide">가이드</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" href="/about">about</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.facebook.com/mapleitempicker/"><i class="fab fa-facebook-f"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/mapleitempicker"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"><i class="fab fa-instagram"></i></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+	
+  
+<div class="mainbody flex-center flex-column">
+  <h4 class="animated fadeIn mb-3"> </h4>
+
+	<div class="card">
+	  <div class="card-body">
+		  
+		<h3 class="card-title">게임 내 확률형 아이템 정보</h3>
+		  
+		<div class="content">
+			<span class="content-item"><a href="/guide">가이드 메인화면</a></span>
+			<span class="content-item">· <a href="/guide/picker">추가옵션 분석기 사용법</a></span>
+			<span class="content-item">· <a href="/guide/item">아이템 품질 및 잠재능력</a></span>
+			<span class="content-item">· <a href="/guide/percentage">게임 내 확률형 아이템 정보</a></span>
+		</div>
+		  
+		<span class="card-text">
+			<h5>- 게임 내 확률형 아이템 정보</h5>
+			<p class="animated fadeIn text-muted">메이플스토리의 확률형 아이템에 대한 세부 확률과 로직입니다. 공식 홈페이지에 게시된 내용과 같습니다.<br>
+			<a href="https://maplestory.nexon.com/News/Notice/Notice/133316">[공지] 큐브의 잠재능력 재설정 로직과 세부 확률 공개</a><br>
+			<a href="https://maplestory.nexon.com/News/Notice/Notice/133192">[공지] 추가옵션 시스템 로직 공개</a>
+			</p><br><br>
+			<h5>- 추가옵션 등급 설정 확률</h5>
+			<p class="animated fadeIn text-muted">2021년 2월 25일에 진행되는 클라이언트 1.2.344 패치 이후로는 기존의 특정 배열을 통한 추가옵션의 종류가 선택되던 방식이 아닌 일정한 확률에 의한 추가옵션의 종류가 설정됩니다. 각 옵션의 등급이 등장할 확률은 아래와 같습니다.</p>
+			<table class="table table-striped table-hover table-sm">
+				<thead>
+					<tr>
+						<th>등급</th>
+						<th>1등급</th>
+						<th>2등급</th>
+						<th>3등급</th>
+						<th>4등급</th>
+						<th>5등급</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>몬스터 드랍</td>
+						<td>25%</td>
+						<td>30%</td>
+						<td>30%</td>
+						<td>14%</td>
+						<td>1%</td>
+					</tr>
+					<tr>
+						<td>강력한 환생의 불꽃</td>
+						<td>20%</td>
+						<td>30%</td>
+						<td>36%</td>
+						<td>14%</td>
+						<td>0%</td>
+					</tr>
+					<tr>
+						<td>영원한 환생의 불꽃</td>
+						<td>0%</td>
+						<td>29%</td>
+						<td>45%</td>
+						<td>25%</td>
+						<td>1%</td>
+					</tr>
+					<tr>
+						<td>일반 합성/제작</td>
+						<td>50%</td>
+						<td>40%</td>
+						<td>10%</td>
+						<td>0%</td>
+						<td>0%</td>
+					</tr>
+					<tr>
+						<td>장인제작</td>
+						<td>15%</td>
+						<td>30%</td>
+						<td>40%</td>
+						<td>14%</td>
+						<td>1%</td>
+					</tr>
+					<tr>
+						<td>명장제작</td>
+						<td>0%</td>
+						<td>19%</td>
+						<td>50%</td>
+						<td>30%</td>
+						<td>1%</td>
+					</tr>
+					<tr>
+						<td>장인합성</td>
+						<td>25%</td>
+						<td>35%</td>
+						<td>30%</td>
+						<td>10%</td>
+						<td>0%</td>
+					</tr>
+					<tr>
+						<td>명장합성</td>
+						<td>0%</td>
+						<td>40%</td>
+						<td>45%</td>
+						<td>14%</td>
+						<td>1%</td>
+					</tr>
+					<tr>
+						<td>장비 조각 찬스타임</td>
+						<td>0%</td>
+						<td>30%</td>
+						<td>50%</td>
+						<td>19%</td>
+						<td>1%</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h5>- 큐브 및 잠재능력</h5>
+			<p class="animated fadeIn text-muted">각 큐브별 잠재능력 등급 상승의 확률은 다음과 같습니다.<br></p>
+			<table class="table table-striped table-hover table-sm">
+				<thead>
+					<tr>
+						<th>잠재능력 등급</th>
+						<th>레드 큐브</th>
+						<th>블랙 큐브</th>
+						<th>에디셔널 큐브</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>레어 -> 에픽</td>
+						<td>6.0000%</td>
+						<td>15.0000%</td>
+						<td>4.7619%</td>
+					</tr>
+					<tr>
+						<td>에픽 -> 유니크</td>
+						<td>1.8000%</td>
+						<td>3.5000%</td>
+						<td>1.9608%</td>
+					</tr>
+					<tr>
+						<td>유니크 -> 레전드리</td>
+						<td>0.3000%</td>
+						<td>1.0000%</td>
+						<td>0.4975%</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			
+			<p class="animated fadeIn text-muted">잠재능력의 두 번째 옵션과 세 번째 옵션은 잠재능력 등급보다 한 단계 떨어지는 옵션이 등장하도록 되어있습니다. 다만 낮은 확률로 잠재능력과 동일한 등급의 옵션이 등장하게 되는데, 이를 <strong>이탈 옵션</strong>이라고 합니다.<br><br>아래는 이탈 옵션이 등장할 확률입니다.</p>
+			<table class="table table-striped table-hover table-sm">
+				<thead>
+					<tr>
+						<th>레드 큐브</th>
+						<th>레어 등급</th>
+						<th>에픽 등급</th>
+						<th>유니크 등급</th>
+						<th>레전드리 등급</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>두 번째 옵션</td>
+						<td>10.0000%</td>
+						<td>10.0000%</td>
+						<td>10.0000%</td>
+						<td>10.0000%</td>
+					</tr>
+					<tr>
+						<td>세 번째 옵션</td>
+						<td>1.0000%</td>
+						<td>1.0000%</td>
+						<td>1.0000%</td>
+						<td>1.0000%</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-striped table-hover table-sm">
+				<thead>
+					<tr>
+						<th>블랙 큐브</th>
+						<th>레어 등급</th>
+						<th>에픽 등급</th>
+						<th>유니크 등급</th>
+						<th>레전드리 등급</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>두 번째 옵션</td>
+						<td>20.0000%</td>
+						<td>20.0000%</td>
+						<td>20.0000%</td>
+						<td>20.0000%</td>
+					</tr>
+					<tr>
+						<td>세 번째 옵션</td>
+						<td>5.0000%</td>
+						<td>5.0000%</td>
+						<td>5.0000%</td>
+						<td>5.0000%</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-striped table-hover table-sm">
+				<thead>
+					<tr>
+						<th>에디셔널 큐브</th>
+						<th>레어 등급</th>
+						<th>에픽 등급</th>
+						<th>유니크 등급</th>
+						<th>레전드리 등급</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>두 번째 옵션</td>
+						<td>1.1968%</td>
+						<td>4.7619%</td>
+						<td>1.1968%</td>
+						<td>0.4975%</td>
+					</tr>
+					<tr>
+						<td>세 번째 옵션</td>
+						<td>1.1968%</td>
+						<td>4.7619%</td>
+						<td>1.1968%</td>
+						<td>0.4975%</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<p class="animated fadeIn text-muted">아이템별 잠재능력의 각 항목에 대한 등장 확률은 아래 페이지를 참고해주세요.<br><br><a href="https://maplestory.nexon.com/Guide/OtherProbability/cube/red">레드 큐브 옵션 등장 확률</a><br>
+			<a href="https://maplestory.nexon.com/Guide/OtherProbability/cube/black">블랙 큐브 옵션 등장 확률</a><br>
+			<a href="https://maplestory.nexon.com/Guide/OtherProbability/cube/addi">에디셔널 큐브 옵션 등장 확률</a></p>
+		</span>
+		</div>
+	</div>
+</div>
+  <!-- End your project here-->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="/js/mdb.min.js"></script>
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript"></script>
+
+</body>
+</html>

@@ -19,4 +19,8 @@ router.get('/picker', function(req, res, next) {
   res.render('guide_picker', { title: 'Express' });
 });
 
+router.get('/percentage', function(req, res, next) {
+  res.render('guide_percentage', { title: 'Express' });
+});
+
 module.exports = router;

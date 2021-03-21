@@ -98,6 +98,12 @@ ul {
 	list-style: none;
 }
 
+.ul-populate {
+	padding: 1rem 1rem 1rem 0;
+	background-color: #ffffff;
+	border-radius: 5px;
+}
+
 #list-unstyled {
 	background-color: #ffffff;
 	min-width: 270px;
@@ -158,8 +164,6 @@ ul {
 	width: 100%;
 	min-width: 270px;
 	border-radius: 5px;
-	background-color: #FFFFFF;
-	padding: 1rem 1rem 0rem 1rem;
 	margin-bottom: 1rem;
 }
 
@@ -288,4 +292,16 @@ ul {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: contain;
+}
+.bt-guide3 {
+	background-image: url("/img/background/button-guide3.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
+.percentageBanner {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	margin: auto;
+	border-radius: 5px;
 }
